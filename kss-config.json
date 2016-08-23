@@ -1,0 +1,10 @@
+{
+    "source": ["stylesheets"],
+    "destination": "docs/",
+    "css": [],
+    "js": [],
+    "homepage": "README.md",
+    "title": "Lepidoptera",
+    "builder": "builder/twig",
+    "namespace": "builderTwig:kss-template"
+}

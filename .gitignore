@@ -1,0 +1,5 @@
+/stylesheets/vendors
+/.sass-cache
+/docs/*
+/kss-template/kss-assets/vendors/*
+/kss-template/kss-assets/main.css

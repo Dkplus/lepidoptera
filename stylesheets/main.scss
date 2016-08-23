@@ -1,0 +1,30 @@
+///
+/// This main file should be compiled to css.
+/// @author Oskar Pfeifer-Bley
+///
+@charset 'utf-8';
+
+// abstracts
+
+// vendors-extensions
+@import 'vendors-extensions/font-awesome';
+@import 'vendors-extensions/materialize';
+
+// vendors
+@import 'vendors/font-awesome/scss/font-awesome';
+@import 'vendors/materialize/sass/materialize';
+
+// base
+
+// layout
+@import 'layout/side-nav';
+
+// components
+
+// pages
+
+// themes
+@import 'themes/lepidoptera';
+
+// shame
+@import 'shame';

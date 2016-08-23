@@ -1,0 +1,91 @@
+@import 'compass/css3/transition';
+@import '../vendors/materialize/sass/components/variables';
+
+//
+// side-nav
+//
+// Slide out menu from MaterializeCSS (http://materializecss.com/side-nav.html).
+//
+// Markup:
+// <div class="side-nav" id="slide-out-{{modifier_class}}">
+//  <ul>
+//    <li></li>
+//  </ul>
+// </div>
+// <a href="#" data-activates="slide-out-{{modifier_class}}" class="js-button-collapse"><i class="material-icons">menu</i></a>
+//
+// .side-nav--fixed-expanding - Stays
+//
+// Styleguide layout.side-nav
+//
+.side-nav--fixed-expanding {
+  @include transition(0.5s);
+  width: 78px;
+
+  &:hover {
+    @include transition(0.5s);
+    width: 300px;
+  }
+
+  .side-nav__logo img {
+    width: (78px - 16px);
+  }
+
+  .side-nav__preview {
+    width: 48px;
+    padding-right: 16px;
+  }
+}
+
+//
+// side-nav__logo
+//
+// Logo inside the side-nav of MaterializeCSS.
+//
+// Markup:
+// <div class="side-nav">
+//  <div class="side-nav__logo {{modifier_class}}">
+//    <a href="#1" class="side-nav__logo-link waves-effect">
+//      <div>
+//        <img src="/images/logo.png"> BRAND
+//      </div>
+//    </a>
+//  </div>
+// </div>
+//
+// .side-nav__logo--centered - Horizontally centered version of the logo
+//
+// Styleguide layout.side-nav.logo
+//
+.side-nav__logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+}
+
+.side-nav__logo--centered div {
+  width: 100%;
+  text-align: center;
+}
+
+// the .fixed rule is necessary to avoid being overridden by materializecss
+.side-nav.fixed .side-nav__logo-link,
+.side-nav .side-nav__logo-link {
+  @extend .valign-wrapper;
+
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  div {
+    @extend .valign;
+    margin: 8px;
+    height: ($navbar-height-mobile - 16px);
+
+    @media #{$medium-and-up} {
+      height: ($navbar-height - 16px);
+    }
+  }
+}

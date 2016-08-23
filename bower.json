@@ -1,0 +1,23 @@
+{
+    "name": "lepidoptera",
+    "authors": [
+        "Oskar Pfeifer-Bley <oskar@programming-php.net>"
+    ],
+    "description": "MaterializeCSS Template",
+    "main": "",
+    "license": "MIT",
+    "homepage": "",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendor",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "font-awesome": "fontawesome#^4.6.3",
+        "materialize": "^0.97.7"
+    }
+}
