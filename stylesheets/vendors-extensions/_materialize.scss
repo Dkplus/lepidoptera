@@ -1,1 +1,30 @@
-$roboto-font-path: 'vendors/materialize/fonts/roboto/';
+.side-nav,
+.side-nav.fixed {
+  .collapsible-header {
+    height: $sidenav-item-height; // overwrite extended height from MaterializeCSS
+    padding: 0 (2 * $sidenav-padding); // align equals to normal items
+  }
+
+  .collapsible-body {
+    background-color: $sidenav-bg-color; // adjust collapsible color in side-nav to side-nav-color (was collapsible)
+  }
+
+  .collapsible-body li a {
+    padding-left: (3 * $sidenav-padding);
+  }
+
+  .collapsible-header .material-icons {
+    font-size: 24px; // back to default
+  }
+
+  li > a > i {
+    margin-right: 1rem; // reduce the margin to the default value for collapsible-header
+  }
+}
+
+.side-nav.fixed li > a > i,
+.side-nav li > a > i {
+  &.material-icons {
+    margin-right: 1rem; // see above, more strict and avoiding scss lint errors
+  }
+}

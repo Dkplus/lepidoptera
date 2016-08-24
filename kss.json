@@ -1,0 +1,13 @@
+{
+    "source": ["stylesheets"],
+    "destination": "build/docs/",
+    "css": [],
+    "js": [],
+    "homepage": "README.md",
+    "title": "Lepidoptera",
+    "builder": "build/kss-template",
+    "verbose": true,
+    "extend": "build/kss-template/extensions",
+    "nav-depth": 2,
+    "custom": ["Default", "FontAwesome", "Material"]
+}

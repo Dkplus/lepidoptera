@@ -133,13 +133,14 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 3
+    # 4 is necessary to overwrite some of the rules from MaterializeCSS (origanal 3)
+    max_depth: 4
 
   SelectorFormat:
     enabled: true
     convention: hyphenated_lowercase
     # Modified for the usage of __ (BEM)
-    class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][\-a-zA-Z0-9]*)?(?:__[a-z][\-a-zA-Z0-9]*)?$'
+    class_convention: '^userView$|^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][\-a-zA-Z0-9]*)?(?:__[a-z][\-a-zA-Z0-9]*)?$'
 
   Shorthand:
     enabled: true

@@ -1,64 +1,6 @@
-
 @import 'compass/css3/transition';
 @import 'compass/css3/transform';
 
 .container {
   margin-left: 85px;
-}
-
-.side-nav {
-  @extend .blue, .accent-1, .z-depth-1;
-
-  padding-top: $navbar-height; // todo: mobile
-
-  .material-icons.menu-toggle,
-  .fa.menu-toggle {
-    @include transition(0.5s);
-    @include rotate(0deg);
-    float: right;
-    height: auto;
-    margin: 0;
-  }
-
-  li.active .material-icons.menu-toggle,
-  li.active .fa.fa-fw.menu-toggle {
-    @include rotate(90deg);
-    @include transition(0.5s);
-  }
-
-  li ul {
-    max-height: 0;
-    overflow: hidden;
-    @include transition(0.5s max-height);
-
-    li a {
-      margin-left: -2em;
-    }
-  }
-  li.active ul {
-    max-height: 1300px;
-    @include transition(0.5s max-height);
-
-    li a {
-      margin-left: 0;
-      @include transition(.5s);
-    }
-  }
-
-  ul {
-    max-height: 100%;
-    overflow: auto;
-  }
-
-  .divider {
-    margin: 0 0 8px;
-  }
-
-  a, i.material-icons, i.fa {
-    @extend .white-text;
-  }
-
-  li > * {
-    clear: both;
-  }
 }

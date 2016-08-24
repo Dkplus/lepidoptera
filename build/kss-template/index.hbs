@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{options.title}}</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="kss-assets/default.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="kss-assets/vendors/prism/themes/prism.css"/>
+    {{{styles}}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" data-activates="menu" class="button-collapse-left"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="./">Menü-Eintrag</a></li>
+            </ul>
+
+            <div id="menu" class="side-nav fixed side-nav--expanding side-nav--fixed-logo">
+                <div class="side-nav__logo z-depth-1">
+                    <a href="./" class="side-nav__logo-link waves-effect">
+                        <div>
+                            <div class="side-nav__short">
+                                <img src="kss-assets/logo.png">
+                            </div>
+                            <div class="side-nav__long">{{ options.title }}</div>
+                        </div>
+                    </a>
+                </div>
+                <ul class="collapsible">
+                    {{#each menu}}
+                        <li {{#if isActive }}class="active"{{/if}}>
+                            <a class="waves-effect{{#if children }} collapsible-header{{/if}}{{#if isActive}} active{{/if}}"
+                                    {{#unless children}}href="section-{{referenceURI}}.html"{{/unless}}>
+                                {{#if fontawesome}}
+                                    <i class="side-nav__short fa fa-{{fontawesome}}"></i>
+                                {{else if material}}
+                                    <i class="side-nav__short material-icons">{{material}}</i>
+                                {{else}}
+                                    <span class="side-nav__short">{{ referenceNumber }}</span>
+                                {{/if}}
+                                <span class="side-nav__long">{{ header }}</span>
+                                {{#if children}}
+                                    <i class="fa fa-fw fa-caret-down side-nav__menu-toggle side-nav__menu-toggle--animated side-nav__menu-toggle--right"></i>
+                                {{/if}}
+                            </a>
+                            {{#if children}}
+                                <ul class="collapsible-body">
+                                    {{#each children}}
+                                        <li>
+                                            <a class="waves-effect" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                                                <span class="side-nav__short">{{referenceNumber}}</span>
+                                                <span class="side-nav__long">{{header}}</span>
+                                            </a>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </div>
+    <div class="container">
+        {{#if homepage}}
+            <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
+                {{{homepage}}}
+            </div>
+        {{else}}
+            {{!
+              Display each section, in order.
+              The "root" element comes first in this loop, and can be detected using
+              the "#if @first" block as seen below.
+            }}
+            <div class="row">
+                <div class="col s12 m9 l10">
+                    {{#each sections}}
+                        <div id="kssref-{{referenceURI}}" class="section scrollspy">
+                            <h{{depth}}>
+                                <a href="#kssref-{{referenceURI}}">
+                                    {{#if fontawesome}}
+                                        <i class="fa fa-{{fontawesome}}"></i>
+                                    {{else if material}}
+                                        <i class="material-icons">{{material}}</i>
+                                    {{/if}}
+                                    {{referenceNumber}} {{header}}
+                                </a>
+                            </h{{depth}}>
+
+                            {{#if description}}
+                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                    {{{description}}}
+                                </div>
+                            {{/if}}
+
+                            {{#if parameters}}
+                                <div class="kss-parameters__title">Parameters:</div>
+                                <ul class="kss-parameters">
+                                    {{#each parameters}}
+                                        <li class="kss-parameters__item">
+                                            <div class="kss-parameters__name"><code>{{name}}</code></div>
+                                            <div class="kss-parameters__description">
+                                                {{{description}}}
+                                                {{#if defaultValue}}
+                                                    <div class="kss-parameters__default-value">
+                                                        Defaults to: <code>{{defaultValue}}</code>
+                                                    </div>
+                                                {{/if}}
+                                            </div>
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            {{/if}}
+
+                            {{#if default}}
+                                Default: <code>{{default}}</code>
+                            {{/if}}
+
+
+                            {{#if example}}
+                                <div>
+                                    <div class="promo-caption" style="font-size: 1.7rem; font-weight: 500; margin-top: 5px; margin-bottom: 0;">
+                                        Example{{#if modifiers}}s{{/if}}
+                                    </div>
+
+                                    <div class="example" style="margin-left: 2em;">
+                                        {{#if modifiers}}
+                                            <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
+                                                Default styling
+                                            </div>
+                                        {{/if}}
+
+                                        {{{idable_markup example}}}
+                                    </div>
+
+                                    {{#each modifiers}}
+                                        <div class="example" style="margin-left: 2em;">
+                                            <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
+                                                {{name}}
+                                            </div>
+                                            {{#if_skip_example_of this}}
+                                                <p>{{{skippable_description_of this}}}</p>
+                                                <p>{{{reason_to_skip this}}}</p>
+                                            {{else}}
+                                                <p>{{{description}}}</p>
+                                                {{{idable_markup markup}}}
+                                            {{/if_skip_example_of}}
+                                        </div>
+                                    {{/each}}
+                                    <pre><code class="language-html">{{idable_markup example}}</code></pre>
+                                </div>
+                            {{/if}}
+
+                            {{#if sourceFile.name}}
+                                <div class="kss-source kss-style">
+                                    Source: <code>{{sourceFile.name}}</code>, line {{sourceFile.line}}
+                                </div>
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                </div>
+                <div class="col hide-on-small-only m3 l2">
+                    <ul class="section table-of-contents pinned">
+                        {{#each sections}}
+                            <li><a href="#kssref-{{referenceURI}}">{{referenceNumber}} {{header}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+
+    <script type="text/javascript" src="kss-assets/vendors/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="kss-assets/vendors/materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="kss-assets/vendors/prism/prism.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.button-collapse').sideNav({edge: 'right'});
+            $('.button-collapse-left').sideNav();
+            $('.collapsible').collapsible();
+            $('.scrollspy').scrollSpy();
+        });
+    </script>
+    {{{scripts}}}
+    </body>
+</html>

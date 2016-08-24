@@ -1,0 +1,38 @@
+//
+// Variables
+//
+// Styleguide abstracts.variables
+
+//
+// $le-base-path
+//
+// Base path to the stylesheets directory.
+// Can be used to adjust paths of fonts and images shipped with Lepidoptera.
+//
+// Default: ./
+//
+// Styleguide abstracts.variables.base-path
+//
+$le-base-path: './' !default;
+
+//
+// $le-side-nav-width
+//
+// Width of the `.side-nav`.
+//
+// Default: 300px
+//
+// Styleguide abstracts.variables.side-nav-width
+//
+$le-side-nav-width: 300px !default;
+
+//
+// $le-side-nav-expanding-width
+//
+// Width of the `.side-nav--expanding` in collapsed state.
+//
+// Default: 65px
+//
+// Styleguide abstracts.variables.side-nav-expanding-width
+//
+$le-side-nav-expanding-width: 65px !default;
