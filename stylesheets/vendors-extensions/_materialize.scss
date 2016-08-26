@@ -1,3 +1,6 @@
+//
+// side-nav
+//
 .side-nav,
 .side-nav.fixed {
   .collapsible-header {
@@ -26,5 +29,18 @@
 .side-nav li > a > i {
   &.material-icons {
     margin-right: 1rem; // see above, more strict and avoiding scss lint errors
+  }
+}
+
+//
+// navbar
+//
+nav .nav-wrapper a {
+  // fix for using Font Awesome Icons
+  max-height: $navbar-height-mobile;
+  overflow: hidden;
+
+  @media #{$large-and-up} {
+    max-height: $navbar-height;
   }
 }

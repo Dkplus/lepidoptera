@@ -1,6 +1,24 @@
 @import 'compass/css3/transition';
 @import 'compass/css3/transform';
 
-.container {
-  margin-left: 85px;
+@media #{$large-and-up} {
+  .nav-wrapper {
+    margin-left: $le-side-nav-expanding-width;
+  }
+
+  .container {
+    margin-left: $le-side-nav-expanding-width;
+  }
+}
+
+nav {
+  .row {
+    height: 100%;
+    margin-bottom: 0;
+  }
+
+  .col {
+    height: 100%;
+  }
+
 }

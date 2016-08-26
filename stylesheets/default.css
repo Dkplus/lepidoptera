@@ -12846,41 +12846,59 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   }
 }
 /* line 1, vendors-extensions/_fontawesome.scss */
-.side-nav .collapsible-header .fa {
+.side-nav .collapsible-header .side-nav__toggle.fa {
   font-size: 14px;
 }
 
-/* line 3, vendors-extensions/_materialize.scss */
+/* line 5, vendors-extensions/_fontawesome.scss */
+.side-nav .fa,
+nav .nav-wrapper .fa {
+  font-size: 1.7rem;
+}
+
+/* line 6, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-header,
 .side-nav.fixed .collapsible-header {
   height: 48px;
   padding: 0 32px;
 }
-/* line 8, vendors-extensions/_materialize.scss */
+/* line 11, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-body,
 .side-nav.fixed .collapsible-body {
   background-color: #fff;
 }
-/* line 12, vendors-extensions/_materialize.scss */
+/* line 15, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-body li a,
 .side-nav.fixed .collapsible-body li a {
   padding-left: 48px;
 }
-/* line 16, vendors-extensions/_materialize.scss */
+/* line 19, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-header .material-icons,
 .side-nav.fixed .collapsible-header .material-icons {
   font-size: 24px;
 }
-/* line 20, vendors-extensions/_materialize.scss */
+/* line 23, vendors-extensions/_materialize.scss */
 .side-nav li > a > i,
 .side-nav.fixed li > a > i {
   margin-right: 1rem;
 }
 
-/* line 27, vendors-extensions/_materialize.scss */
+/* line 30, vendors-extensions/_materialize.scss */
 .side-nav.fixed li > a > i.material-icons,
 .side-nav li > a > i.material-icons {
   margin-right: 1rem;
+}
+
+/* line 38, vendors-extensions/_materialize.scss */
+nav .nav-wrapper a {
+  max-height: 56px;
+  overflow: hidden;
+}
+@media only screen and (min-width: 993px) {
+  /* line 38, vendors-extensions/_materialize.scss */
+  nav .nav-wrapper a {
+    max-height: 64px;
+  }
 }
 
 /* ==========================================================================
@@ -12961,29 +12979,29 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
    ========================================================================== */
 /* 24. Progress Bar
    ========================================================================== */
-/* line 98, layout/_side-nav.scss */
+/* line 101, layout/_side-nav.scss */
 .side-nav {
   width: 300px;
 }
 
-/* line 105, layout/_side-nav.scss */
+/* line 108, layout/_side-nav.scss */
 .side-nav ul {
   overflow: visible;
   height: auto;
 }
 
-/* line 111, layout/_side-nav.scss */
+/* line 114, layout/_side-nav.scss */
 .side-nav--fixed-header {
   overflow: hidden;
 }
-/* line 115, layout/_side-nav.scss */
+/* line 118, layout/_side-nav.scss */
 .side-nav--fixed-header ul {
   height: 100%;
   overflow: auto;
 }
 
 @media only screen and (min-width: 993px) {
-  /* line 125, layout/_side-nav.scss */
+  /* line 128, layout/_side-nav.scss */
   .side-nav--expanding,
   .side-nav--expanding.fixed {
     -moz-transition: linear 0.5s width;
@@ -12992,19 +13010,19 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     transition: linear 0.5s width;
     width: 65px;
   }
-  /* line 130, layout/_side-nav.scss */
+  /* line 133, layout/_side-nav.scss */
   .side-nav--expanding a,
   .side-nav--expanding .collapsible-header,
   .side-nav--expanding.fixed a,
   .side-nav--expanding.fixed .collapsible-header {
     padding: 0 16px;
   }
-  /* line 135, layout/_side-nav.scss */
+  /* line 138, layout/_side-nav.scss */
   .side-nav--expanding li,
   .side-nav--expanding.fixed li {
     overflow: hidden;
   }
-  /* line 139, layout/_side-nav.scss */
+  /* line 142, layout/_side-nav.scss */
   .side-nav--expanding:hover,
   .side-nav--expanding.fixed:hover {
     -moz-transition: linear 0.5s width;
@@ -13013,7 +13031,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     transition: linear 0.5s width;
     width: 300px;
   }
-  /* line 145, layout/_side-nav.scss */
+  /* line 148, layout/_side-nav.scss */
   .side-nav--expanding .collapsible-body,
   .side-nav--expanding.fixed .collapsible-body {
     -moz-transition: max-height 0.5s linear;
@@ -13023,7 +13041,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     max-height: 0;
     overflow: hidden;
   }
-  /* line 151, layout/_side-nav.scss */
+  /* line 154, layout/_side-nav.scss */
   .side-nav--expanding:hover .collapsible-body,
   .side-nav--expanding.fixed:hover .collapsible-body {
     -moz-transition: max-height 0.5s linear;
@@ -13032,7 +13050,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     transition: max-height 0.5s linear;
     max-height: 1300px;
   }
-  /* line 156, layout/_side-nav.scss */
+  /* line 159, layout/_side-nav.scss */
   .side-nav--expanding .collapsible-body a,
   .side-nav--expanding.fixed .collapsible-body a {
     -moz-transition: linear 0.5s;
@@ -13041,12 +13059,12 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     transition: linear 0.5s;
     margin-left: -1em;
   }
-  /* line 161, layout/_side-nav.scss */
+  /* line 164, layout/_side-nav.scss */
   .side-nav--expanding .collapsible-body li a,
   .side-nav--expanding.fixed .collapsible-body li a {
     padding-left: 32px;
   }
-  /* line 165, layout/_side-nav.scss */
+  /* line 168, layout/_side-nav.scss */
   .side-nav--expanding:hover .collapsible-body a,
   .side-nav--expanding.fixed:hover .collapsible-body a {
     -moz-transition: linear 0.5s;
@@ -13056,7 +13074,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     margin-left: 0;
   }
 }
-/* line 193, layout/_side-nav.scss */
+/* line 200, layout/_side-nav.scss */
 .side-nav--expanding .userView {
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
@@ -13064,7 +13082,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   transition: linear 0.5s;
   padding-left: 16px;
 }
-/* line 197, layout/_side-nav.scss */
+/* line 204, layout/_side-nav.scss */
 .side-nav--expanding .userView .circle {
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
@@ -13073,13 +13091,13 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   height: 33px;
   width: 33px;
 }
-/* line 203, layout/_side-nav.scss */
+/* line 210, layout/_side-nav.scss */
 .side-nav--expanding .userView .name,
 .side-nav--expanding .userView .email {
   visibility: hidden;
 }
 
-/* line 209, layout/_side-nav.scss */
+/* line 216, layout/_side-nav.scss */
 .side-nav--expanding:hover .userView {
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
@@ -13087,12 +13105,12 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   transition: linear 0.5s;
   padding-left: 32px;
 }
-/* line 213, layout/_side-nav.scss */
+/* line 220, layout/_side-nav.scss */
 .side-nav--expanding:hover .userView .name,
 .side-nav--expanding:hover .userView .email {
   visibility: visible;
 }
-/* line 218, layout/_side-nav.scss */
+/* line 225, layout/_side-nav.scss */
 .side-nav--expanding:hover .userView .circle {
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
@@ -13102,16 +13120,16 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   width: 64px;
 }
 
-/* line 226, layout/_side-nav.scss */
+/* line 233, layout/_side-nav.scss */
 .side-nav--fixed-header .userView {
   margin-bottom: 0;
 }
-/* line 229, layout/_side-nav.scss */
+/* line 236, layout/_side-nav.scss */
 .side-nav--fixed-header .userView + ul {
   margin-top: 0;
 }
 
-/* line 251, layout/_side-nav.scss */
+/* line 258, layout/_side-nav.scss */
 .side-nav .side-nav__short,
 .side-nav .material-icons.side-nav__short {
   position: relative;
@@ -13122,14 +13140,14 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   text-align: center;
 }
 
-/* line 291, layout/_side-nav.scss */
+/* line 298, layout/_side-nav.scss */
 .side-nav .side-nav__long {
   display: inline-block;
   position: relative;
 }
 
 @media only screen and (min-width: 993px) {
-  /* line 297, layout/_side-nav.scss */
+  /* line 304, layout/_side-nav.scss */
   .side-nav--expanding .side-nav__long {
     -moz-transform: translateX(-400%);
     -ms-transform: translateX(-400%);
@@ -13137,7 +13155,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     transform: translateX(-400%);
   }
 
-  /* line 301, layout/_side-nav.scss */
+  /* line 308, layout/_side-nav.scss */
   .side-nav--expanding:hover .side-nav__long {
     -moz-transform: translateX(0%);
     -ms-transform: translateX(0%);
@@ -13145,58 +13163,58 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     transform: translateX(0%);
   }
 }
-/* line 338, layout/_side-nav.scss */
+/* line 345, layout/_side-nav.scss */
 .side-nav__logo {
   width: 100%;
   height: 56px;
 }
-/* line 344, layout/_side-nav.scss */
+/* line 351, layout/_side-nav.scss */
 .side-nav.fixed .side-nav__logo a, .side-nav .side-nav__logo a {
   width: 100%;
   height: 100%;
   padding: 8px;
 }
-/* line 352, layout/_side-nav.scss */
+/* line 359, layout/_side-nav.scss */
 .side-nav__logo a > div {
   width: 100%;
   overflow: hidden;
   max-height: 100%;
 }
 @media only screen and (min-width: 601px) {
-  /* line 338, layout/_side-nav.scss */
+  /* line 345, layout/_side-nav.scss */
   .side-nav__logo {
     height: 64px;
   }
 }
 @media only screen and (min-width: 993px) {
-  /* line 365, layout/_side-nav.scss */
+  /* line 372, layout/_side-nav.scss */
   .side-nav--expanding .side-nav__logo .side-nav__short {
     width: 49px;
   }
 }
 
-/* line 371, layout/_side-nav.scss */
+/* line 378, layout/_side-nav.scss */
 .side-nav__logo--centered > a > div {
   text-align: center;
 }
 
-/* line 375, layout/_side-nav.scss */
+/* line 382, layout/_side-nav.scss */
 .side-nav__logo--right > a > div {
   text-align: right;
 }
 
-/* line 424, layout/_side-nav.scss */
-.side-nav li > a > .side-nav__menu-toggle--right.material-icons,
-.side-nav .side-nav__menu-toggle--right,
-.side-nav.fixed li > a > .side-nav__menu-toggle--right.material-icons,
-.side-nav.fixed .side-nav__menu-toggle--right {
+/* line 431, layout/_side-nav.scss */
+.side-nav li > a > .side-nav__toggle--right.material-icons,
+.side-nav .side-nav__toggle--right,
+.side-nav.fixed li > a > .side-nav__toggle--right.material-icons,
+.side-nav.fixed .side-nav__toggle--right {
   float: right;
   margin-right: 0;
   margin-left: 1rem;
 }
-/* line 431, layout/_side-nav.scss */
-.side-nav .side-nav__menu-toggle--animated,
-.side-nav.fixed .side-nav__menu-toggle--animated {
+/* line 438, layout/_side-nav.scss */
+.side-nav .side-nav__toggle--animated,
+.side-nav.fixed .side-nav__toggle--animated {
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
   -webkit-transition: linear 0.5s;
@@ -13208,9 +13226,9 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   height: auto;
   margin: 0;
 }
-/* line 438, layout/_side-nav.scss */
-.side-nav .active > .side-nav__menu-toggle--animated,
-.side-nav.fixed .active > .side-nav__menu-toggle--animated {
+/* line 445, layout/_side-nav.scss */
+.side-nav .active > .side-nav__toggle--animated,
+.side-nav.fixed .active > .side-nav__toggle--animated {
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
   -webkit-transition: linear 0.5s;
@@ -13221,9 +13239,9 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   transform: rotate(0deg);
 }
 @media only screen and (min-width: 993px) {
-  /* line 444, layout/_side-nav.scss */
-  .side-nav.side-nav--expanding .side-nav__menu-toggle--animated,
-  .side-nav.fixed.side-nav--expanding .side-nav__menu-toggle--animated {
+  /* line 451, layout/_side-nav.scss */
+  .side-nav.side-nav--expanding .side-nav__toggle--animated,
+  .side-nav.fixed.side-nav--expanding .side-nav__toggle--animated {
     -moz-transition: linear 0.5s;
     -o-transition: linear 0.5s;
     -webkit-transition: linear 0.5s;
@@ -13233,9 +13251,9 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
   }
-  /* line 449, layout/_side-nav.scss */
-  .side-nav.side-nav--expanding:hover .active > .side-nav__menu-toggle--animated,
-  .side-nav.fixed.side-nav--expanding:hover .active > .side-nav__menu-toggle--animated {
+  /* line 456, layout/_side-nav.scss */
+  .side-nav.side-nav--expanding:hover .active > .side-nav__toggle--animated,
+  .side-nav.fixed.side-nav--expanding:hover .active > .side-nav__toggle--animated {
     -moz-transition: linear 0.5s;
     -o-transition: linear 0.5s;
     -webkit-transition: linear 0.5s;
@@ -13247,9 +13265,38 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   }
 }
 
-/* line 4, _shame.scss */
-.container {
-  margin-left: 85px;
+/* line 54, layout/_navbar.scss */
+.nav-wrapper .material-icons + .badge,
+.nav-wrapper .fa + .badge {
+  display: block;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.5rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+
+@media only screen and (min-width: 993px) {
+  /* line 5, _shame.scss */
+  .nav-wrapper {
+    margin-left: 65px;
+  }
+
+  /* line 9, _shame.scss */
+  .container {
+    margin-left: 65px;
+  }
+}
+/* line 15, _shame.scss */
+nav .row {
+  height: 100%;
+  margin-bottom: 0;
+}
+/* line 20, _shame.scss */
+nav .col {
+  height: 100%;
 }
 
 /* line 1, themes/default/layout/_side-nav.scss */

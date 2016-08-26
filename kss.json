@@ -3,7 +3,7 @@
     "destination": "build/docs/",
     "css": [],
     "js": [],
-    "homepage": "README.md",
+    "homepage": "../README.md",
     "title": "Lepidoptera",
     "builder": "build/kss-template",
     "verbose": true,

@@ -13,10 +13,18 @@
     <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
-            <a href="#" data-activates="menu" class="button-collapse-left"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="./">Menü-Eintrag</a></li>
+            <ul>
+                <li>
+                    <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
+                </li>
             </ul>
+            <!--<form>
+                <div class="input-field">
+                    <input id="search" type="search" required>
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>-->
 
             <div id="menu" class="side-nav fixed side-nav--expanding side-nav--fixed-logo">
                 <div class="side-nav__logo z-depth-1">
@@ -39,11 +47,11 @@
                                 {{else if material}}
                                     <i class="side-nav__short material-icons">{{material}}</i>
                                 {{else}}
-                                    <span class="side-nav__short">{{ referenceNumber }}</span>
+                                    <span class="side-nav__short">{{referenceNumber}}</span>
                                 {{/if}}
-                                <span class="side-nav__long">{{ header }}</span>
+                                <span class="side-nav__long">{{header}}</span>
                                 {{#if children}}
-                                    <i class="fa fa-fw fa-caret-down side-nav__menu-toggle side-nav__menu-toggle--animated side-nav__menu-toggle--right"></i>
+                                    <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
                                 {{/if}}
                             </a>
                             {{#if children}}
@@ -181,6 +189,7 @@
         $(function () {
             $('.button-collapse').sideNav({edge: 'right'});
             $('.button-collapse-left').sideNav();
+            $('.dropdown-button-click').dropdown();
             $('.collapsible').collapsible();
             $('.scrollspy').scrollSpy();
         });

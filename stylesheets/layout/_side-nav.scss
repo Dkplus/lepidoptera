@@ -9,12 +9,15 @@
 // Slide out menu from MaterializeCSS.
 // It has been extended with some modifiers that allow a more flexible usage of the side-nav.
 //
+// The two most noteworthy things are the possibility to always have a small side-nav that expands on hover
+// (See `.side-nav--expanding` and to add an logo to the sidebar.
+//
 // For most use cases you can keep up using the normal markup from Materialize,
 // but for some modifiers you need to put the `side-nav` class at a div and put the `ul` inside of this `div`:
 // ```html
 // <div class="side-nav">
 //  <ul>
-//    <li><a href="#">Label</a></li>
+//    <li><a href="#!">Label</a></li>
 //  </ul>
 // </div>
 // ```
@@ -31,20 +34,20 @@
 //    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
 //  </div>
 //  <ul class="collapsible">
-//    <li><a class="subheader" href="#">First five items</a></li>
-//    <li><a href="#">First item</a></li>
-//    <li><a href="#">Second item</a></li>
-//    <li><a href="#">Third item</a></li>
-//    <li><a href="#">Fourth item</a></li>
+//    <li><a class="subheader" href="#!">First five items</a></li>
+//    <li><a href="#!">First item</a></li>
+//    <li><a href="#!">Second item</a></li>
+//    <li><a href="#!">Third item</a></li>
+//    <li><a href="#!">Fourth item</a></li>
 //    <li><div class="divider"/></li>
-//    <li><a class="subheader" href="#">Second five items</a></li>
-//    <li><a href="#">Fifth item</a></li>
-//    <li><a href="#">Sixth item</a></li>
-//    <li><a href="#">Seventh item</a></li>
-//    <li><a href="#">Eighth item</a></li>
-//    <li><a href="#">Ninth item</a></li>
+//    <li><a class="subheader" href="#!">Second five items</a></li>
+//    <li><a href="#!">Fifth item</a></li>
+//    <li><a href="#!">Sixth item</a></li>
+//    <li><a href="#!">Seventh item</a></li>
+//    <li><a href="#!">Eighth item</a></li>
+//    <li><a href="#!">Ninth item</a></li>
 //    <li><div class="divider"/></li>
-//    <li><a class="subheader" href="#">Dropdowns</a></li>
+//    <li><a class="subheader" href="#!">Dropdowns</a></li>
 //    <li class="active">
 //      <a class="collapsible-header active">
 //        Dropdown (Material Icon) <i class="material-icons">arrow_drop_down</i>
@@ -72,16 +75,16 @@
 //      </div>
 //    </li>
 //    <li><div class="divider"/></li>
-//    <li><a class="subheader" href="#">Last five items</a></li>
-//    <li><a href="#">Tenth item</a></li>
-//    <li><a href="#">Eleventh item</a></li>
-//    <li><a href="#">Twelfth item</a></li>
-//    <li><a href="#">Thirteenth item</a></li>
-//    <li><a href="#">Fourteenth item</a></li>
-//    <li><a href="#">Fifteenth item</a></li>
+//    <li><a class="subheader" href="#!">Last five items</a></li>
+//    <li><a href="#!">Tenth item</a></li>
+//    <li><a href="#!">Eleventh item</a></li>
+//    <li><a href="#!">Twelfth item</a></li>
+//    <li><a href="#!">Thirteenth item</a></li>
+//    <li><a href="#!">Fourteenth item</a></li>
+//    <li><a href="#!">Fifteenth item</a></li>
 //  </ul>
 // </div>
-// <a href="#" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
+// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
 // .side-nav--expanding    - On large devices it just opens a small preview of the side-nav.
 //                           The full side-nav becomes visible when the user hovers the side-nav.
@@ -170,7 +173,11 @@
 }
 
 //
-// SideNav UserView
+// UserView
+//
+// The UserView gives the ability to show the current user in a design that is well known from many Android Apps.
+//
+// It is a built in MaterializeCSS and only optimized for the usage with the expanding SideNav.
 //
 // Markup:
 // <ul class="side-nav" id="slide-out-[UNIQID]">
@@ -182,11 +189,11 @@
 //       <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
 //     </div>
 //   </li>
-//   <li><a href="#">First item</a></li>
-//   <li><a href="#">Second item</a></li>
-//   <li><a href="#">Third item</a></li>
+//   <li><a href="#!">First item</a></li>
+//   <li><a href="#!">Second item</a></li>
+//   <li><a href="#!">Third item</a></li>
 // </ul>
-// <a href="#" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
+// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
 // Styleguide layout.side-nav.user-view
 //
@@ -232,7 +239,7 @@
 }
 
 //
-// SideNav Short
+// Short Label
 //
 // Short prefix of a navigation item.
 // Can be either a Material icon, a FontAwesome icon or a string.
@@ -240,11 +247,11 @@
 //
 // Markup:
 // <ul class="side-nav side-nav--expanding" id="slide-out-[UNIQID]">
-//  <li><a href="#"><span class="side-nav__short">ST</span> <span class="side-nav__long">Can be a string</span></a></li>
-//  <li><a href="#"><i class="side-nav__short fa fa-user"></i> <span class="side-nav__long">Or a FontAwesome Icon</span></a></li>
-//  <li><a href="#"><i class="side-nav__short material-icons">account_circle</i> <span class="side-nav__long">Or a Material Icon</span></a></li>
+//  <li><a href="#!"><span class="side-nav__short">ST</span> <span class="side-nav__long">Can be a string</span></a></li>
+//  <li><a href="#!"><i class="side-nav__short fa fa-user"></i> <span class="side-nav__long">Or a FontAwesome Icon</span></a></li>
+//  <li><a href="#!"><i class="side-nav__short material-icons">account_circle</i> <span class="side-nav__long">Or a Material Icon</span></a></li>
 // </ul>
-// <a href="#" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
+// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
 // Styleguide layout.side-nav.short
 //
@@ -260,31 +267,31 @@
 }
 
 //
-// SideNav Long
+// Long Label
 //
 // Long content of a navigation item. Will be hidden in the collapsed `.side-nav--expanding`.
 //
 // Markup:
 // <ul class="side-nav side-nav--expanding" id="slide-out-[UNIQID]">
 //  <li>
-//    <a href="#">
+//    <a href="#!">
 //      <span class="side-nav__short">ST</span>
 //      <span class="side-nav__long">Can be a string</span>
 //    </a>
 //  </li>
 //  <li>
-//    <a href="#">
+//    <a href="#!">
 //      <i class="side-nav__short fa fa-user"></i>
 //      <span class="side-nav__long">Or a FontAwesome Icon</span>
 //    </a>
 //  </li>
 //  <li>
-//    <a href="#">
+//    <a href="#!">
 //      <i class="side-nav__short material-icons">account_circle</i>
 //      <span class="side-nav__long">Or a Material Icon</span></a>
 //  </li>
 // </ul>
-// <a href="#" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
+// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
 // Styleguide layout.side-nav.long
 //
@@ -304,7 +311,7 @@
 }
 
 //
-// SideNav Logo
+// Logo
 //
 // Logo inside the side-nav of MaterializeCSS.
 //
@@ -323,12 +330,12 @@
 //    </a>
 //  </div>
 //  <ul>
-//    <li><a href="#">First item</a></li>
-//    <li><a href="#">Second item</a></li>
-//    <li><a href="#">Third item</a></li>
+//    <li><a href="#!">First item</a></li>
+//    <li><a href="#!">Second item</a></li>
+//    <li><a href="#!">Third item</a></li>
 //  </ul>
 // </div>
-// <a href="#" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
+// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
 // .side-nav__logo--centered - Horizontally centered version of the logo.
 // .side-nav__logo--right    - Horizontally right aligned version of the logo.
@@ -377,7 +384,7 @@
 }
 
 //
-// SideNav MenuToggle Icon
+// Toggle Icon
 //
 // Markup:
 // <div class="side-nav" id="slide-out-[UNIQID]">
@@ -385,7 +392,7 @@
 //    <li class="active">
 //      <a class="collapsible-header active">
 //        Dropdown (Material Icon)
-//        <i class="material-icons side-nav__menu-toggle {{modifier_class}}">arrow_drop_down</i>
+//        <i class="material-icons side-nav__toggle {{modifier_class}}">arrow_drop_down</i>
 //      </a>
 //      <div class="collapsible-body">
 //        <ul>
@@ -399,7 +406,7 @@
 //    <li>
 //      <a class="collapsible-header">
 //        Dropdown (Font Awesome)
-//        <i class="fa fa-caret-down side-nav__menu-toggle {{modifier_class}}"></i>
+//        <i class="fa fa-caret-down side-nav__toggle {{modifier_class}}"></i>
 //      </a>
 //      <div class="collapsible-body">
 //        <ul>
@@ -412,41 +419,41 @@
 //    </li>
 //  </ul>
 // </div>
-// <a href="#" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
+// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
-// .side-nav__menu-toggle--right    - Moves the Icon to the right side of the menu.
-// .side-nav__menu-toggle--animated - Adds an animation for opening and closing.
+// .side-nav__toggle--right    - Moves the Icon to the right side of the menu.
+// .side-nav__toggle--animated - Adds an animation for opening and closing.
 //
-// Styleguide layout.side-nav.menu-toggle
+// Styleguide layout.side-nav.toggle
 //
 .side-nav,
 .side-nav.fixed {
-  li > a > .side-nav__menu-toggle--right.material-icons,
-  .side-nav__menu-toggle--right {
+  li > a > .side-nav__toggle--right.material-icons,
+  .side-nav__toggle--right {
     float: right;
     margin-right: 0;
     margin-left: 1rem;
   }
 
-  .side-nav__menu-toggle--animated {
+  .side-nav__toggle--animated {
     @include transition(0.5s linear);
     @include rotate(-90deg);
     height: auto;
     margin: 0;
   }
 
-  .active > .side-nav__menu-toggle--animated {
+  .active > .side-nav__toggle--animated {
     @include transition(0.5s linear);
     @include rotate(0deg);
   }
   
   @media #{$large-and-up} {
-    &.side-nav--expanding .side-nav__menu-toggle--animated {
+    &.side-nav--expanding .side-nav__toggle--animated {
       @include transition(0.5s linear);
       @include rotate(-90deg);
     }
 
-    &.side-nav--expanding:hover .active > .side-nav__menu-toggle--animated {
+    &.side-nav--expanding:hover .active > .side-nav__toggle--animated {
       @include transition(0.5s linear);
       @include rotate(0deg);
     }
