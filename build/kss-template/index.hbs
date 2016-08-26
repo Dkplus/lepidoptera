@@ -17,14 +17,16 @@
                 <li>
                     <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
                 </li>
+                <li>
+                    <form id="js-search-form">
+                        <div class="input-field">
+                            <input id="search" type="search" required class="autocomplete">
+                            <label for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                </li>
             </ul>
-            <!--<form>
-                <div class="input-field">
-                    <input id="search" type="search" required>
-                    <label for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
-            </form>-->
 
             <div id="menu" class="side-nav fixed side-nav--expanding side-nav--fixed-logo">
                 <div class="side-nav__logo z-depth-1">
@@ -57,12 +59,14 @@
                             {{#if children}}
                                 <ul class="collapsible-body">
                                     {{#each children}}
+                                        {{#if_lte depth 2}}
                                         <li>
                                             <a class="waves-effect" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
                                                 <span class="side-nav__short">{{referenceNumber}}</span>
                                                 <span class="side-nav__long">{{header}}</span>
                                             </a>
                                         </li>
+                                        {{/if_lte}}
                                     {{/each}}
                                 </ul>
                             {{/if}}
@@ -185,6 +189,7 @@
     <script type="text/javascript" src="kss-assets/vendors/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/materialize/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/prism/prism.js"></script>
+    <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
     <script type="text/javascript">
         $(function () {
             $('.button-collapse').sideNav({edge: 'right'});
@@ -192,6 +197,48 @@
             $('.dropdown-button-click').dropdown();
             $('.collapsible').collapsible();
             $('.scrollspy').scrollSpy();
+
+            var index = lunr(function () {
+                this.field('header', {boost: 10});
+                this.field('description');
+                this.ref('url');
+            });
+            {{#each menu}}
+                index.add({
+                    'header': "{{prepareForSearch header}}",
+                    'description': "{{prepareForSearch description}}",
+                    'url': "section-{{referenceURI}}.html"
+                });
+                {{#if children}}
+                    {{#each children}}
+                        index.add({
+                            'header': "{{prepareForSearch header}}",
+                            'description': "{{prepareForSearch description}}",
+                            "url": "section-{{../referenceURI}}.html#kssref-{{referenceURI}}"
+                        });
+                    {{/each}}
+                {{/if}}
+            {{/each}}
+            $('#search').autocomplete({data: {
+                {{#each menu}}
+                    "{{header}}": null,
+                    {{#if children}}
+                        {{#each children}}
+                            "{{header}}": null,
+                        {{/each}}
+                    {{/if}}
+                {{/each}}
+            }});
+            $('#search ~ .autocomplete-content').on('click', function () {
+                window.setTimeout(function(){$('#js-search-form').submit();}, 200);
+            });
+            $('#js-search-form').submit(function () {
+                var result = index.search($('#search').val());
+                if (result.length > 0) {
+                    window.location.assign(result[0].ref);
+                    return false;
+                }
+            });
         });
     </script>
     {{{scripts}}}

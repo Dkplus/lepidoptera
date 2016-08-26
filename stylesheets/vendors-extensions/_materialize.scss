@@ -44,3 +44,10 @@ nav .nav-wrapper a {
     max-height: $navbar-height;
   }
 }
+
+nav .nav-wrapper > ul,
+nav .nav-wrapper > ul > li,
+nav .nav-wrapper > .row,
+nav .nav-wrapper > .row > .col {
+  height: 100%; // Allow search form inside subelements inside of the navbar
+}

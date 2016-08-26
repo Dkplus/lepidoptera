@@ -12901,6 +12901,14 @@ nav .nav-wrapper a {
   }
 }
 
+/* line 48, vendors-extensions/_materialize.scss */
+nav .nav-wrapper > ul,
+nav .nav-wrapper > ul > li,
+nav .nav-wrapper > .row,
+nav .nav-wrapper > .row > .col {
+  height: 100%;
+}
+
 /* ==========================================================================
    Materialize variables
    ========================================================================== */

@@ -8,6 +8,6 @@
     "builder": "build/kss-template",
     "verbose": true,
     "extend": "build/kss-template/extensions",
-    "nav-depth": 2,
+    "nav-depth": 3,
     "custom": ["Default", "FontAwesome", "Material"]
 }
