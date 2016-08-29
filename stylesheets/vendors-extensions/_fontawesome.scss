@@ -1,0 +1,8 @@
+.side-nav .collapsible-header .side-nav__toggle.fa {
+  font-size: $fa-font-size-base;  // original size for .side-nav__toggle
+}
+
+.side-nav .fa,
+nav .nav-wrapper .fa {
+  font-size: 1.7rem;  // adjust for Material Icons for .side-nav and .navbar
+}

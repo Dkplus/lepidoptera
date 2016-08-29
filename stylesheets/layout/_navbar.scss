@@ -1,0 +1,66 @@
+//
+// Navbar
+//
+// Horizontal navigation bar from MaterializeCSS.
+//
+// Please have a look at the [documentation of MaterializeCSS](http://materializecss.com/navbar.html) for many awesome
+// build in features.
+//
+// Markup:
+// <nav>
+//  <div class="nav-wrapper">
+//    <a href="#" class="brand-logo">Logo</a>
+//  </div>
+// </nav>
+//
+// Styleguide layout.navbar
+//
+
+//
+// Badge
+//
+// Support for badges within the Navbar is built in in MaterializeCSS.
+// But its missing support for badges near to Materialize Icons. This has been added.
+// Together with class `circle` it can be used to create a nice looking notification counter.
+//
+// Markup:
+// <nav>
+//  <div class="nav-wrapper">
+//    <ul class="right">
+//      <li>
+//        <a href="#!" class="waves-effect">
+//          Missed phones
+//          <span class="new badge">2</span>
+//        </a>
+//      </li>
+//      <li>
+//        <a href="#!" class="waves-effect">
+//          <i class="material-icons">mail_outline</i>
+//          <span class="circle orange badge">1</span>
+//        </a>
+//      </li>
+//      <li>
+//        <a href="#!" class="waves-effect">
+//          <i class="fa fa-envelope-o"></i>
+//          <span class="circle orange badge">1</span>
+//        </a>
+//      </li>
+//  </div>
+// </nav>
+//
+// Styleguide layout.navbar.badge
+//
+.nav-wrapper {
+  .material-icons + .badge,
+  .fa + .badge {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    width: $navbar-font-size * 1.5;
+    min-width: $navbar-font-size * 1.5; // otherwise the width is not applied
+    height: $navbar-font-size * 1.5;
+    line-height: $navbar-font-size * 1.5;
+  }
+}

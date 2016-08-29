@@ -1,0 +1,5 @@
+/stylesheets/vendors
+/.sass-cache
+/build/docs/*
+/build/kss-template/kss-assets/*
+!/build/kss-template/kss-assets/.gitkeep
