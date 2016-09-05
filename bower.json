@@ -1,20 +1,21 @@
 {
   "name": "lepidoptera",
+  "description": "Lepidoptera is a material design framework that is build on top of the awesome MaterializeCSS.",
   "authors": [
     "Oskar Pfeifer-Bley <oskar@programming-php.net>"
   ],
-  "description": "MaterializeCSS Template",
-  "main": "",
   "license": "MIT",
-  "homepage": "",
-  "private": true,
+  "homepage": "https://dkplus.github.io/lepidoptera",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
-    "vendor",
-    "test",
-    "tests"
+    "build/*",
+    "images/*",
+    "deploy_key.enc",
+    "kss.json",
+    "Makefile",
+    "README.md",
+    "travis_deploy.sh",
+    "compass.rb"
   ],
   "dependencies": {
     "font-awesome": "fontawesome#^4.6.3",
