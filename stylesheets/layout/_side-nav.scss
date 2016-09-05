@@ -1,7 +1,7 @@
 @import 'compass/css3/transform';
 @import 'compass/css3/transition';
 @import '../abstracts/variables';
-@import '../vendors/materialize/sass/components/variables';
+@import 'vendors/materialize/sass/components/variables';
 
 //
 // SideNav
@@ -161,6 +161,7 @@
       margin-left: -1em;
 
     }
+
     .collapsible-body li a {
       padding-left: (2 * $sidenav-padding); // by default 3 * $sidenav-padding but we need more space
     }
@@ -446,7 +447,7 @@
     @include transition(0.5s linear);
     @include rotate(0deg);
   }
-  
+
   @media #{$large-and-up} {
     &.side-nav--expanding .side-nav__toggle--animated {
       @include transition(0.5s linear);

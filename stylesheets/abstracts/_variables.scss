@@ -4,16 +4,16 @@
 // Styleguide abstracts.variables
 
 //
-// $le-base-path
+// $le-vendor-base-path
 //
-// Base path to the stylesheets directory.
+// Base path to the stylesheets-vendor directory.
 // Can be used to adjust paths of fonts and images shipped with Lepidoptera.
 //
 // Default: ./
 //
 // Styleguide abstracts.variables.base-path
 //
-$le-base-path: './' !default;
+$le-vendor-base-path: './vendors' !default;
 
 //
 // $le-side-nav-width

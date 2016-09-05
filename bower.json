@@ -15,7 +15,9 @@
     "Makefile",
     "README.md",
     "travis_deploy.sh",
-    "compass.rb"
+    "compass.rb",
+    "stylesheets/kss.scss",
+    "stylesheets/kss.css"
   ],
   "dependencies": {
     "font-awesome": "fontawesome#^4.6.3",

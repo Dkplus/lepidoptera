@@ -2,11 +2,11 @@
 @import 'compass/css3/transform';
 
 @media #{$large-and-up} {
-  .nav-wrapper {
+  body > div > nav > .nav-wrapper, body > nav .nav-wrapper {
     margin-left: $le-side-nav-expanding-width;
   }
 
-  .container {
+  body > .container {
     margin-left: $le-side-nav-expanding-width;
   }
 }

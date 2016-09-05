@@ -3,7 +3,7 @@ css_dir = "stylesheets"
 sass_dir = "stylesheets"
 images_dir = "images"
 javascripts_dir = "js"
-additional_import_paths = []
+additional_import_paths = ["stylesheets"]
 
 # You can select your preferred output style here (can be overridden via the command line):
 #output_style = :compressed

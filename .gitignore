@@ -3,3 +3,4 @@
 /build/docs/*
 /build/kss-template/kss-assets/*
 !/build/kss-template/kss-assets/.gitkeep
+/stylesheets/kss.css
