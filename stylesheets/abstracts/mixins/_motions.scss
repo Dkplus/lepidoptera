@@ -1,0 +1,120 @@
+@import 'compass/css3/animation';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+
+//
+// Motions
+//
+// Lepidoptera ships different motions from the material design guidelines.
+// They are implemented as *mixins* that can be applied via `@include`.
+// For each animation two version exist: The `animation-` and the `transition-` version.
+//
+// Styleguide abstracts.mixins.motions
+//
+
+//
+// Staggered List
+//
+// `animation-staggered` and `transition-staggered` allow a list to appear staggered one by one.
+// They are no motions itself but it must be combined with a motion.
+//
+// Styleguide abstracts.mixins.motions.staggered
+//
+@mixin animation-staggered {
+  @for $i from 2 to 40 {
+    $selector: 'li:nth-child(' + $i + ')';
+
+    @at-root #{selector-replace(&, 'li', $selector)} {
+      @include animation-delay(0s + (($i - 1) / 10));
+    }
+  }
+}
+
+@mixin transition-staggered {
+  @for $i from 2 to 40 {
+    $selector: 'li:nth-child(' + $i + ')';
+
+    @at-root #{selector-replace(&, 'li', $selector)} {
+      @include transition-delay(0s + (($i - 1) / 10));
+    }
+  }
+}
+
+//
+// Appear from
+//
+// The mixins `animation-appear-from` and `transition-appear-from` allow an element to appear by increasing its
+// opacity and moving from a specific direction.
+//
+// $origin   - Origin from where to appear in (default: `bottom`)
+// $duration - Duration of the animation (default: `0.3s`)
+//
+// Styleguide abstracts.mixins.motions.appear-from
+//
+$_le-appear-from-origins: (
+    left: (x: -2em, y: 0),
+    right: (x: 2em, y: 0),
+    bottom: (x: 0, y: 2em),
+    top: (x: 0, y: -2em),
+);
+
+@each $name, $position in $_le-appear-from-origins {
+  @include keyframes(appear-from-#{$name}) {
+    from {
+      @include translateX(map-get($position, 'x'));
+      @include translateY(map-get($position, 'y'));
+      opacity: 0;
+    }
+
+    to {
+      @include translateX(0);
+      @include translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animation-appear-from($origin: 'bottom', $duration: 0.3s) {
+  @if not map-has-key($_le-appear-from-origins, $origin) {
+    @error '$direction must be one of (top, left, bottom, right) but was ' + $origin;
+  }
+  @include animation(appear-from-#{$origin} $duration both cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+@mixin transition-appear-from($origin: 'bottom', $duration: 0.3s) {
+  @if not map-has-key($_le-appear-from-origins, $origin) {
+    @error '$direction must be one of (top, left, bottom, right) but was ' + $origin;
+  }
+  @include transition(translate $duration cubic-bezier(0.4, 0, 0.2, 1), opacity $duration cubic-bezier(0.4, 0, 0.2, 1));
+  @include translateX(0);
+  @include translateY(0);
+  opacity: 1;
+}
+
+//
+// Disappear to
+//
+// The mixins `animation-disappear-to` and `transition-disappear-to` allow an element to disappear by decreasing its
+// opacity and moving to a specific direction.
+//
+// $direction - Direction where to move (default: `bottom`)
+// $duration  - Duration of the animation (default: `0.3s`)
+//
+// Styleguide abstracts.mixins.motions.appear-from
+//
+@mixin disappear-to-animation($direction: 'bottom', $duration: 0.3s) {
+  @if not map-has-key($_le-appear-from-origins, $direction) {
+    @error '$direction must be one of (top, left, bottom, right) but was ' + $direction;
+  }
+  @include animation(appear-from-#{$direction} $duration reverse both cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+@mixin disappear-to-transition($target: 'bottom', $duration: 0.3s) {
+  @if not map-has-key($_le-appear-from-origins, $target) {
+    @error '$direction must be one of (top, left, bottom, right) but was ' + $target;
+  }
+  @include transition(translate $duration cubic-bezier(0.4, 0, 0.2, 1), opacity $duration cubic-bezier(0.4, 0, 0.2, 1));
+  @include translateX(map-get(map-get($_le-appear-from-origins, $target), 'x'));
+  @include translateY(-1 * map-get(map-get($_le-appear-from-origins, $target), 'y'));
+  opacity: 0;
+}

@@ -6,7 +6,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="kss-assets/kss.css" media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="kss-assets/vendors/prism/themes/prism.css"/>
-    {{{styles}}}
+    {{styles}}
+    <!-- moved to top so that we can use it within our example markup -->
+    <script type="text/javascript" src="kss-assets/vendors/jquery/dist/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
@@ -28,7 +30,7 @@
                 </li>
             </ul>
 
-            <div id="menu" class="side-nav fixed side-nav--expanding side-nav--fixed-logo">
+            <div id="menu" class="side-nav fixed side-nav--mini side-nav--fixed-logo">
                 <div class="side-nav__logo z-depth-1">
                     <a href="./" class="side-nav__logo-link waves-effect">
                         <div>
@@ -186,7 +188,6 @@
         {{/if}}
     </div>
 
-    <script type="text/javascript" src="kss-assets/vendors/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/materialize/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/prism/prism.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
