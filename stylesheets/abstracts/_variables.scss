@@ -36,3 +36,12 @@ $le-side-nav-width: 300px !default;
 // Styleguide abstracts.variables.side-nav-expanding-width
 //
 $le-side-nav-expanding-width: 65px !default;
+
+//
+// $le-default-collections-origin
+//
+// From which origin should the `.collections.animated` slide in?
+//
+// Default: bottom
+//
+$le-default-collections-origin: 'bottom';

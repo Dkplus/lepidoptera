@@ -1,0 +1,28 @@
+@import 'compass/css3/animation';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+@import 'transitions';
+
+@mixin li-slides-in-transition($duration: 0.3s, $origin: 'bottom') {
+  @include slides-in-transition($duration, $origin);
+
+  @for $i from 2 to 20 {
+    $selector: 'li:nth-child(' + $i + ')';
+
+    @at-root #{selector-replace(&, 'li', $selector)} {
+      @include transition-delay(0s + (($i - 1) / 10));
+    }
+  }
+}
+
+@mixin li-slides-out-transition($duration: 0.3s, $origin: 'bottom') {
+  @include slides-out-transition($duration, $origin);
+
+  @for $i from 2 to 20 {
+    $selector: 'li:nth-child(' + $i + ')';
+
+    @at-root #{selector-replace(&, 'li', $selector)} {
+      @include transition-delay(0s + (($i - 1) / 10));
+    }
+  }
+}

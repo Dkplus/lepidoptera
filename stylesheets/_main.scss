@@ -10,6 +10,10 @@
 @import 'abstracts/variables';
 @import 'abstracts/variables/materialize';
 @import 'abstracts/variables/fontawesome';
+@import 'abstracts/mixins/animations';
+@import 'abstracts/mixins/list-animations';
+@import 'abstracts/mixins/transitions';
+@import 'abstracts/mixins/list-transitions';
 
 // vendors
 @import 'vendors/font-awesome/scss/font-awesome';
@@ -40,6 +44,8 @@
 //
 // Styleguide components
 //
+@import 'components/movement';
+@import 'components/collections';
 
 // pages
 

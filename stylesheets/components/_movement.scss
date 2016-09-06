@@ -1,0 +1,68 @@
+@import 'compass/css3/animation';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+
+//
+// Movement
+//
+// Styleguide components.movement
+//
+
+//
+// Arc
+//
+// Markup:
+// <div class="z-depth-1 playground-[UNIQID]">
+//  <div class="movable-[UNIQID] arc--downward">
+//    <div class="z-depth-2 red content-[UNIQID]"/>
+//  </div>
+// </div>
+// <style type="text/css">
+//  .playground-[UNIQID] {
+//    width: 200px;
+//    height: 200px;
+//    position: relative;
+//  }
+//  .movable-[UNIQID] {
+//    position: relative;
+//    top: 20px;
+//    left: 20px;
+//  }
+//  .movable-[UNIQID].arc--moved {
+//    top: 160px;
+//    left: 160px;
+//  }
+//  .content-[UNIQID] {
+//    width: 20px;
+//    height: 20px;
+//  }
+// </style>
+// <script type="text/javascript">
+//  $(function () {
+//    $('.playground-[UNIQID]').click(function (){
+//      $('.movable-[UNIQID]').toggleClass('arc--moved');
+//    });
+//  });
+// </script>
+//
+// Styleguide components.movement.arc
+//
+
+@include keyframes(xAxis) {
+  50% {
+    animation-timing-function: ease-in;
+    transform: translateX(100px);
+  }
+}
+
+.arc--downward {
+  @include transition(2s ease-in top);
+
+  > * {
+    position: relative;
+  }
+}
+
+.arc--moved {
+  @include transition(2s ease-out top);
+}

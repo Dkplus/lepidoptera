@@ -1,0 +1,58 @@
+@import 'compass/css3/animation';
+@import 'compass/css3/transition';
+@import 'compass/css3/transform';
+
+//
+// Animations
+//
+// Lepidoptera ships different animations as *mixins* that can be applied via `@include`.
+//
+// Styleguide abstracts.mixins.animation
+//
+
+$_le-slide-in-origins: (
+  left: (x: -2em, y: 0),
+  right: (x: 2em, y: 0),
+  bottom: (x: 0, y: 2em),
+  top: (x: 0, y: -2em),
+);
+
+@each $name, $position in $_le-slide-in-origins {
+  @include keyframes(slides-in-from-#{$name}) {
+    from {
+      @include translateX(map-get($position, 'x'));
+      @include translateY(map-get($position, 'y'));
+      opacity: 0;
+    }
+
+    to {
+      @include translateX(0);
+      @include translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+//
+// Sliding in on load
+//
+// The mixin `slides-in-on-load` allow an element to slide in on load.
+//
+// $duration - Duration of the animation (default: `0.3s`)
+// $origin   - Origin from where to slide in (default: `bottom`)
+//
+// Styleguide abstracts.mixins.animation.slides-in-on-load
+//
+@mixin slides-in-animation($duration: 0.3s, $origin: 'bottom') {
+  @if not map-has-key($_le-slide-in-origins, $origin) {
+    @error '$direction must be one of (top, left, bottom, right) but was ' + $origin;
+  }
+  @include animation(slides-in-from-#{$origin} $duration both cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+@mixin slides-out-animation($duration: 0.3s, $target: 'bottom') {
+  @if not map-has-key($_le-slide-in-origins, $target) {
+    @error '$direction must be one of (top, left, bottom, right) but was ' + $target;
+  }
+  @include animation(slides-in-from-#{$target} $duration reverse both cubic-bezier(0.4, 0, 0.2, 1));
+}

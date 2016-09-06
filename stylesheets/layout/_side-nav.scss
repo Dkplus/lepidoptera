@@ -10,7 +10,7 @@
 // It has been extended with some modifiers that allow a more flexible usage of the side-nav.
 //
 // The two most noteworthy things are the possibility to always have a small side-nav that expands on hover
-// (See `.side-nav--expanding` and to add an logo to the sidebar.
+// (See `.side-nav--mini` and to add an logo to the sidebar.
 //
 // For most use cases you can keep up using the normal markup from Materialize,
 // but for some modifiers you need to put the `side-nav` class at a div and put the `ul` inside of this `div`:
@@ -86,7 +86,7 @@
 // </div>
 // <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
-// .side-nav--expanding    - On large devices it just opens a small preview of the side-nav.
+// .side-nav--mini         - On large devices it just opens a small preview of the side-nav.
 //                           The full side-nav becomes visible when the user hovers the side-nav.
 //                           Can be perfectly combined with `.fixed` to always have a small menu without loosing much
 //                           space.
@@ -122,12 +122,12 @@
 }
 
 //
-// .side-nav--expanding
+// .side-nav--mini
 //
 @media #{$large-and-up} {
-  .side-nav--expanding,
-  .side-nav--expanding.fixed {
-    @include transition(0.5s linear width);
+  .side-nav--mini,
+  .side-nav--mini.fixed {
+    @include transition(0.3s cubic-bezier(0.4, 0, 0.2, 1) width 0.3s);
     width: $le-side-nav-expanding-width;
 
     a,
@@ -140,35 +140,28 @@
     }
 
     &:hover {
-      @include transition(0.5s linear width);
+      @include transition(0.3s cubic-bezier(0.4, 0, 0.2, 1) width);
       width: $le-side-nav-width;
     }
 
     // collapsible-body children should be shown only if open
-    .collapsible-body {
-      @include transition(0.5s max-height linear);
+    li.active .collapsible-body {
+      @include transition(0.3s max-height cubic-bezier(0.4, 0, 0.2, 1));
       max-height: 0;
-      overflow: hidden;
     }
 
-    &:hover .collapsible-body {
-      @include transition(0.5s max-height linear);
+    &:hover li.active .collapsible-body {
+      @include transition(0.3s max-height cubic-bezier(0.4, 0, 0.2, 1));
       max-height: 1300px;
     }
 
-    .collapsible-body a {
-      @include transition(0.5s linear);
-      margin-left: -1em;
-
-    }
-
-    .collapsible-body li a {
+    li.active .collapsible-body li a {
+      @include li-slides-out-transition;
       padding-left: (2 * $sidenav-padding); // by default 3 * $sidenav-padding but we need more space
     }
 
-    &:hover .collapsible-body a {
-      @include transition(0.5s linear);
-      margin-left: 0;
+    &:hover li.active .collapsible-body li a {
+      @include li-slides-in-transition;
     }
   }
 }
@@ -198,7 +191,7 @@
 //
 // Styleguide layout.side-nav.user-view
 //
-.side-nav--expanding .userView {
+.side-nav--mini .userView {
   @include transition(0.5s linear);
   padding-left: $sidenav-padding;
 
@@ -214,7 +207,7 @@
   }
 }
 
-.side-nav--expanding:hover .userView {
+.side-nav--mini:hover .userView {
   @include transition(0.5s linear);
   padding-left: 32px;
 
@@ -270,7 +263,7 @@
 //
 // Long Label
 //
-// Long content of a navigation item. Will be hidden in the collapsed `.side-nav--expanding`.
+// Long content of a navigation item. Will be hidden in the collapsed `.side-nav--mini`.
 //
 // Markup:
 // <ul class="side-nav side-nav--expanding" id="slide-out-[UNIQID]">
@@ -302,11 +295,11 @@
 }
 
 @media #{$large-and-up} {
-  .side-nav--expanding .side-nav__long {
+  .side-nav--mini .side-nav__long {
     @include translateX(-400%);
   }
 
-  .side-nav--expanding:hover .side-nav__long {
+  .side-nav--mini:hover .side-nav__long {
     @include translateX(0%);
   }
 }
@@ -369,8 +362,8 @@
   }
 
   @media #{$large-and-up} {
-    // make more space available for the logo in collapsed .side-nav--expanding
-    .side-nav--expanding & .side-nav__short {
+    // make more space available for the logo in collapsed .side-nav--mini
+    .side-nav--mini & .side-nav__short {
       width: ($le-side-nav-expanding-width - $sidenav-padding);
     }
   }
@@ -449,12 +442,12 @@
   }
 
   @media #{$large-and-up} {
-    &.side-nav--expanding .side-nav__toggle--animated {
+    &.side-nav--mini .side-nav__toggle--animated {
       @include transition(0.5s linear);
       @include rotate(-90deg);
     }
 
-    &.side-nav--expanding:hover .active > .side-nav__toggle--animated {
+    &.side-nav--mini:hover .active > .side-nav__toggle--animated {
       @include transition(0.5s linear);
       @include rotate(0deg);
     }

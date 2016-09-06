@@ -1,0 +1,113 @@
+@import '../abstracts/mixins/list-animations';
+
+//
+// Header
+//
+// Styleguide components.header
+//
+
+//
+// Issue-List
+//
+//
+// Markup:
+// <div class="issue-list {{modifier_class}}">
+//  <header>
+//    <div class="row">
+//      <div class="col s12 right">
+//          <form>
+//            <div class="input-field">
+//              <input id="issue-search" type="search" required>
+//              <label for="issue-search"><i class="material-icons">search</i></label>
+//              <i class="material-icons">close</i>
+//            </div>
+//          </form>
+//      </div>
+//      <div class="col s12">
+//        <ul class="tabs">
+//          <li class="tab col s6"><a class="active" href="#tab-open">Open</a></li>
+//          <li class="tab col s6"><a href="#tab-closed">Closed</a></li>
+//        </ul>
+//      </div>
+//    </div>
+//  </header>
+//  <div id="tab-open">
+//  <ul class="collection animated">
+//    <li class="collection-item avatar">
+//      <i class="fa fa-bug circle green"></i>
+//      <a class="title">#2 An issue opened by myself</a>
+//      <p>Opened 3 days ago by Oskar Pfeifer-Bley</p>
+//      <div class="secondary-content right-align">
+//        <p><i class="fa fa-comments"></i> 3</p>
+//        <p>Updated 4 days ago</p>
+//      </div>
+//    </li>
+//    <li class="collection-item avatar">
+//      <i class="fa fa-bug circle green"></i>
+//      <a class="title">#2 An issue opened by myself</a>
+//      <p>Opened 3 days ago by Oskar Pfeifer-Bley</p>
+//      <div class="secondary-content right-align">
+//        <p><i class="fa fa-comments"></i> 3</p>
+//        <p>Updated 4 days ago</p>
+//      </div>
+//    </li>
+//    <li class="collection-item avatar">
+//      <i class="fa fa-bug circle green"></i>
+//      <a class="title">#2 An issue opened by myself</a>
+//      <p>Opened 3 days ago by Oskar Pfeifer-Bley</p>
+//      <div class="secondary-content right-align">
+//        <p><i class="fa fa-comments"></i> 3</p>
+//        <p>Updated 4 days ago</p>
+//      </div>
+//    </li>
+//    <li class="collection-item avatar">
+//      <i class="fa fa-bug circle green"></i>
+//      <a class="title">#2 An issue opened by myself</a>
+//      <p>Opened 3 days ago by Oskar Pfeifer-Bley</p>
+//      <div class="secondary-content right-align">
+//        <p><i class="fa fa-comments"></i> 3</p>
+//        <p>Updated 4 days ago</p>
+//      </div>
+//    </li>
+//  </ul>
+//  </div>
+//  <div id="tab-closed">
+//    No closed issues available
+//  </div>
+// </div>
+//
+// Styleguide components.issues
+//
+.issue-list input[type=search] {
+  @include transition(2s);
+  width: 0;
+}
+
+.issue-list input[type=search]:hover {
+  @include transition(2s);
+  width: auto;
+}
+
+//
+// Collection
+//
+// Collections from from MaterializeCSS. For usage information please have a look at the
+// [documentation of MaterializeCSS](http://materializecss.com/collections.html).
+//
+// Lepidoptera adds some modifiers for the collections.
+//
+// Markup:
+// <ul class="collection {{modifier_class}}">
+//  <li class="collection-item">Dagobert Duck</li>
+//  <li class="collection-item">Donald Duck</li>
+//  <li class="collection-item">Tick, Trick and Track Duck</li>
+//  <li class="collection-item">Daisy Duck</li>
+// </ul>
+//
+// .animated - Lets the list items slide in.
+//
+// Styleguide components.collection
+//
+.collection.animated li {
+  @include li-slides-in-animation($origin: $le-default-collections-origin);
+}
