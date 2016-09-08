@@ -99,11 +99,11 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
-                <a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a>
-                <ul class="right hide-on-small-and-down">
-                    <li>
-                        <form id="js-search-form">
+                <ul>
+                    <li><a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a></li>
+                    <li><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
+                    <li class="right">
+                        <form id="js-search-form" class="hide-on-small-and-down">
                             <div class="input-field">
                                 <input id="search" type="search" required class="autocomplete">
                                 <label for="search"><i class="material-icons">search</i></label>
@@ -194,7 +194,7 @@ awesome <a href="http://materializecss.com/">Materialize</a>.</p>
                 });
                         index.add({
                             'header': "Navbar",
-                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p  ",
+                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p  ",
                             "url": "section-layout.html#kssref-layout-navbar"
                         });
                         index.add({
