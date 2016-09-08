@@ -30,7 +30,7 @@
                     {{/if}}
                 </a>
                 {{#if children}}
-                    <ul class="collapsible-body">
+                    <ul class="collapsible-body collection--animated">
                         {{#each children}}
                             {{#if_lte depth 2}}
                                 <li>
@@ -51,7 +51,7 @@
             <div class="nav-wrapper">
                 <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
                 <a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a>
-                <ul class="right">
+                <ul class="right hide-on-small-and-down">
                     <li>
                         <form id="js-search-form">
                             <div class="input-field">
