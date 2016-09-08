@@ -20,7 +20,7 @@
                     <span class="side-nav__long">Abstracts</span>
                         <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
                 </a>
-                    <ul class="collapsible-body">
+                    <ul class="collapsible-body collection--animated">
                                 <li>
                                     <a class="waves-effect" href="section-abstracts.html#kssref-abstracts-mixins">
                                         <span class="side-nav__short">1.1</span>
@@ -42,23 +42,11 @@
                     <span class="side-nav__long">Components</span>
                         <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
                 </a>
-                    <ul class="collapsible-body">
+                    <ul class="collapsible-body collection--animated">
                                 <li>
                                     <a class="waves-effect" href="section-components.html#kssref-components-collection">
                                         <span class="side-nav__short">2.1</span>
                                         <span class="side-nav__long">Collection</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="waves-effect" href="section-components.html#kssref-components-header">
-                                        <span class="side-nav__short">2.2</span>
-                                        <span class="side-nav__long">Header</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="waves-effect" href="section-components.html#kssref-components-issues">
-                                        <span class="side-nav__short">2.3</span>
-                                        <span class="side-nav__long">Issue-List</span>
                                     </a>
                                 </li>
                     </ul>
@@ -70,7 +58,7 @@
                     <span class="side-nav__long">Layout</span>
                         <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
                 </a>
-                    <ul class="collapsible-body">
+                    <ul class="collapsible-body collection--animated">
                                 <li>
                                     <a class="waves-effect" href="section-layout.html#kssref-layout-navbar">
                                         <span class="side-nav__short">3.1</span>
@@ -92,7 +80,7 @@
                     <span class="side-nav__long">Vendors Extensions</span>
                         <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
                 </a>
-                    <ul class="collapsible-body">
+                    <ul class="collapsible-body collection--animated">
                                 <li>
                                     <a class="waves-effect" href="section-vendors-extensions.html#kssref-vendors-extensions-font-awesome">
                                         <span class="side-nav__short">4.1</span>
@@ -113,7 +101,7 @@
             <div class="nav-wrapper">
                 <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
                 <a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a>
-                <ul class="right">
+                <ul class="right hide-on-small-and-down">
                     <li>
                         <form id="js-search-form">
                             <div class="input-field">
@@ -199,16 +187,6 @@ awesome <a href="http://materializecss.com/">Materialize</a>.</p>
                             'description': " p Collections from from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com collections.html  documentation of MaterializeCSS  a .  p   p Lepidoptera adds some modifiers for the collections.  p  ",
                             "url": "section-components.html#kssref-components-collection"
                         });
-                        index.add({
-                            'header': "Header",
-                            'description': "",
-                            "url": "section-components.html#kssref-components-header"
-                        });
-                        index.add({
-                            'header': "Issue-List",
-                            'description': "",
-                            "url": "section-components.html#kssref-components-issues"
-                        });
                 index.add({
                     'header': "Layout",
                     'description': "",
@@ -269,6 +247,11 @@ awesome <a href="http://materializecss.com/">Materialize</a>.</p>
                             'description': " p A fixed SideNav hides content at the left. To prevent this, the  code nav  code  and the main content (use  code .container  code  or  code .main  code ) will be automatically intended if it is placed after the fixed navbar.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav"
                         });
+                        index.add({
+                            'header': "Screen margins",
+                            'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for the  code .nav-wrapper  code  and the  code .main  code .  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-screen-margins"
+                        });
             $('#search').autocomplete({data: {
                     "Abstracts": null,
                             "Mixins": null,
@@ -279,8 +262,6 @@ awesome <a href="http://materializecss.com/">Materialize</a>.</p>
                             "$le-side-nav-width": null,
                     "Components": null,
                             "Collection": null,
-                            "Header": null,
-                            "Issue-List": null,
                     "Layout": null,
                             "Navbar": null,
                             "Badge": null,
@@ -293,6 +274,7 @@ awesome <a href="http://materializecss.com/">Materialize</a>.</p>
                             "SideNav Toggle Font-Size": null,
                             "MaterializeCSS": null,
                             "Intention after fixed SideNav": null,
+                            "Screen margins": null,
             }});
             $('#search ~ .autocomplete-content').on('click', function () {
                 window.setTimeout(function(){$('#js-search-form').submit();}, 200);

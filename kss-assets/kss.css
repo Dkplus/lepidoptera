@@ -13090,55 +13090,61 @@ nav .nav-wrapper .fa {
   /* line 27, vendors-extensions/_materialize.scss */
   .fixed ~ .container,
   .fixed ~ .main {
-    padding-left: 365px;
+    padding-left: 316px;
   }
 }
-/* line 38, vendors-extensions/_materialize.scss */
+/* line 43, vendors-extensions/_materialize.scss */
+nav .nav-wrapper,
+.main {
+  padding: 0 16px;
+}
+
+/* line 53, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-header,
 .side-nav.fixed .collapsible-header {
   height: 48px;
   padding: 0 32px;
 }
-/* line 43, vendors-extensions/_materialize.scss */
+/* line 58, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-body,
 .side-nav.fixed .collapsible-body {
   background-color: #fff;
 }
-/* line 47, vendors-extensions/_materialize.scss */
+/* line 62, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-body li a,
 .side-nav.fixed .collapsible-body li a {
   padding-left: 48px;
 }
-/* line 51, vendors-extensions/_materialize.scss */
+/* line 66, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-header .material-icons,
 .side-nav.fixed .collapsible-header .material-icons {
   font-size: 24px;
 }
-/* line 55, vendors-extensions/_materialize.scss */
+/* line 70, vendors-extensions/_materialize.scss */
 .side-nav li > a > i,
 .side-nav.fixed li > a > i {
   margin-right: 1rem;
 }
 
-/* line 62, vendors-extensions/_materialize.scss */
+/* line 77, vendors-extensions/_materialize.scss */
 .side-nav.fixed li > a > i.material-icons,
 .side-nav li > a > i.material-icons {
   margin-right: 1rem;
 }
 
-/* line 70, vendors-extensions/_materialize.scss */
+/* line 85, vendors-extensions/_materialize.scss */
 nav .nav-wrapper a {
   max-height: 56px;
   overflow: hidden;
 }
 @media only screen and (min-width: 993px) {
-  /* line 70, vendors-extensions/_materialize.scss */
+  /* line 85, vendors-extensions/_materialize.scss */
   nav .nav-wrapper a {
     max-height: 64px;
   }
 }
 
-/* line 80, vendors-extensions/_materialize.scss */
+/* line 95, vendors-extensions/_materialize.scss */
 nav .nav-wrapper > ul,
 nav .nav-wrapper > ul > li,
 nav .nav-wrapper > .row,
@@ -13567,25 +13573,7 @@ nav .nav-wrapper > .row > .col {
     opacity: 1;
   }
 }
-/* line 81, components/_collections.scss */
-.issue-list input[type=search] {
-  -moz-transition: 2s;
-  -o-transition: 2s;
-  -webkit-transition: 2s;
-  transition: 2s;
-  width: 0;
-}
-
-/* line 86, components/_collections.scss */
-.issue-list input[type=search]:hover {
-  -moz-transition: 2s;
-  -o-transition: 2s;
-  -webkit-transition: 2s;
-  transition: 2s;
-  width: auto;
-}
-
-/* line 111, components/_collections.scss */
+/* line 23, components/_collections.scss */
 .collection--animated li {
   -moz-animation: appear-from-bottom 0.3s both cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-animation: appear-from-bottom 0.3s both cubic-bezier(0.4, 0, 0.2, 1);
@@ -13820,13 +13808,7 @@ nav .nav-wrapper > .row > .col {
   animation-delay: 3.8s;
 }
 
-/* line 1, themes/default/layout/_side-nav.scss */
-.side-nav__logo a {
-  font-size: 2em;
-  font-weight: bold;
-}
-
-/* line 6, themes/default/layout/_side-nav.scss */
-.side-nav .side-nav__logo-link img {
+/* line 1, themes/kss/layout/_side-nav.scss */
+.brand-logo img {
   vertical-align: text-bottom;
 }
