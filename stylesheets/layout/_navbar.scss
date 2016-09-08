@@ -6,15 +6,61 @@
 // Please have a look at the [documentation of MaterializeCSS](http://materializecss.com/navbar.html) for many awesome
 // build in features.
 //
+// Modifiers should be added to the `nav` element if it is not wrapped by a `.navbar-fixed`.
+// Otherwise it should be added to the `.navbar-fixed` wrapper.
+//
 // Markup:
-// <nav>
+// <nav class="{{modifier_class}}">
 //  <div class="nav-wrapper">
 //    <a href="#" class="brand-logo">Logo</a>
+//    <ul class="right">
+//      <li><a href="#!">Button without an action</a></li>
+//      <li><a href="#!" onclick="console.log($(this).parents('nav').toggleClass('nav--waterfall-shrunk'));" class="btn">Click to shrink</a></li>
+//      <li><a href="#!">(Waterfall only)</a></li>
+//    </ul>
+//    <ul>
+//      <li><a href="#!">Second row</a></li>
+//    </ul>
 //  </div>
 // </nav>
 //
+// .nav--waterfall-2x - Allows the usage of a bigger (2x) navbar that shrinks on scrolling.
+//                      This effect is triggered at the example by a button-click.
+// .nav--waterfall-3x - Allows the usage of a bigger (3x) navbar that shrinks on scrolling.
+//                      This effect is triggered at the example by a button-click.
+// .nav--waterfall-4x - Allows the usage of a bigger (4x) navbar that shrinks on scrolling.
+//                      This effect is triggered at the example by a button-click.
+// .nav--waterfall-5x - Allows the usage of a bigger (5x) navbar that shrinks on scrolling.
+//                      This effect is triggered at the example by a button-click.
+//
 // Styleguide layout.navbar
 //
+
+@for $i from 2 to 6 {
+  .nav--waterfall-#{$i}x,
+  .nav--waterfall-#{$i} nav {
+    @include transition(0.3s height);
+    height: $i * $navbar-height;
+
+    .nav-wrapper > ul {
+      height: (100% / $i);
+    }
+  }
+}
+
+.nav--waterfall-shrunk,
+.nav--waterfall-shrunk nav {
+  @include transition(0.3s height);
+  height: $navbar-height;
+
+  .nav-wrapper > ul {
+    height: 100%;
+  }
+
+  .nav--waterfall-shrunk__hidden {
+    display: none;
+  }
+}
 
 //
 // Badge
