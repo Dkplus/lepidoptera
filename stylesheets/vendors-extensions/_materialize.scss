@@ -26,8 +26,23 @@
 
   .fixed ~ .container,
   .fixed ~ .main {
-    padding-left: $le-side-nav-width + 65px; // 65px is from materializecss
+    padding-left: $le-side-nav-width + 16px; // 16px is from Material Design Guidelines
   }
+}
+
+//
+// Screen margins
+//
+// The Material Design Guidelines mention
+// [a screen edge left and right margin of 16dp](https://material.google.com/layout/metrics-keylines.html).
+//
+// This has been added for the `.nav-wrapper` and the `.main`.
+//
+// Styleguide vendors-extensions.materializecss.screen-margins
+//
+nav .nav-wrapper,
+.main {
+  padding: 0 16px;
 }
 
 //
