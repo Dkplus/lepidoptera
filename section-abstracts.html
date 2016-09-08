@@ -7,90 +7,127 @@
     <link type="text/css" rel="stylesheet" href="kss-assets/kss.css" media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="kss-assets/vendors/prism/themes/prism.css"/>
     
+    <!-- moved to top so that we can use it within our example markup -->
+    <script type="text/javascript" src="kss-assets/vendors/jquery/dist/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+    <ul id="menu" class="side-nav fixed collapsible">
+            <li class="active">
+                <a class="waves-effect collapsible-header active"
+                   >
+                        <i class="side-nav__short fa fa-usd"></i>
+                    <span class="side-nav__long">Abstracts</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body">
+                                <li>
+                                    <a class="waves-effect" href="section-abstracts.html#kssref-abstracts-mixins">
+                                        <span class="side-nav__short">1.1</span>
+                                        <span class="side-nav__long">Mixins</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-abstracts.html#kssref-abstracts-variables">
+                                        <span class="side-nav__short">1.2</span>
+                                        <span class="side-nav__long">Variables</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+            <li >
+                <a class="waves-effect collapsible-header"
+                   >
+                        <i class="side-nav__short material-icons">picture_in_picture</i>
+                    <span class="side-nav__long">Components</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body">
+                                <li>
+                                    <a class="waves-effect" href="section-components.html#kssref-components-collection">
+                                        <span class="side-nav__short">2.1</span>
+                                        <span class="side-nav__long">Collection</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-components.html#kssref-components-header">
+                                        <span class="side-nav__short">2.2</span>
+                                        <span class="side-nav__long">Header</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-components.html#kssref-components-issues">
+                                        <span class="side-nav__short">2.3</span>
+                                        <span class="side-nav__long">Issue-List</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+            <li >
+                <a class="waves-effect collapsible-header"
+                   >
+                        <i class="side-nav__short material-icons">view_quilt</i>
+                    <span class="side-nav__long">Layout</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body">
+                                <li>
+                                    <a class="waves-effect" href="section-layout.html#kssref-layout-navbar">
+                                        <span class="side-nav__short">3.1</span>
+                                        <span class="side-nav__long">Navbar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-layout.html#kssref-layout-side-nav">
+                                        <span class="side-nav__short">3.2</span>
+                                        <span class="side-nav__long">SideNav</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+            <li >
+                <a class="waves-effect collapsible-header"
+                   >
+                        <i class="side-nav__short material-icons">extensions</i>
+                    <span class="side-nav__long">Vendors Extensions</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body">
+                                <li>
+                                    <a class="waves-effect" href="section-vendors-extensions.html#kssref-vendors-extensions-font-awesome">
+                                        <span class="side-nav__short">4.1</span>
+                                        <span class="side-nav__long">Font Awesome</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-vendors-extensions.html#kssref-vendors-extensions-materializecss">
+                                        <span class="side-nav__short">4.2</span>
+                                        <span class="side-nav__long">MaterializeCSS</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+    </ul>
     <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-            <ul>
-                <li>
-                    <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
-                </li>
-                <li>
-                    <form id="js-search-form">
-                        <div class="input-field">
-                            <input id="search" type="search" required class="autocomplete">
-                            <label for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </li>
-            </ul>
-
-            <div id="menu" class="side-nav fixed side-nav--expanding side-nav--fixed-logo">
-                <div class="side-nav__logo z-depth-1">
-                    <a href="./" class="side-nav__logo-link waves-effect">
-                        <div>
-                            <div class="side-nav__short">
-                                <img src="kss-assets/logo.png">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
+                <a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a>
+                <ul class="right">
+                    <li>
+                        <form id="js-search-form">
+                            <div class="input-field">
+                                <input id="search" type="search" required class="autocomplete">
+                                <label for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
                             </div>
-                            <div class="side-nav__long">Lepidoptera</div>
-                        </div>
-                    </a>
-                </div>
-                <ul class="collapsible">
-                        <li class="active">
-                            <a class="waves-effect collapsible-header active"
-                                    >
-                                    <i class="side-nav__short fa fa-usd"></i>
-                                <span class="side-nav__long">Abstracts</span>
-                                    <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
-                            </a>
-                                <ul class="collapsible-body">
-                                        <li>
-                                            <a class="waves-effect" href="section-abstracts.html#kssref-abstracts-variables">
-                                                <span class="side-nav__short">1.1</span>
-                                                <span class="side-nav__long">Variables</span>
-                                            </a>
-                                        </li>
-                                </ul>
-                        </li>
-                        <li >
-                            <a class="waves-effect"
-                                    href="section-components.html">
-                                    <i class="side-nav__short material-icons">picture_in_picture</i>
-                                <span class="side-nav__long">Components</span>
-                            </a>
-                        </li>
-                        <li >
-                            <a class="waves-effect collapsible-header"
-                                    >
-                                    <i class="side-nav__short material-icons">view_quilt</i>
-                                <span class="side-nav__long">Layout</span>
-                                    <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
-                            </a>
-                                <ul class="collapsible-body">
-                                        <li>
-                                            <a class="waves-effect" href="section-layout.html#kssref-layout-navbar">
-                                                <span class="side-nav__short">3.1</span>
-                                                <span class="side-nav__long">Navbar</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="waves-effect" href="section-layout.html#kssref-layout-side-nav">
-                                                <span class="side-nav__short">3.2</span>
-                                                <span class="side-nav__long">SideNav</span>
-                                            </a>
-                                        </li>
-                                </ul>
-                        </li>
+                        </form>
+                    </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
     </div>
-    <div class="container">
+    <div class="main">
             <div class="row">
                 <div class="col s12 m9 l10">
                         <div id="kssref-abstracts" class="section scrollspy">
@@ -110,10 +147,145 @@
                                     Source: <code>_main.scss</code>, line 3
                                 </div>
                         </div>
+                        <div id="kssref-abstracts-mixins" class="section scrollspy">
+                            <h2>
+                                <a href="#kssref-abstracts-mixins">
+                                    1.1 Mixins
+                                </a>
+                            </h2>
+
+                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                    <p>Utilities that should help you to design your template.</p>
+
+                                </div>
+
+
+
+
+
+                                <div class="kss-source kss-style">
+                                    Source: <code>_main.scss</code>, line 14
+                                </div>
+                        </div>
+                        <div id="kssref-abstracts-mixins-motions" class="section scrollspy">
+                            <h3>
+                                <a href="#kssref-abstracts-mixins-motions">
+                                    1.1.1 Motions
+                                </a>
+                            </h3>
+
+                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                    <p>Lepidoptera ships different motions from the material design guidelines.
+They are implemented as <em>mixins</em> that can be applied via <code>@include</code>.
+For each animation two version exist: The <code>animation-</code> and the <code>transition-</code> version.</p>
+
+                                </div>
+
+
+
+
+
+                                <div class="kss-source kss-style">
+                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 5
+                                </div>
+                        </div>
+                        <div id="kssref-abstracts-mixins-motions-appear-from" class="section scrollspy">
+                            <h4>
+                                <a href="#kssref-abstracts-mixins-motions-appear-from">
+                                    1.1.1.1 Appear from
+                                </a>
+                            </h4>
+
+                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                    <p>The mixins <code>animation-appear-from</code> and <code>transition-appear-from</code> allow an element to appear by increasing its
+opacity and moving from a specific direction.</p>
+
+                                </div>
+
+                                <div class="kss-parameters__title">Parameters:</div>
+                                <ul class="kss-parameters">
+                                        <li class="kss-parameters__item">
+                                            <div class="kss-parameters__name"><code>$origin</code></div>
+                                            <div class="kss-parameters__description">
+                                                Origin from where to appear in (default: <code>bottom</code>)
+                                            </div>
+                                        </li>
+                                        <li class="kss-parameters__item">
+                                            <div class="kss-parameters__name"><code>$duration</code></div>
+                                            <div class="kss-parameters__description">
+                                                Duration of the animation (default: <code>0.3s</code>)
+                                            </div>
+                                        </li>
+                                </ul>
+
+
+
+
+                                <div class="kss-source kss-style">
+                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 43
+                                </div>
+                        </div>
+                        <div id="kssref-abstracts-mixins-motions-appear-from" class="section scrollspy">
+                            <h4>
+                                <a href="#kssref-abstracts-mixins-motions-appear-from">
+                                    1.1.1.1 Disappear to
+                                </a>
+                            </h4>
+
+                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                    <p>The mixins <code>animation-disappear-to</code> and <code>transition-disappear-to</code> allow an element to disappear by decreasing its
+opacity and moving to a specific direction.</p>
+
+                                </div>
+
+                                <div class="kss-parameters__title">Parameters:</div>
+                                <ul class="kss-parameters">
+                                        <li class="kss-parameters__item">
+                                            <div class="kss-parameters__name"><code>$direction</code></div>
+                                            <div class="kss-parameters__description">
+                                                Direction where to move (default: <code>bottom</code>)
+                                            </div>
+                                        </li>
+                                        <li class="kss-parameters__item">
+                                            <div class="kss-parameters__name"><code>$duration</code></div>
+                                            <div class="kss-parameters__description">
+                                                Duration of the animation (default: <code>0.3s</code>)
+                                            </div>
+                                        </li>
+                                </ul>
+
+
+
+
+                                <div class="kss-source kss-style">
+                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 94
+                                </div>
+                        </div>
+                        <div id="kssref-abstracts-mixins-motions-staggered" class="section scrollspy">
+                            <h4>
+                                <a href="#kssref-abstracts-mixins-motions-staggered">
+                                    1.1.1.2 Staggered List
+                                </a>
+                            </h4>
+
+                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                    <p><code>animation-staggered</code> and <code>transition-staggered</code> allow a list to appear staggered one by one.
+They are no motions itself but it must be combined with a motion.</p>
+
+                                </div>
+
+
+
+
+
+                                <div class="kss-source kss-style">
+                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 15
+                                </div>
+                        </div>
                         <div id="kssref-abstracts-variables" class="section scrollspy">
                             <h2>
                                 <a href="#kssref-abstracts-variables">
-                                    1.1 Variables
+                                    1.2 Variables
                                 </a>
                             </h2>
 
@@ -129,7 +301,7 @@
                         <div id="kssref-abstracts-variables-base-path" class="section scrollspy">
                             <h3>
                                 <a href="#kssref-abstracts-variables-base-path">
-                                    1.1.1 $le-vendor-base-path
+                                    1.2.1 $le-vendor-base-path
                                 </a>
                             </h3>
 
@@ -151,7 +323,7 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                         <div id="kssref-abstracts-variables-side-nav-expanding-width" class="section scrollspy">
                             <h3>
                                 <a href="#kssref-abstracts-variables-side-nav-expanding-width">
-                                    1.1.2 $le-side-nav-expanding-width
+                                    1.2.2 $le-side-nav-expanding-width
                                 </a>
                             </h3>
 
@@ -172,7 +344,7 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                         <div id="kssref-abstracts-variables-side-nav-width" class="section scrollspy">
                             <h3>
                                 <a href="#kssref-abstracts-variables-side-nav-width">
-                                    1.1.3 $le-side-nav-width
+                                    1.2.3 $le-side-nav-width
                                 </a>
                             </h3>
 
@@ -194,16 +366,20 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                 <div class="col hide-on-small-only m3 l2">
                     <ul class="section table-of-contents pinned">
                             <li><a href="#kssref-abstracts">1 Abstracts</a></li>
-                            <li><a href="#kssref-abstracts-variables">1.1 Variables</a></li>
-                            <li><a href="#kssref-abstracts-variables-base-path">1.1.1 $le-vendor-base-path</a></li>
-                            <li><a href="#kssref-abstracts-variables-side-nav-expanding-width">1.1.2 $le-side-nav-expanding-width</a></li>
-                            <li><a href="#kssref-abstracts-variables-side-nav-width">1.1.3 $le-side-nav-width</a></li>
+                            <li><a href="#kssref-abstracts-mixins">1.1 Mixins</a></li>
+                            <li><a href="#kssref-abstracts-mixins-motions">1.1.1 Motions</a></li>
+                            <li><a href="#kssref-abstracts-mixins-motions-appear-from">1.1.1.1 Appear from</a></li>
+                            <li><a href="#kssref-abstracts-mixins-motions-appear-from">1.1.1.1 Disappear to</a></li>
+                            <li><a href="#kssref-abstracts-mixins-motions-staggered">1.1.1.2 Staggered List</a></li>
+                            <li><a href="#kssref-abstracts-variables">1.2 Variables</a></li>
+                            <li><a href="#kssref-abstracts-variables-base-path">1.2.1 $le-vendor-base-path</a></li>
+                            <li><a href="#kssref-abstracts-variables-side-nav-expanding-width">1.2.2 $le-side-nav-expanding-width</a></li>
+                            <li><a href="#kssref-abstracts-variables-side-nav-width">1.2.3 $le-side-nav-width</a></li>
                     </ul>
                 </div>
             </div>
     </div>
 
-    <script type="text/javascript" src="kss-assets/vendors/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/materialize/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/prism/prism.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
@@ -225,6 +401,16 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                     'description': "",
                     'url': "section-abstracts.html"
                 });
+                        index.add({
+                            'header': "Mixins",
+                            'description': " p Utilities that should help you to design your template.  p  ",
+                            "url": "section-abstracts.html#kssref-abstracts-mixins"
+                        });
+                        index.add({
+                            'header': "Motions",
+                            'description': " p Lepidoptera ships different motions from the material design guidelines. They are implemented as  em mixins  em  that can be applied via  code @include  code . For each animation two version exist: The  code animation-  code  and the  code transition-  code  version.  p  ",
+                            "url": "section-abstracts.html#kssref-abstracts-mixins-motions"
+                        });
                         index.add({
                             'header': "Variables",
                             'description': "",
@@ -250,6 +436,21 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                     'description': "",
                     'url': "section-components.html"
                 });
+                        index.add({
+                            'header': "Collection",
+                            'description': " p Collections from from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com collections.html  documentation of MaterializeCSS  a .  p   p Lepidoptera adds some modifiers for the collections.  p  ",
+                            "url": "section-components.html#kssref-components-collection"
+                        });
+                        index.add({
+                            'header': "Header",
+                            'description': "",
+                            "url": "section-components.html#kssref-components-header"
+                        });
+                        index.add({
+                            'header': "Issue-List",
+                            'description': "",
+                            "url": "section-components.html#kssref-components-issues"
+                        });
                 index.add({
                     'header': "Layout",
                     'description': "",
@@ -262,12 +463,12 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                         });
                         index.add({
                             'header': "Badge",
-                            'description': " p Support for badges within the Navbar is built in in MaterializeCSS. But its missing support for badges near to Materialize Icons. This has been added. Together with class  code circle  code  it can be used to create a nice looking notification counter.  p  ",
+                            'description': " p Support for badges within the Navbar is built in in MaterializeCSS. But its missing support for badges near to Materialize Icons (see the  em Default styling  em  example). This has been added. Together with class  code circle  code  it can be used to create a nice looking notification counter.  p  ",
                             "url": "section-layout.html#kssref-layout-navbar-badge"
                         });
                         index.add({
                             'header': "SideNav",
-                            'description': " p Slide out menu from MaterializeCSS. It has been extended with some modifiers that allow a more flexible usage of the side-nav.  p   p The two most noteworthy things are the possibility to always have a small side-nav that expands on hover (See  code .side-nav--expanding  code  and to add an logo to the sidebar.  p   p For most use cases you can keep up using the normal markup from Materialize, but for some modifiers you need to put the  code side-nav  code  class at a div and put the  code ul  code  inside of this  code div  code :  p   pre  code class  lang-html   div class  side-nav     ul      li  a href  #!  Label  a   li     ul    div    code   pre   p Please have a look at the  a href  http:  materializecss.com side-nav.html  documentation of MaterializeCSS  a  especially for the initialization with jQuery and the Dropdown HTML Structure.  p  ",
+                            'description': " p Slide out menu from MaterializeCSS. It has been extended with some modifiers that allow a more flexible usage of the side-nav.  p   p The two most noteworthy things are the possibility to always have a small side-nav that expands on hover (See  code .side-nav--mini  code  and to add an logo to the sidebar.  p   p For most use cases you can keep up using the normal markup from Materialize, but for some modifiers you need to put the  code side-nav  code  class at a div and put the  code ul  code  inside of this  code div  code :  p   pre  code class  lang-html   div class  side-nav     ul      li  a href  #!  Label  a   li     ul    div    code   pre   p Please have a look at the  a href  http:  materializecss.com side-nav.html  documentation of MaterializeCSS  a  especially for the initialization with jQuery and the Dropdown HTML Structure.  p  ",
                             "url": "section-layout.html#kssref-layout-side-nav"
                         });
                         index.add({
@@ -276,41 +477,64 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                             "url": "section-layout.html#kssref-layout-side-nav-logo"
                         });
                         index.add({
-                            'header': "Long Label",
-                            'description': " p Long content of a navigation item. Will be hidden in the collapsed  code .side-nav--expanding  code .  p  ",
-                            "url": "section-layout.html#kssref-layout-side-nav-long"
-                        });
-                        index.add({
-                            'header': "Short Label",
-                            'description': " p Short prefix of a navigation item. Can be either a Material icon, a FontAwesome icon or a string. It will be always visible event in the collapsed  code .side-nav-expanding  code .  p  ",
-                            "url": "section-layout.html#kssref-layout-side-nav-short"
-                        });
-                        index.add({
                             'header': "Toggle Icon",
                             'description': "",
                             "url": "section-layout.html#kssref-layout-side-nav-toggle"
                         });
+                index.add({
+                    'header': "Vendors Extensions",
+                    'description': " p All used frameworks are great by itself but may need a little bit more love when playing together.  p  ",
+                    'url': "section-vendors-extensions.html"
+                });
                         index.add({
-                            'header': "UserView",
-                            'description': " p The UserView gives the ability to show the current user in a design that is well known from many Android Apps.  p   p It is a built in MaterializeCSS and only optimized for the usage with the expanding SideNav.  p  ",
-                            "url": "section-layout.html#kssref-layout-side-nav-user-view"
+                            'header': "Font Awesome",
+                            'description': " p Font Awesome has been added as another Icon-library. While the Material Design Icons are great they are missing some Icons that may be found in Font Awesome.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-font-awesome"
+                        });
+                        index.add({
+                            'header': "Adjusted Font size",
+                            'description': " p Font size for  code .fa  code  has been adjusted to match Material Design Icon size in  code .side-nav  code  and  code .nav-wrapper  code .  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-font-awesome-adjusted-font-size"
+                        });
+                        index.add({
+                            'header': "SideNav Toggle Font-Size",
+                            'description': " p Reset the font-size for the  code .side-nav__toggle  code . It has been increased by MaterializeCSS.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-font-awesome-side-nav-toggle"
+                        });
+                        index.add({
+                            'header': "MaterializeCSS",
+                            'description': " p While MaterializeCSS is a great framework, there are some things that can be enhanced to allow a better interaction with other frameworks without adding new classes.  p   p These hacks are listed here.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss"
+                        });
+                        index.add({
+                            'header': "Intention after fixed SideNav",
+                            'description': " p A fixed SideNav hides content at the left. To prevent this, the  code nav  code  and the main content (use  code .container  code  or  code .main  code ) will be automatically intended if it is placed after the fixed navbar.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav"
                         });
             $('#search').autocomplete({data: {
                     "Abstracts": null,
+                            "Mixins": null,
+                            "Motions": null,
                             "Variables": null,
                             "$le-vendor-base-path": null,
                             "$le-side-nav-expanding-width": null,
                             "$le-side-nav-width": null,
                     "Components": null,
+                            "Collection": null,
+                            "Header": null,
+                            "Issue-List": null,
                     "Layout": null,
                             "Navbar": null,
                             "Badge": null,
                             "SideNav": null,
                             "Logo": null,
-                            "Long Label": null,
-                            "Short Label": null,
                             "Toggle Icon": null,
-                            "UserView": null,
+                    "Vendors Extensions": null,
+                            "Font Awesome": null,
+                            "Adjusted Font size": null,
+                            "SideNav Toggle Font-Size": null,
+                            "MaterializeCSS": null,
+                            "Intention after fixed SideNav": null,
             }});
             $('#search ~ .autocomplete-content').on('click', function () {
                 window.setTimeout(function(){$('#js-search-form').submit();}, 200);
