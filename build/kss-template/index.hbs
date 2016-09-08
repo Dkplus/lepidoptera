@@ -12,74 +12,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+    <ul id="menu" class="side-nav fixed collapsible">
+        {{#each menu}}
+            <li {{#if isActive }}class="active"{{/if}}>
+                <a class="waves-effect{{#if children }} collapsible-header{{/if}}{{#if isActive}} active{{/if}}"
+                   {{#unless children}}href="section-{{referenceURI}}.html"{{/unless}}>
+                    {{#if fontawesome}}
+                        <i class="side-nav__short fa fa-{{fontawesome}}"></i>
+                    {{else if material}}
+                        <i class="side-nav__short material-icons">{{material}}</i>
+                    {{else}}
+                        <span class="side-nav__short">{{referenceNumber}}</span>
+                    {{/if}}
+                    <span class="side-nav__long">{{header}}</span>
+                    {{#if children}}
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                    {{/if}}
+                </a>
+                {{#if children}}
+                    <ul class="collapsible-body">
+                        {{#each children}}
+                            {{#if_lte depth 2}}
+                                <li>
+                                    <a class="waves-effect" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
+                                        <span class="side-nav__short">{{referenceNumber}}</span>
+                                        <span class="side-nav__long">{{header}}</span>
+                                    </a>
+                                </li>
+                            {{/if_lte}}
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
     <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-            <ul>
-                <li>
-                    <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
-                </li>
-                <li>
-                    <form id="js-search-form">
-                        <div class="input-field">
-                            <input id="search" type="search" required class="autocomplete">
-                            <label for="search"><i class="material-icons">search</i></label>
-                            <i class="material-icons">close</i>
-                        </div>
-                    </form>
-                </li>
-            </ul>
-
-            <div id="menu" class="side-nav fixed side-nav--mini side-nav--fixed-logo">
-                <div class="side-nav__logo z-depth-1">
-                    <a href="./" class="side-nav__logo-link waves-effect">
-                        <div>
-                            <div class="side-nav__short">
-                                <img src="kss-assets/logo.png">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a>
+                <a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a>
+                <ul class="right">
+                    <li>
+                        <form id="js-search-form">
+                            <div class="input-field">
+                                <input id="search" type="search" required class="autocomplete">
+                                <label for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
                             </div>
-                            <div class="side-nav__long">{{ options.title }}</div>
-                        </div>
-                    </a>
-                </div>
-                <ul class="collapsible">
-                    {{#each menu}}
-                        <li {{#if isActive }}class="active"{{/if}}>
-                            <a class="waves-effect{{#if children }} collapsible-header{{/if}}{{#if isActive}} active{{/if}}"
-                                    {{#unless children}}href="section-{{referenceURI}}.html"{{/unless}}>
-                                {{#if fontawesome}}
-                                    <i class="side-nav__short fa fa-{{fontawesome}}"></i>
-                                {{else if material}}
-                                    <i class="side-nav__short material-icons">{{material}}</i>
-                                {{else}}
-                                    <span class="side-nav__short">{{referenceNumber}}</span>
-                                {{/if}}
-                                <span class="side-nav__long">{{header}}</span>
-                                {{#if children}}
-                                    <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
-                                {{/if}}
-                            </a>
-                            {{#if children}}
-                                <ul class="collapsible-body">
-                                    {{#each children}}
-                                        {{#if_lte depth 2}}
-                                        <li>
-                                            <a class="waves-effect" href="section-{{../referenceURI}}.html#kssref-{{referenceURI}}">
-                                                <span class="side-nav__short">{{referenceNumber}}</span>
-                                                <span class="side-nav__long">{{header}}</span>
-                                            </a>
-                                        </li>
-                                        {{/if_lte}}
-                                    {{/each}}
-                                </ul>
-                            {{/if}}
-                        </li>
-                    {{/each}}
+                        </form>
+                    </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
     </div>
-    <div class="container">
+    <div class="main">
         {{#if homepage}}
             <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
                 {{{homepage}}}

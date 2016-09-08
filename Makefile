@@ -4,3 +4,4 @@ compile: stylesheets/kss.scss
 	cp -fR stylesheets/vendors build/kss-template/kss-assets/.
 	cp -fR images/* build/kss-template/kss-assets/.
 	kss -c kss.json
+	cp images/favicon.ico build/docs/.
