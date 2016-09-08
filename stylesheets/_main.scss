@@ -10,16 +10,29 @@
 @import 'abstracts/variables';
 @import 'abstracts/variables/materialize';
 @import 'abstracts/variables/fontawesome';
-@import 'abstracts/mixins/animations';
-@import 'abstracts/mixins/list-animations';
-@import 'abstracts/mixins/transitions';
-@import 'abstracts/mixins/list-transitions';
+
+//
+// Mixins
+//
+// Utilities that should help you to design your template.
+//
+// Styleguide abstracts.mixins
+//
+@import 'abstracts/mixins/motions';
 
 // vendors
 @import 'vendors/font-awesome/scss/font-awesome';
 @import 'vendors/materialize/sass/materialize';
 
-// vendors-extensions
+//
+// Vendors Extensions
+//
+// All used frameworks are great by itself but may need a little bit more love when playing together.
+//
+// Material: extensions
+//
+// Styleguide vendors-extensions
+//
 @import 'vendors-extensions/fontawesome';
 @import 'vendors-extensions/materialize';
 
@@ -44,7 +57,6 @@
 //
 // Styleguide components
 //
-@import 'components/movement';
 @import 'components/collections';
 
 // pages

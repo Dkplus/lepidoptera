@@ -86,11 +86,6 @@
 // </div>
 // <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
-// .side-nav--mini         - On large devices it just opens a small preview of the side-nav.
-//                           The full side-nav becomes visible when the user hovers the side-nav.
-//                           Can be perfectly combined with `.fixed` to always have a small menu without loosing much
-//                           space.
-//                           On small and medium devices it will behave like the regular `.side-nav`.
 // .side-nav--fixed-header - Allows to put a fixed div upon the ul at the top of the side-nav. It will be sticky
 //                           and does not scroll. This can be e.g. the `.userView` or the `.side-nav__logo`.
 // .fixed                  - Stays always open on all devices except the small ones.
@@ -121,108 +116,6 @@
   }
 }
 
-//
-// .side-nav--mini
-//
-@media #{$large-and-up} {
-  .side-nav--mini,
-  .side-nav--mini.fixed {
-    @include transition(0.3s cubic-bezier(0.4, 0, 0.2, 1) width 0.3s);
-    width: $le-side-nav-expanding-width;
-
-    a,
-    .collapsible-header {
-      padding: 0 $sidenav-padding; // by default set for .fixed but 2 * $sidenav-padding for non fixed (by MaterializeCSS)
-    }
-
-    li {
-      overflow: hidden; // hide everything except .side-nav__short
-    }
-
-    &:hover {
-      @include transition(0.3s cubic-bezier(0.4, 0, 0.2, 1) width);
-      width: $le-side-nav-width;
-    }
-
-    // collapsible-body children should be shown only if open
-    li.active .collapsible-body {
-      @include transition(0.3s max-height cubic-bezier(0.4, 0, 0.2, 1));
-      max-height: 0;
-    }
-
-    &:hover li.active .collapsible-body {
-      @include transition(0.3s max-height cubic-bezier(0.4, 0, 0.2, 1));
-      max-height: 1300px;
-    }
-
-    li.active .collapsible-body li a {
-      @include li-slides-out-transition;
-      padding-left: (2 * $sidenav-padding); // by default 3 * $sidenav-padding but we need more space
-    }
-
-    &:hover li.active .collapsible-body li a {
-      @include li-slides-in-transition;
-    }
-  }
-}
-
-//
-// UserView
-//
-// The UserView gives the ability to show the current user in a design that is well known from many Android Apps.
-//
-// It is a built in MaterializeCSS and only optimized for the usage with the expanding SideNav.
-//
-// Markup:
-// <ul class="side-nav" id="slide-out-[UNIQID]">
-//   <li>
-//     <div class="userView">
-//       <img class="background" src="kss-assets/user-background.jpg">
-//       <a href="#!user"><img class="circle" src="kss-assets/avatar.png"></a>
-//       <a href="#!name"><span class="white-text name">John Doe</span></a>
-//       <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-//     </div>
-//   </li>
-//   <li><a href="#!">First item</a></li>
-//   <li><a href="#!">Second item</a></li>
-//   <li><a href="#!">Third item</a></li>
-// </ul>
-// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
-//
-// Styleguide layout.side-nav.user-view
-//
-.side-nav--mini .userView {
-  @include transition(0.5s linear);
-  padding-left: $sidenav-padding;
-
-  .circle {
-    @include transition(0.5s linear);
-    height: ($le-side-nav-expanding-width - 2 * $sidenav-padding);
-    width: ($le-side-nav-expanding-width - 2 * $sidenav-padding);
-  }
-
-  .name,
-  .email {
-    visibility: hidden;
-  }
-}
-
-.side-nav--mini:hover .userView {
-  @include transition(0.5s linear);
-  padding-left: 32px;
-
-  .name,
-  .email {
-    visibility: visible;
-  }
-
-  .circle {
-    @include transition(0.5s linear);
-    height: 64px;
-    width: 64px;
-  }
-}
-
 // nicer to look at because there is no space between the scrollbar and the fixed header
 .side-nav--fixed-header .userView {
   margin-bottom: 0;
@@ -233,84 +126,12 @@
 }
 
 //
-// Short Label
-//
-// Short prefix of a navigation item.
-// Can be either a Material icon, a FontAwesome icon or a string.
-// It will be always visible event in the collapsed `.side-nav-expanding`.
-//
-// Markup:
-// <ul class="side-nav side-nav--expanding" id="slide-out-[UNIQID]">
-//  <li><a href="#!"><span class="side-nav__short">ST</span> <span class="side-nav__long">Can be a string</span></a></li>
-//  <li><a href="#!"><i class="side-nav__short fa fa-user"></i> <span class="side-nav__long">Or a FontAwesome Icon</span></a></li>
-//  <li><a href="#!"><i class="side-nav__short material-icons">account_circle</i> <span class="side-nav__long">Or a Material Icon</span></a></li>
-// </ul>
-// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
-//
-// Styleguide layout.side-nav.short
-//
-.side-nav .side-nav__short,
-.side-nav .material-icons.side-nav__short {
-  position: relative;
-  display: inline-block;
-  z-index: 2; // should be ahead of .side-nav__long
-
-  margin: 0;
-  width: ($le-side-nav-expanding-width - 2 * $sidenav-padding);
-  text-align: center;
-}
-
-//
-// Long Label
-//
-// Long content of a navigation item. Will be hidden in the collapsed `.side-nav--mini`.
-//
-// Markup:
-// <ul class="side-nav side-nav--expanding" id="slide-out-[UNIQID]">
-//  <li>
-//    <a href="#!">
-//      <span class="side-nav__short">ST</span>
-//      <span class="side-nav__long">Can be a string</span>
-//    </a>
-//  </li>
-//  <li>
-//    <a href="#!">
-//      <i class="side-nav__short fa fa-user"></i>
-//      <span class="side-nav__long">Or a FontAwesome Icon</span>
-//    </a>
-//  </li>
-//  <li>
-//    <a href="#!">
-//      <i class="side-nav__short material-icons">account_circle</i>
-//      <span class="side-nav__long">Or a Material Icon</span></a>
-//  </li>
-// </ul>
-// <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
-//
-// Styleguide layout.side-nav.long
-//
-.side-nav .side-nav__long {
-  display: inline-block;
-  position: relative;
-}
-
-@media #{$large-and-up} {
-  .side-nav--mini .side-nav__long {
-    @include translateX(-400%);
-  }
-
-  .side-nav--mini:hover .side-nav__long {
-    @include translateX(0%);
-  }
-}
-
-//
 // Logo
 //
 // Logo inside the side-nav of MaterializeCSS.
 //
 // Markup:
-// <div class="side-nav side-nav--expanding" id="slide-out-[UNIQID]">
+// <div class="side-nav" id="slide-out-[UNIQID]">
 //  <div class="side-nav__logo {{modifier_class}}">
 //    <a href="#1" class="side-nav__logo-link waves-effect">
 //      <div>
@@ -331,8 +152,8 @@
 // </div>
 // <a href="#!" data-activates="slide-out-[UNIQID]" class="button-collapse">Click to view the example</a>
 //
-// .side-nav__logo--centered - Horizontally centered version of the logo.
-// .side-nav__logo--right    - Horizontally right aligned version of the logo.
+// .side-nav__logo--center-align - Horizontally centered version of the logo.
+// .side-nav__logo--right-align  - Horizontally right aligned version of the logo.
 //
 // Styleguide layout.side-nav.logo
 //
@@ -369,11 +190,11 @@
   }
 }
 
-.side-nav__logo--centered > a > div {
+.side-nav__logo--center-align > a > div {
   text-align: center;
 }
 
-.side-nav__logo--right > a > div {
+.side-nav__logo--right-align > a > div {
   text-align: right;
 }
 
@@ -439,17 +260,5 @@
   .active > .side-nav__toggle--animated {
     @include transition(0.5s linear);
     @include rotate(0deg);
-  }
-
-  @media #{$large-and-up} {
-    &.side-nav--mini .side-nav__toggle--animated {
-      @include transition(0.5s linear);
-      @include rotate(-90deg);
-    }
-
-    &.side-nav--mini:hover .active > .side-nav__toggle--animated {
-      @include transition(0.5s linear);
-      @include rotate(0deg);
-    }
   }
 }

@@ -1,8 +1,31 @@
-.side-nav .collapsible-header .side-nav__toggle.fa {
-  font-size: $fa-font-size-base;  // original size for .side-nav__toggle
-}
+//
+// Font Awesome
+//
+// Font Awesome has been added as another Icon-library. While the Material Design Icons are great they are missing some
+// Icons that may be found in Font Awesome.
+//
+// Styleguide vendors-extensions.font-awesome
+//
 
+//
+// Adjusted Font size
+//
+// Font size for `.fa` has been adjusted to match Material Design Icon size in `.side-nav` and `.nav-wrapper`.
+//
+// Styleguide vendors-extensions.font-awesome.adjusted font-size
+//
 .side-nav .fa,
 nav .nav-wrapper .fa {
   font-size: 1.7rem;  // adjust for Material Icons for .side-nav and .navbar
+}
+
+//
+// SideNav Toggle Font-Size
+//
+// Reset the font-size for the `.side-nav__toggle`. It has been increased by MaterializeCSS.
+//
+// Styleguide vendors-extensions.font-awesome.side-nav-toggle
+//
+.side-nav .collapsible-header .side-nav__toggle.fa {
+  font-size: $fa-font-size-base;  // original size for .side-nav__toggle
 }

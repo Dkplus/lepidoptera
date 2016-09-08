@@ -20,8 +20,8 @@
 // Badge
 //
 // Support for badges within the Navbar is built in in MaterializeCSS.
-// But its missing support for badges near to Materialize Icons. This has been added.
-// Together with class `circle` it can be used to create a nice looking notification counter.
+// But its missing support for badges near to Materialize Icons (see the *Default styling* example).
+// This has been added. Together with class `circle` it can be used to create a nice looking notification counter.
 //
 // Markup:
 // <nav>
@@ -36,31 +36,31 @@
 //      <li>
 //        <a href="#!" class="waves-effect">
 //          <i class="material-icons">mail_outline</i>
-//          <span class="circle orange badge">1</span>
+//          <span class="circle orange badge {{modifier_class}} badge--numeric">1</span>
 //        </a>
 //      </li>
 //      <li>
 //        <a href="#!" class="waves-effect">
 //          <i class="fa fa-envelope-o"></i>
-//          <span class="circle orange badge">1</span>
+//          <span class="circle orange badge {{modifier_class}} badge--numeric">2</span>
 //        </a>
 //      </li>
 //  </div>
 // </nav>
 //
+// .badge--raised - Moves the badge to the top right side of the element. This is currently supported only with numeric
+//                  content.
+//
 // Styleguide layout.navbar.badge
 //
-.nav-wrapper {
-  .material-icons + .badge,
-  .fa + .badge {
-    display: block;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-
-    width: $navbar-font-size * 1.5;
-    min-width: $navbar-font-size * 1.5; // otherwise the width is not applied
-    height: $navbar-font-size * 1.5;
-    line-height: $navbar-font-size * 1.5;
-  }
+.nav-wrapper .badge.badge--raised {
+  display: block;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  text-align: center;
+  width: $navbar-font-size * 1.5;
+  min-width: $navbar-font-size * 1.5; // otherwise the width is not applied
+  height: $navbar-font-size * 1.5;
+  line-height: $navbar-font-size * 1.5;
 }

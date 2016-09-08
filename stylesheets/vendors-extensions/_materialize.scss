@@ -1,4 +1,36 @@
 //
+// MaterializeCSS
+//
+// While MaterializeCSS is a great framework, there are some things that can be enhanced to allow a better interaction
+// with other frameworks without adding new classes.
+//
+// These hacks are listed here.
+//
+// Styleguide vendors-extensions.materializecss
+//
+
+//
+// Intention after fixed SideNav
+//
+// A fixed SideNav hides content at the left.
+// To prevent this, the `nav` and the main content (use `.container` or `.main`) will be automatically intended
+// if it is placed after the fixed navbar.
+//
+// Styleguide vendors-extensions.materializecss.intend-after-fixed-side-nav
+//
+@media #{$large-and-up} {
+  .fixed ~ .navbar-fixed nav,
+  .fixed ~ nav {
+    padding-left: $le-side-nav-width;
+  }
+
+  .fixed ~ .container,
+  .fixed ~ .main {
+    padding-left: $le-side-nav-width + 65px; // 65px is from materializecss
+  }
+}
+
+//
 // side-nav
 //
 .side-nav,

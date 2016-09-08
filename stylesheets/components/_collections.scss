@@ -1,4 +1,4 @@
-@import '../abstracts/mixins/list-animations';
+@import '../abstracts/mixins/motions';
 
 //
 // Header
@@ -104,10 +104,11 @@
 //  <li class="collection-item">Daisy Duck</li>
 // </ul>
 //
-// .animated - Lets the list items slide in.
+// .collection--animated - Lets the list items appear staggeredly.
 //
 // Styleguide components.collection
 //
-.collection.animated li {
-  @include li-slides-in-animation($origin: $le-default-collections-origin);
+.collection--animated li {
+  @include animation-appear-from($origin: $le-default-collections-origin);
+  @include animation-staggered;
 }
