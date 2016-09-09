@@ -13093,62 +13093,74 @@ nav .nav-wrapper .fa {
     padding-left: 316px;
   }
 }
-/* line 45, vendors-extensions/_materialize.scss */
+/* line 44, vendors-extensions/_materialize.scss */
 nav .nav-wrapper .brand-logo {
   padding-left: 16px;
 }
 
-/* line 49, vendors-extensions/_materialize.scss */
-.main {
+/* line 48, vendors-extensions/_materialize.scss */
+nav .nav-wrapper .button-collapse,
+nav .nav-wrapper > ul,
+body > .main {
   padding: 0 16px;
 }
 
+/* line 54, vendors-extensions/_materialize.scss */
+nav .nav-wrapper .breadcrumb:first-child {
+  padding-left: 16px;
+}
+
 /* line 58, vendors-extensions/_materialize.scss */
+nav .nav-wrapper .breadcrumb:last-child {
+  padding-right: 16px;
+}
+
+/* line 67, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-header,
 .side-nav.fixed .collapsible-header {
   height: 48px;
   padding: 0 32px;
 }
-/* line 63, vendors-extensions/_materialize.scss */
+/* line 72, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-body,
 .side-nav.fixed .collapsible-body {
   background-color: #fff;
 }
-/* line 67, vendors-extensions/_materialize.scss */
+/* line 76, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-body li a,
 .side-nav.fixed .collapsible-body li a {
   padding-left: 48px;
 }
-/* line 71, vendors-extensions/_materialize.scss */
+/* line 80, vendors-extensions/_materialize.scss */
 .side-nav .collapsible-header .material-icons,
 .side-nav.fixed .collapsible-header .material-icons {
   font-size: 24px;
 }
-/* line 75, vendors-extensions/_materialize.scss */
+/* line 84, vendors-extensions/_materialize.scss */
 .side-nav li > a > i,
 .side-nav.fixed li > a > i {
   margin-right: 1rem;
 }
 
-/* line 82, vendors-extensions/_materialize.scss */
+/* line 91, vendors-extensions/_materialize.scss */
 .side-nav.fixed li > a > i.material-icons,
 .side-nav li > a > i.material-icons {
   margin-right: 1rem;
 }
 
-/* line 90, vendors-extensions/_materialize.scss */
+/* line 99, vendors-extensions/_materialize.scss */
 nav .nav-wrapper a {
   max-height: 56px;
   overflow: hidden;
 }
 @media only screen and (min-width: 993px) {
-  /* line 90, vendors-extensions/_materialize.scss */
+  /* line 99, vendors-extensions/_materialize.scss */
   nav .nav-wrapper a {
     max-height: 64px;
   }
 }
 
-/* line 100, vendors-extensions/_materialize.scss */
+/* line 109, vendors-extensions/_materialize.scss */
 nav .nav-wrapper > ul,
 nav .nav-wrapper > ul > li,
 nav .nav-wrapper > .row,
@@ -13156,16 +13168,16 @@ nav .nav-wrapper > .row > .col {
   height: 100%;
 }
 
-/* line 116, vendors-extensions/_materialize.scss */
+/* line 124, vendors-extensions/_materialize.scss */
 nav ul .breadcrumb {
   display: inline-block;
   padding: 0;
 }
-/* line 120, vendors-extensions/_materialize.scss */
+/* line 128, vendors-extensions/_materialize.scss */
 nav ul .breadcrumb:first-child {
   padding-left: 15px;
 }
-/* line 123, vendors-extensions/_materialize.scss */
+/* line 132, vendors-extensions/_materialize.scss */
 nav ul .breadcrumb:last-child {
   padding-right: 15px;
 }
@@ -13356,7 +13368,7 @@ nav ul .breadcrumb:last-child {
 
 /* line 51, layout/_navbar.scss */
 .navbar--waterfall-2x,
-.navbar--waterfall-2 nav {
+.navbar--waterfall-2x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13365,13 +13377,13 @@ nav ul .breadcrumb:last-child {
 }
 /* line 56, layout/_navbar.scss */
 .navbar--waterfall-2x .nav-wrapper > ul,
-.navbar--waterfall-2 nav .nav-wrapper > ul {
+.navbar--waterfall-2x nav .nav-wrapper > ul {
   height: 50%;
 }
 
 /* line 51, layout/_navbar.scss */
 .navbar--waterfall-3x,
-.navbar--waterfall-3 nav {
+.navbar--waterfall-3x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13380,13 +13392,13 @@ nav ul .breadcrumb:last-child {
 }
 /* line 56, layout/_navbar.scss */
 .navbar--waterfall-3x .nav-wrapper > ul,
-.navbar--waterfall-3 nav .nav-wrapper > ul {
+.navbar--waterfall-3x nav .nav-wrapper > ul {
   height: 33.33333%;
 }
 
 /* line 51, layout/_navbar.scss */
 .navbar--waterfall-4x,
-.navbar--waterfall-4 nav {
+.navbar--waterfall-4x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13395,13 +13407,13 @@ nav ul .breadcrumb:last-child {
 }
 /* line 56, layout/_navbar.scss */
 .navbar--waterfall-4x .nav-wrapper > ul,
-.navbar--waterfall-4 nav .nav-wrapper > ul {
+.navbar--waterfall-4x nav .nav-wrapper > ul {
   height: 25%;
 }
 
 /* line 51, layout/_navbar.scss */
 .navbar--waterfall-5x,
-.navbar--waterfall-5 nav {
+.navbar--waterfall-5x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13410,7 +13422,7 @@ nav ul .breadcrumb:last-child {
 }
 /* line 56, layout/_navbar.scss */
 .navbar--waterfall-5x .nav-wrapper > ul,
-.navbar--waterfall-5 nav .nav-wrapper > ul {
+.navbar--waterfall-5x nav .nav-wrapper > ul {
   height: 20%;
 }
 
