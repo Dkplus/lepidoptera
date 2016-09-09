@@ -13182,6 +13182,11 @@ nav ul .breadcrumb:last-child {
   padding-right: 15px;
 }
 
+/* line 2, base/_normalize.scss */
+body {
+  overflow-y: scroll;
+}
+
 /* ==========================================================================
    Materialize variables
    ========================================================================== */
