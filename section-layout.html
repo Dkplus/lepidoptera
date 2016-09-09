@@ -148,6 +148,7 @@
 build in features.</p>
 <p>Modifiers should be added to the <code>nav</code> element if it is not wrapped by a <code>.navbar-fixed</code>.
 Otherwise it should be added to the <code>.navbar-fixed</code> wrapper.</p>
+<p>To initialize the plugin you need to include <code>js/waterfall-nav.js</code> and call <code>$(&#39;.nav-waterfall-2x&#39;).waterfallNav();</code>.</p>
 
                                 </div>
 
@@ -165,15 +166,24 @@ Otherwise it should be added to the <code>.navbar-fixed</code> wrapper.</p>
                                             </div>
 
                                         <nav class="[modifier class]">
- <div class="nav-wrapper">
-   <a href="#" class="brand-logo">Logo</a>
-   <ul class="right">
+ <div class="nav-wrapper row">
+   <ul class="left col s6 nav--waterfall-shrunk__hidden">
+     <li>
+       <a href="#!" class="breadcrumb">Here</a>
+       <a href="#!" class="breadcrumb">Are</a>
+       <a href="#!" class="breadcrumb">We</a>
+     </li>
+   </ul>
+   <ul class="right col s6">
      <li><a href="#!">Button without an action</a></li>
-     <li><a href="#!" onclick="console.log($(this).parents('nav').toggleClass('nav--waterfall-shrunk'));" class="btn">Click to shrink</a></li>
+     <li><a href="#!" onclick="$(this).parents('nav').toggleClass('nav--waterfall-shrunk');" class="btn">Click to shrink</a></li>
      <li><a href="#!">(Waterfall only)</a></li>
    </ul>
-   <ul>
-     <li><a href="#!">Second row</a></li>
+   <ul class="col s6">
+     <li><a href="#!">Second</a></li>
+     <li><a href="#!">More</a></li>
+     <li><a href="#!">Important</a></li>
+     <li><a href="#!">Row</a></li>
    </ul>
  </div>
 </nav>
@@ -185,15 +195,24 @@ Otherwise it should be added to the <code>.navbar-fixed</code> wrapper.</p>
                                             </div>
                                                 <p>Allows the usage of a bigger (2x) navbar that shrinks on scrolling. This effect is triggered at the example by a button-click.</p>
                                                 <nav class="nav--waterfall-2x">
- <div class="nav-wrapper">
-   <a href="#" class="brand-logo">Logo</a>
-   <ul class="right">
+ <div class="nav-wrapper row">
+   <ul class="left col s6 nav--waterfall-shrunk__hidden">
+     <li>
+       <a href="#!" class="breadcrumb">Here</a>
+       <a href="#!" class="breadcrumb">Are</a>
+       <a href="#!" class="breadcrumb">We</a>
+     </li>
+   </ul>
+   <ul class="right col s6">
      <li><a href="#!">Button without an action</a></li>
-     <li><a href="#!" onclick="console.log($(this).parents('nav').toggleClass('nav--waterfall-shrunk'));" class="btn">Click to shrink</a></li>
+     <li><a href="#!" onclick="$(this).parents('nav').toggleClass('nav--waterfall-shrunk');" class="btn">Click to shrink</a></li>
      <li><a href="#!">(Waterfall only)</a></li>
    </ul>
-   <ul>
-     <li><a href="#!">Second row</a></li>
+   <ul class="col s6">
+     <li><a href="#!">Second</a></li>
+     <li><a href="#!">More</a></li>
+     <li><a href="#!">Important</a></li>
+     <li><a href="#!">Row</a></li>
    </ul>
  </div>
 </nav>
@@ -204,15 +223,24 @@ Otherwise it should be added to the <code>.navbar-fixed</code> wrapper.</p>
                                             </div>
                                                 <p>Allows the usage of a bigger (3x) navbar that shrinks on scrolling. This effect is triggered at the example by a button-click.</p>
                                                 <nav class="nav--waterfall-3x">
- <div class="nav-wrapper">
-   <a href="#" class="brand-logo">Logo</a>
-   <ul class="right">
+ <div class="nav-wrapper row">
+   <ul class="left col s6 nav--waterfall-shrunk__hidden">
+     <li>
+       <a href="#!" class="breadcrumb">Here</a>
+       <a href="#!" class="breadcrumb">Are</a>
+       <a href="#!" class="breadcrumb">We</a>
+     </li>
+   </ul>
+   <ul class="right col s6">
      <li><a href="#!">Button without an action</a></li>
-     <li><a href="#!" onclick="console.log($(this).parents('nav').toggleClass('nav--waterfall-shrunk'));" class="btn">Click to shrink</a></li>
+     <li><a href="#!" onclick="$(this).parents('nav').toggleClass('nav--waterfall-shrunk');" class="btn">Click to shrink</a></li>
      <li><a href="#!">(Waterfall only)</a></li>
    </ul>
-   <ul>
-     <li><a href="#!">Second row</a></li>
+   <ul class="col s6">
+     <li><a href="#!">Second</a></li>
+     <li><a href="#!">More</a></li>
+     <li><a href="#!">Important</a></li>
+     <li><a href="#!">Row</a></li>
    </ul>
  </div>
 </nav>
@@ -223,15 +251,24 @@ Otherwise it should be added to the <code>.navbar-fixed</code> wrapper.</p>
                                             </div>
                                                 <p>Allows the usage of a bigger (4x) navbar that shrinks on scrolling. This effect is triggered at the example by a button-click.</p>
                                                 <nav class="nav--waterfall-4x">
- <div class="nav-wrapper">
-   <a href="#" class="brand-logo">Logo</a>
-   <ul class="right">
+ <div class="nav-wrapper row">
+   <ul class="left col s6 nav--waterfall-shrunk__hidden">
+     <li>
+       <a href="#!" class="breadcrumb">Here</a>
+       <a href="#!" class="breadcrumb">Are</a>
+       <a href="#!" class="breadcrumb">We</a>
+     </li>
+   </ul>
+   <ul class="right col s6">
      <li><a href="#!">Button without an action</a></li>
-     <li><a href="#!" onclick="console.log($(this).parents('nav').toggleClass('nav--waterfall-shrunk'));" class="btn">Click to shrink</a></li>
+     <li><a href="#!" onclick="$(this).parents('nav').toggleClass('nav--waterfall-shrunk');" class="btn">Click to shrink</a></li>
      <li><a href="#!">(Waterfall only)</a></li>
    </ul>
-   <ul>
-     <li><a href="#!">Second row</a></li>
+   <ul class="col s6">
+     <li><a href="#!">Second</a></li>
+     <li><a href="#!">More</a></li>
+     <li><a href="#!">Important</a></li>
+     <li><a href="#!">Row</a></li>
    </ul>
  </div>
 </nav>
@@ -242,29 +279,47 @@ Otherwise it should be added to the <code>.navbar-fixed</code> wrapper.</p>
                                             </div>
                                                 <p>Allows the usage of a bigger (5x) navbar that shrinks on scrolling. This effect is triggered at the example by a button-click.</p>
                                                 <nav class="nav--waterfall-5x">
- <div class="nav-wrapper">
-   <a href="#" class="brand-logo">Logo</a>
-   <ul class="right">
+ <div class="nav-wrapper row">
+   <ul class="left col s6 nav--waterfall-shrunk__hidden">
+     <li>
+       <a href="#!" class="breadcrumb">Here</a>
+       <a href="#!" class="breadcrumb">Are</a>
+       <a href="#!" class="breadcrumb">We</a>
+     </li>
+   </ul>
+   <ul class="right col s6">
      <li><a href="#!">Button without an action</a></li>
-     <li><a href="#!" onclick="console.log($(this).parents('nav').toggleClass('nav--waterfall-shrunk'));" class="btn">Click to shrink</a></li>
+     <li><a href="#!" onclick="$(this).parents('nav').toggleClass('nav--waterfall-shrunk');" class="btn">Click to shrink</a></li>
      <li><a href="#!">(Waterfall only)</a></li>
    </ul>
-   <ul>
-     <li><a href="#!">Second row</a></li>
+   <ul class="col s6">
+     <li><a href="#!">Second</a></li>
+     <li><a href="#!">More</a></li>
+     <li><a href="#!">Important</a></li>
+     <li><a href="#!">Row</a></li>
    </ul>
  </div>
 </nav>
                                         </div>
                                     <pre><code class="language-html">&lt;nav class&#x3D;&quot;[modifier class]&quot;&gt;
- &lt;div class&#x3D;&quot;nav-wrapper&quot;&gt;
-   &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;brand-logo&quot;&gt;Logo&lt;/a&gt;
-   &lt;ul class&#x3D;&quot;right&quot;&gt;
+ &lt;div class&#x3D;&quot;nav-wrapper row&quot;&gt;
+   &lt;ul class&#x3D;&quot;left col s6 nav--waterfall-shrunk__hidden&quot;&gt;
+     &lt;li&gt;
+       &lt;a href&#x3D;&quot;#!&quot; class&#x3D;&quot;breadcrumb&quot;&gt;Here&lt;/a&gt;
+       &lt;a href&#x3D;&quot;#!&quot; class&#x3D;&quot;breadcrumb&quot;&gt;Are&lt;/a&gt;
+       &lt;a href&#x3D;&quot;#!&quot; class&#x3D;&quot;breadcrumb&quot;&gt;We&lt;/a&gt;
+     &lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;ul class&#x3D;&quot;right col s6&quot;&gt;
      &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;Button without an action&lt;/a&gt;&lt;/li&gt;
-     &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot; onclick&#x3D;&quot;console.log($(this).parents(&#x27;nav&#x27;).toggleClass(&#x27;nav--waterfall-shrunk&#x27;));&quot; class&#x3D;&quot;btn&quot;&gt;Click to shrink&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot; onclick&#x3D;&quot;$(this).parents(&#x27;nav&#x27;).toggleClass(&#x27;nav--waterfall-shrunk&#x27;);&quot; class&#x3D;&quot;btn&quot;&gt;Click to shrink&lt;/a&gt;&lt;/li&gt;
      &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;(Waterfall only)&lt;/a&gt;&lt;/li&gt;
    &lt;/ul&gt;
-   &lt;ul&gt;
-     &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;Second row&lt;/a&gt;&lt;/li&gt;
+   &lt;ul class&#x3D;&quot;col s6&quot;&gt;
+     &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;Second&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;More&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;Important&lt;/a&gt;&lt;/li&gt;
+     &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;Row&lt;/a&gt;&lt;/li&gt;
    &lt;/ul&gt;
  &lt;/div&gt;
 &lt;/nav&gt;</code></pre>
@@ -381,7 +436,7 @@ This has been added. Together with class <code>circle</code> it can be used to c
                                 </div>
 
                                 <div class="kss-source kss-style">
-                                    Source: <code>layout/_navbar.scss</code>, line 65
+                                    Source: <code>layout/_navbar.scss</code>, line 76
                                 </div>
                         </div>
                         <div id="kssref-layout-side-nav" class="section scrollspy">
@@ -422,7 +477,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                                                 Default styling
                                             </div>
 
-                                        <div class="side-nav [modifier class]" id="slide-out-6s95v4w1y">
+                                        <div class="side-nav [modifier class]" id="slide-out-h0j557pcu">
  <div class="userView">
    <img class="background" src="kss-assets/user-background.jpg">
    <a href="#!user"><img class="circle" src="kss-assets/avatar.png"></a>
@@ -480,7 +535,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    <li><a href="#!">Fifteenth item</a></li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-6s95v4w1y" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-h0j557pcu" class="button-collapse">Click to view the example</a>
                                     </div>
 
                                         <div class="example" style="margin-left: 2em;">
@@ -488,7 +543,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                                                 .side-nav--fixed-header
                                             </div>
                                                 <p>Allows to put a fixed div upon the ul at the top of the side-nav. It will be sticky and does not scroll. This can be e.g. the <code>.userView</code> or the <code>.side-nav__logo</code>.</p>
-                                                <div class="side-nav side-nav--fixed-header" id="slide-out-il73akvmr">
+                                                <div class="side-nav side-nav--fixed-header" id="slide-out-nlnjzyr3c">
  <div class="userView">
    <img class="background" src="kss-assets/user-background.jpg">
    <a href="#!user"><img class="circle" src="kss-assets/avatar.png"></a>
@@ -546,7 +601,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    <li><a href="#!">Fifteenth item</a></li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-il73akvmr" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-nlnjzyr3c" class="button-collapse">Click to view the example</a>
                                         </div>
                                         <div class="example" style="margin-left: 2em;">
                                             <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
@@ -555,7 +610,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                                                 <p>Stays always open on all devices except the small ones. </p>
                                                 <p>Example could not be shown because it would override the navigation</p>
                                         </div>
-                                    <pre><code class="language-html">&lt;div class&#x3D;&quot;side-nav [modifier class]&quot; id&#x3D;&quot;slide-out-53yp2m0k1&quot;&gt;
+                                    <pre><code class="language-html">&lt;div class&#x3D;&quot;side-nav [modifier class]&quot; id&#x3D;&quot;slide-out-1e5rfuqny&quot;&gt;
  &lt;div class&#x3D;&quot;userView&quot;&gt;
    &lt;img class&#x3D;&quot;background&quot; src&#x3D;&quot;kss-assets/user-background.jpg&quot;&gt;
    &lt;a href&#x3D;&quot;#!user&quot;&gt;&lt;img class&#x3D;&quot;circle&quot; src&#x3D;&quot;kss-assets/avatar.png&quot;&gt;&lt;/a&gt;
@@ -613,7 +668,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;Fifteenth item&lt;/a&gt;&lt;/li&gt;
  &lt;/ul&gt;
 &lt;/div&gt;
-&lt;a href&#x3D;&quot;#!&quot; data-activates&#x3D;&quot;slide-out-53yp2m0k1&quot; class&#x3D;&quot;button-collapse&quot;&gt;Click to view the example&lt;/a&gt;</code></pre>
+&lt;a href&#x3D;&quot;#!&quot; data-activates&#x3D;&quot;slide-out-1e5rfuqny&quot; class&#x3D;&quot;button-collapse&quot;&gt;Click to view the example&lt;/a&gt;</code></pre>
                                 </div>
 
                                 <div class="kss-source kss-style">
@@ -645,7 +700,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                                                 Default styling
                                             </div>
 
-                                        <div class="side-nav" id="slide-out-a2h161gf0">
+                                        <div class="side-nav" id="slide-out-8v79yi676">
  <div class="side-nav__logo [modifier class]">
    <a href="#1" class="side-nav__logo-link waves-effect">
      <div>
@@ -664,7 +719,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    <li><a href="#!">Third item</a></li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-a2h161gf0" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-8v79yi676" class="button-collapse">Click to view the example</a>
                                     </div>
 
                                         <div class="example" style="margin-left: 2em;">
@@ -672,7 +727,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                                                 .side-nav__logo--center-align
                                             </div>
                                                 <p>Horizontally centered version of the logo.</p>
-                                                <div class="side-nav" id="slide-out-vmlu6hkdn">
+                                                <div class="side-nav" id="slide-out-m4ozv97si">
  <div class="side-nav__logo side-nav__logo--center-align">
    <a href="#1" class="side-nav__logo-link waves-effect">
      <div>
@@ -691,14 +746,14 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    <li><a href="#!">Third item</a></li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-vmlu6hkdn" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-m4ozv97si" class="button-collapse">Click to view the example</a>
                                         </div>
                                         <div class="example" style="margin-left: 2em;">
                                             <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
                                                 .side-nav__logo--right-align
                                             </div>
                                                 <p>Horizontally right aligned version of the logo.</p>
-                                                <div class="side-nav" id="slide-out-t6o45bf97">
+                                                <div class="side-nav" id="slide-out-uc1fddgfg">
  <div class="side-nav__logo side-nav__logo--right-align">
    <a href="#1" class="side-nav__logo-link waves-effect">
      <div>
@@ -717,9 +772,9 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    <li><a href="#!">Third item</a></li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-t6o45bf97" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-uc1fddgfg" class="button-collapse">Click to view the example</a>
                                         </div>
-                                    <pre><code class="language-html">&lt;div class&#x3D;&quot;side-nav&quot; id&#x3D;&quot;slide-out-oohiob0o0&quot;&gt;
+                                    <pre><code class="language-html">&lt;div class&#x3D;&quot;side-nav&quot; id&#x3D;&quot;slide-out-aznhxftnd&quot;&gt;
  &lt;div class&#x3D;&quot;side-nav__logo [modifier class]&quot;&gt;
    &lt;a href&#x3D;&quot;#1&quot; class&#x3D;&quot;side-nav__logo-link waves-effect&quot;&gt;
      &lt;div&gt;
@@ -738,7 +793,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    &lt;li&gt;&lt;a href&#x3D;&quot;#!&quot;&gt;Third item&lt;/a&gt;&lt;/li&gt;
  &lt;/ul&gt;
 &lt;/div&gt;
-&lt;a href&#x3D;&quot;#!&quot; data-activates&#x3D;&quot;slide-out-oohiob0o0&quot; class&#x3D;&quot;button-collapse&quot;&gt;Click to view the example&lt;/a&gt;</code></pre>
+&lt;a href&#x3D;&quot;#!&quot; data-activates&#x3D;&quot;slide-out-aznhxftnd&quot; class&#x3D;&quot;button-collapse&quot;&gt;Click to view the example&lt;/a&gt;</code></pre>
                                 </div>
 
                                 <div class="kss-source kss-style">
@@ -766,7 +821,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                                                 Default styling
                                             </div>
 
-                                        <div class="side-nav" id="slide-out-v91jb42ir">
+                                        <div class="side-nav" id="slide-out-7uyay8lsd">
  <ul class="collapsible">
    <li class="active">
      <a class="collapsible-header active">
@@ -798,7 +853,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    </li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-v91jb42ir" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-7uyay8lsd" class="button-collapse">Click to view the example</a>
                                     </div>
 
                                         <div class="example" style="margin-left: 2em;">
@@ -806,7 +861,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                                                 .side-nav__toggle--right
                                             </div>
                                                 <p>Moves the Icon to the right side of the menu.</p>
-                                                <div class="side-nav" id="slide-out-7zos46yxi">
+                                                <div class="side-nav" id="slide-out-59e1zhor2">
  <ul class="collapsible">
    <li class="active">
      <a class="collapsible-header active">
@@ -838,14 +893,14 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    </li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-7zos46yxi" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-59e1zhor2" class="button-collapse">Click to view the example</a>
                                         </div>
                                         <div class="example" style="margin-left: 2em;">
                                             <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
                                                 .side-nav__toggle--animated
                                             </div>
                                                 <p>Adds an animation for opening and closing.</p>
-                                                <div class="side-nav" id="slide-out-5nl04g6on">
+                                                <div class="side-nav" id="slide-out-1904env9x">
  <ul class="collapsible">
    <li class="active">
      <a class="collapsible-header active">
@@ -877,9 +932,9 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    </li>
  </ul>
 </div>
-<a href="#!" data-activates="slide-out-5nl04g6on" class="button-collapse">Click to view the example</a>
+<a href="#!" data-activates="slide-out-1904env9x" class="button-collapse">Click to view the example</a>
                                         </div>
-                                    <pre><code class="language-html">&lt;div class&#x3D;&quot;side-nav&quot; id&#x3D;&quot;slide-out-ei8gglp1r&quot;&gt;
+                                    <pre><code class="language-html">&lt;div class&#x3D;&quot;side-nav&quot; id&#x3D;&quot;slide-out-ncdjulx5a&quot;&gt;
  &lt;ul class&#x3D;&quot;collapsible&quot;&gt;
    &lt;li class&#x3D;&quot;active&quot;&gt;
      &lt;a class&#x3D;&quot;collapsible-header active&quot;&gt;
@@ -911,7 +966,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
    &lt;/li&gt;
  &lt;/ul&gt;
 &lt;/div&gt;
-&lt;a href&#x3D;&quot;#!&quot; data-activates&#x3D;&quot;slide-out-ei8gglp1r&quot; class&#x3D;&quot;button-collapse&quot;&gt;Click to view the example&lt;/a&gt;</code></pre>
+&lt;a href&#x3D;&quot;#!&quot; data-activates&#x3D;&quot;slide-out-ncdjulx5a&quot; class&#x3D;&quot;button-collapse&quot;&gt;Click to view the example&lt;/a&gt;</code></pre>
                                 </div>
 
                                 <div class="kss-source kss-style">
@@ -1000,7 +1055,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                 });
                         index.add({
                             'header': "Navbar",
-                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p  ",
+                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p   p To initialize the plugin you need to include  code js waterfall-nav.js  code  and call  code $( .nav-waterfall-2x ).waterfallNav();  code .  p  ",
                             "url": "section-layout.html#kssref-layout-navbar"
                         });
                         index.add({
@@ -1049,13 +1104,18 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss"
                         });
                         index.add({
+                            'header': "Breadcrumb in List",
+                            'description': " p Breadcrumbs cannot be used within an  code li  code  because they are block-elements (and therefore displayed one below the other) and with too much space between them.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-breadcrumb"
+                        });
+                        index.add({
                             'header': "Intention after fixed SideNav",
                             'description': " p A fixed SideNav hides content at the left. To prevent this, the  code nav  code  and the main content (use  code .container  code  or  code .main  code ) will be automatically intended if it is placed after the fixed navbar.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav"
                         });
                         index.add({
                             'header': "Screen margins",
-                            'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for the  code .nav-wrapper  code  and the  code .main  code .  p  ",
+                            'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for  code .main  code . Within the  code .nav-wrapper  code  this has already been added to the ul elements, but not to the  code brand-logo  code , so we add it here also.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-screen-margins"
                         });
             $('#search').autocomplete({data: {
@@ -1079,6 +1139,7 @@ the initialization with jQuery and the Dropdown HTML Structure.</p>
                             "Adjusted Font size": null,
                             "SideNav Toggle Font-Size": null,
                             "MaterializeCSS": null,
+                            "Breadcrumb in List": null,
                             "Intention after fixed SideNav": null,
                             "Screen margins": null,
             }});

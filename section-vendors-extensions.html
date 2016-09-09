@@ -222,10 +222,31 @@ with other frameworks without adding new classes.</p>
                                     Source: <code>vendors-extensions/_materialize.scss</code>, line 1
                                 </div>
                         </div>
+                        <div id="kssref-vendors-extensions-materializecss-breadcrumb" class="section scrollspy">
+                            <h3>
+                                <a href="#kssref-vendors-extensions-materializecss-breadcrumb">
+                                    4.2.1 Breadcrumb in List
+                                </a>
+                            </h3>
+
+                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                    <p>Breadcrumbs cannot be used within an <code>li</code> because they are block-elements
+(and therefore displayed one below the other) and with too much space between them.</p>
+
+                                </div>
+
+
+
+
+
+                                <div class="kss-source kss-style">
+                                    Source: <code>vendors-extensions/_materialize.scss</code>, line 107
+                                </div>
+                        </div>
                         <div id="kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav" class="section scrollspy">
                             <h3>
                                 <a href="#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav">
-                                    4.2.1 Intention after fixed SideNav
+                                    4.2.2 Intention after fixed SideNav
                                 </a>
                             </h3>
 
@@ -247,14 +268,16 @@ if it is placed after the fixed navbar.</p>
                         <div id="kssref-vendors-extensions-materializecss-screen-margins" class="section scrollspy">
                             <h3>
                                 <a href="#kssref-vendors-extensions-materializecss-screen-margins">
-                                    4.2.2 Screen margins
+                                    4.2.3 Screen margins
                                 </a>
                             </h3>
 
                                 <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
                                     <p>The Material Design Guidelines mention
 <a href="https://material.google.com/layout/metrics-keylines.html">a screen edge left and right margin of 16dp</a>.</p>
-<p>This has been added for the <code>.nav-wrapper</code> and the <code>.main</code>.</p>
+<p>This has been added for <code>.main</code>.
+Within the <code>.nav-wrapper</code> this has already been added to the ul elements, but not to the <code>brand-logo</code>, so we add it
+here also.</p>
 
                                 </div>
 
@@ -274,8 +297,9 @@ if it is placed after the fixed navbar.</p>
                             <li><a href="#kssref-vendors-extensions-font-awesome-adjusted-font-size">4.1.1 Adjusted Font size</a></li>
                             <li><a href="#kssref-vendors-extensions-font-awesome-side-nav-toggle">4.1.2 SideNav Toggle Font-Size</a></li>
                             <li><a href="#kssref-vendors-extensions-materializecss">4.2 MaterializeCSS</a></li>
-                            <li><a href="#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav">4.2.1 Intention after fixed SideNav</a></li>
-                            <li><a href="#kssref-vendors-extensions-materializecss-screen-margins">4.2.2 Screen margins</a></li>
+                            <li><a href="#kssref-vendors-extensions-materializecss-breadcrumb">4.2.1 Breadcrumb in List</a></li>
+                            <li><a href="#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav">4.2.2 Intention after fixed SideNav</a></li>
+                            <li><a href="#kssref-vendors-extensions-materializecss-screen-margins">4.2.3 Screen margins</a></li>
                     </ul>
                 </div>
             </div>
@@ -349,7 +373,7 @@ if it is placed after the fixed navbar.</p>
                 });
                         index.add({
                             'header': "Navbar",
-                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p  ",
+                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p   p To initialize the plugin you need to include  code js waterfall-nav.js  code  and call  code $( .nav-waterfall-2x ).waterfallNav();  code .  p  ",
                             "url": "section-layout.html#kssref-layout-navbar"
                         });
                         index.add({
@@ -398,13 +422,18 @@ if it is placed after the fixed navbar.</p>
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss"
                         });
                         index.add({
+                            'header': "Breadcrumb in List",
+                            'description': " p Breadcrumbs cannot be used within an  code li  code  because they are block-elements (and therefore displayed one below the other) and with too much space between them.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-breadcrumb"
+                        });
+                        index.add({
                             'header': "Intention after fixed SideNav",
                             'description': " p A fixed SideNav hides content at the left. To prevent this, the  code nav  code  and the main content (use  code .container  code  or  code .main  code ) will be automatically intended if it is placed after the fixed navbar.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav"
                         });
                         index.add({
                             'header': "Screen margins",
-                            'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for the  code .nav-wrapper  code  and the  code .main  code .  p  ",
+                            'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for  code .main  code . Within the  code .nav-wrapper  code  this has already been added to the ul elements, but not to the  code brand-logo  code , so we add it here also.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-screen-margins"
                         });
             $('#search').autocomplete({data: {
@@ -428,6 +457,7 @@ if it is placed after the fixed navbar.</p>
                             "Adjusted Font size": null,
                             "SideNav Toggle Font-Size": null,
                             "MaterializeCSS": null,
+                            "Breadcrumb in List": null,
                             "Intention after fixed SideNav": null,
                             "Screen margins": null,
             }});
