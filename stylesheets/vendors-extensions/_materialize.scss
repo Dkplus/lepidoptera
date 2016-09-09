@@ -37,8 +37,7 @@
 // [a screen edge left and right margin of 16dp](https://material.google.com/layout/metrics-keylines.html).
 //
 // This has been added for `.main`.
-// Within the `.nav-wrapper` this has already been added to the ul elements, but not to the `brand-logo`, so we add it
-// here also.
+// Within the `.nav-wrapper` this must be applied to each element on its on because rows already have this.
 //
 // Styleguide vendors-extensions.materializecss.screen-margins
 //
@@ -46,8 +45,18 @@ nav .nav-wrapper .brand-logo {
   padding-left: 16px;
 }
 
-.main {
+nav .nav-wrapper .button-collapse,
+nav .nav-wrapper > ul,
+body > .main {
   padding: 0 16px;
+}
+
+nav .nav-wrapper .breadcrumb:first-child {
+  padding-left: 16px;
+}
+
+nav .nav-wrapper .breadcrumb:last-child {
+  padding-right: 16px;
 }
 
 //
@@ -112,7 +121,6 @@ nav .nav-wrapper > .row > .col {
 //
 // Styleguide vendors-extensions.materializecss.breadcrumb
 //
-
 nav ul .breadcrumb {
   display: inline-block;
   padding: 0;
@@ -120,6 +128,7 @@ nav ul .breadcrumb {
   &:first-child {
     padding-left: 15px;
   }
+
   &:last-child {
     padding-right: 15px;
   }
