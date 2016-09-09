@@ -18,24 +18,27 @@
 // `animation-staggered` and `transition-staggered` allow a list to appear staggered one by one.
 // They are no motions itself but it must be combined with a motion.
 //
+// $item-delay - Delay between each item (default: `0.1s`).
+// $base-delay - Delay until the first `li` animates (default: `0s`).
+//
 // Styleguide abstracts.mixins.motions.staggered
 //
-@mixin animation-staggered {
+@mixin animation-staggered($item-delay: 0.1s, $base-delay: 0s) {
   @for $i from 2 to 40 {
     $selector: 'li:nth-child(' + $i + ')';
 
     @at-root #{selector-replace(&, 'li', $selector)} {
-      @include animation-delay(0s + (($i - 1) / 10));
+      @include animation-delay($base-delay + (($i - 1) * $item-delay));
     }
   }
 }
 
-@mixin transition-staggered {
+@mixin transition-staggered($item-delay: 0.1s, $base-delay: 0s) {
   @for $i from 2 to 40 {
     $selector: 'li:nth-child(' + $i + ')';
 
     @at-root #{selector-replace(&, 'li', $selector)} {
-      @include transition-delay(0s + (($i - 1) / 10));
+      @include transition-delay($base-delay + (($i - 1) * $item-delay));
     }
   }
 }
