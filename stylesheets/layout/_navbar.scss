@@ -14,7 +14,7 @@
 // Markup:
 // <nav class="{{modifier_class}}">
 //  <div class="nav-wrapper row">
-//    <ul class="left col s6 nav--waterfall-shrunk__hidden">
+//    <ul class="left col s6 navbar--waterfall-shrunk__hidden">
 //      <li>
 //        <a href="#!" class="breadcrumb">Here</a>
 //        <a href="#!" class="breadcrumb">Are</a>
@@ -23,7 +23,7 @@
 //    </ul>
 //    <ul class="right col s6">
 //      <li><a href="#!">Button without an action</a></li>
-//      <li><a href="#!" onclick="$(this).parents('nav').toggleClass('nav--waterfall-shrunk');" class="btn">Click to shrink</a></li>
+//      <li><a href="#!" onclick="$(this).parents('nav').toggleClass('navbar--waterfall-shrunk');" class="btn">Click to shrink</a></li>
 //      <li><a href="#!">(Waterfall only)</a></li>
 //    </ul>
 //    <ul class="col s6">
@@ -35,21 +35,21 @@
 //  </div>
 // </nav>
 //
-// .nav--waterfall-2x - Allows the usage of a bigger (2x) navbar that shrinks on scrolling.
-//                      This effect is triggered at the example by a button-click.
-// .nav--waterfall-3x - Allows the usage of a bigger (3x) navbar that shrinks on scrolling.
-//                      This effect is triggered at the example by a button-click.
-// .nav--waterfall-4x - Allows the usage of a bigger (4x) navbar that shrinks on scrolling.
-//                      This effect is triggered at the example by a button-click.
-// .nav--waterfall-5x - Allows the usage of a bigger (5x) navbar that shrinks on scrolling.
-//                      This effect is triggered at the example by a button-click.
+// .navbar--waterfall-2x - Allows the usage of a bigger (2x) navbar that shrinks on scrolling.
+//                         This effect is triggered at the example by a button-click.
+// .navbar--waterfall-3x - Allows the usage of a bigger (3x) navbar that shrinks on scrolling.
+//                         This effect is triggered at the example by a button-click.
+// .navbar--waterfall-4x - Allows the usage of a bigger (4x) navbar that shrinks on scrolling.
+//                         This effect is triggered at the example by a button-click.
+// .navbar--waterfall-5x - Allows the usage of a bigger (5x) navbar that shrinks on scrolling.
+//                         This effect is triggered at the example by a button-click.
 //
 // Styleguide layout.navbar
 //
 
 @for $i from 2 to 6 {
-  .nav--waterfall-#{$i}x,
-  .nav--waterfall-#{$i} nav {
+  .navbar--waterfall-#{$i}x,
+  .navbar--waterfall-#{$i} nav {
     @include transition(0.3s height);
     height: $i * $navbar-height;
 
@@ -59,8 +59,8 @@
   }
 }
 
-.nav--waterfall-shrunk,
-.nav--waterfall-shrunk nav {
+.navbar--waterfall-shrunk,
+.navbar--waterfall-shrunk nav {
   @include transition(0.3s height);
   height: $navbar-height;
 
@@ -68,7 +68,7 @@
     height: 100%;
   }
 
-  .nav--waterfall-shrunk__hidden {
+  .navbar--waterfall-shrunk__hidden {
     display: none;
   }
 }

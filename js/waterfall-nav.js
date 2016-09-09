@@ -20,9 +20,9 @@
             didScroll = false;
 
             if (window.pageYOffset > options.scrollOffset) {
-                selector.addClass('nav--waterfall-shrunk');
+                selector.addClass('navbar--waterfall-shrunk');
             } else {
-                selector.removeClass('nav--waterfall-shrunk');
+                selector.removeClass('navbar--waterfall-shrunk');
             }
         }, 100);
     };
