@@ -13355,8 +13355,8 @@ nav ul .breadcrumb:last-child {
 }
 
 /* line 51, layout/_navbar.scss */
-.nav--waterfall-2x,
-.nav--waterfall-2 nav {
+.navbar--waterfall-2x,
+.navbar--waterfall-2 nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13364,14 +13364,14 @@ nav ul .breadcrumb:last-child {
   height: 128px;
 }
 /* line 56, layout/_navbar.scss */
-.nav--waterfall-2x .nav-wrapper > ul,
-.nav--waterfall-2 nav .nav-wrapper > ul {
+.navbar--waterfall-2x .nav-wrapper > ul,
+.navbar--waterfall-2 nav .nav-wrapper > ul {
   height: 50%;
 }
 
 /* line 51, layout/_navbar.scss */
-.nav--waterfall-3x,
-.nav--waterfall-3 nav {
+.navbar--waterfall-3x,
+.navbar--waterfall-3 nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13379,14 +13379,14 @@ nav ul .breadcrumb:last-child {
   height: 192px;
 }
 /* line 56, layout/_navbar.scss */
-.nav--waterfall-3x .nav-wrapper > ul,
-.nav--waterfall-3 nav .nav-wrapper > ul {
+.navbar--waterfall-3x .nav-wrapper > ul,
+.navbar--waterfall-3 nav .nav-wrapper > ul {
   height: 33.33333%;
 }
 
 /* line 51, layout/_navbar.scss */
-.nav--waterfall-4x,
-.nav--waterfall-4 nav {
+.navbar--waterfall-4x,
+.navbar--waterfall-4 nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13394,14 +13394,14 @@ nav ul .breadcrumb:last-child {
   height: 256px;
 }
 /* line 56, layout/_navbar.scss */
-.nav--waterfall-4x .nav-wrapper > ul,
-.nav--waterfall-4 nav .nav-wrapper > ul {
+.navbar--waterfall-4x .nav-wrapper > ul,
+.navbar--waterfall-4 nav .nav-wrapper > ul {
   height: 25%;
 }
 
 /* line 51, layout/_navbar.scss */
-.nav--waterfall-5x,
-.nav--waterfall-5 nav {
+.navbar--waterfall-5x,
+.navbar--waterfall-5 nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13409,14 +13409,14 @@ nav ul .breadcrumb:last-child {
   height: 320px;
 }
 /* line 56, layout/_navbar.scss */
-.nav--waterfall-5x .nav-wrapper > ul,
-.nav--waterfall-5 nav .nav-wrapper > ul {
+.navbar--waterfall-5x .nav-wrapper > ul,
+.navbar--waterfall-5 nav .nav-wrapper > ul {
   height: 20%;
 }
 
 /* line 62, layout/_navbar.scss */
-.nav--waterfall-shrunk,
-.nav--waterfall-shrunk nav {
+.navbar--waterfall-shrunk,
+.navbar--waterfall-shrunk nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
   -webkit-transition: height 0.3s;
@@ -13424,13 +13424,13 @@ nav ul .breadcrumb:last-child {
   height: 64px;
 }
 /* line 67, layout/_navbar.scss */
-.nav--waterfall-shrunk .nav-wrapper > ul,
-.nav--waterfall-shrunk nav .nav-wrapper > ul {
+.navbar--waterfall-shrunk .nav-wrapper > ul,
+.navbar--waterfall-shrunk nav .nav-wrapper > ul {
   height: 100%;
 }
 /* line 71, layout/_navbar.scss */
-.nav--waterfall-shrunk .nav--waterfall-shrunk__hidden,
-.nav--waterfall-shrunk nav .nav--waterfall-shrunk__hidden {
+.navbar--waterfall-shrunk .navbar--waterfall-shrunk__hidden,
+.navbar--waterfall-shrunk nav .navbar--waterfall-shrunk__hidden {
   display: none;
 }
 
