@@ -9,17 +9,28 @@
 // Modifiers should be added to the `nav` element if it is not wrapped by a `.navbar-fixed`.
 // Otherwise it should be added to the `.navbar-fixed` wrapper.
 //
+// To initialize the plugin you need to include `js/waterfall-nav.js` and call `$('.nav-waterfall-2x').waterfallNav();`.
+//
 // Markup:
 // <nav class="{{modifier_class}}">
-//  <div class="nav-wrapper">
-//    <a href="#" class="brand-logo">Logo</a>
-//    <ul class="right">
+//  <div class="nav-wrapper row">
+//    <ul class="left col s6 nav--waterfall-shrunk__hidden">
+//      <li>
+//        <a href="#!" class="breadcrumb">Here</a>
+//        <a href="#!" class="breadcrumb">Are</a>
+//        <a href="#!" class="breadcrumb">We</a>
+//      </li>
+//    </ul>
+//    <ul class="right col s6">
 //      <li><a href="#!">Button without an action</a></li>
-//      <li><a href="#!" onclick="console.log($(this).parents('nav').toggleClass('nav--waterfall-shrunk'));" class="btn">Click to shrink</a></li>
+//      <li><a href="#!" onclick="$(this).parents('nav').toggleClass('nav--waterfall-shrunk');" class="btn">Click to shrink</a></li>
 //      <li><a href="#!">(Waterfall only)</a></li>
 //    </ul>
-//    <ul>
-//      <li><a href="#!">Second row</a></li>
+//    <ul class="col s6">
+//      <li><a href="#!">Second</a></li>
+//      <li><a href="#!">More</a></li>
+//      <li><a href="#!">Important</a></li>
+//      <li><a href="#!">Row</a></li>
 //    </ul>
 //  </div>
 // </nav>
