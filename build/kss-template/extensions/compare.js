@@ -6,4 +6,9 @@ module.exports = function (Handlebars) {
             ? options.fn(this)
             : options.inverse(this);
     });
+    Handlebars.registerHelper('if_eq', function (var1, var2, options) {
+        return var1 == var2
+            ? options.fn(this)
+            : options.inverse(this);
+    });
 };

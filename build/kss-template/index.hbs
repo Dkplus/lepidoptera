@@ -46,13 +46,13 @@
             </li>
         {{/each}}
     </ul>
-    <div class="navbar-fixed">
+    <div class="navbar-fixed navbar--waterfall-2x">
         <nav>
             <div class="nav-wrapper">
                 <ul>
                     <li><a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a></li>
-                    <li><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
-                    <li class="right">
+                    <li class="navbar--waterfall-shrunk__hidden"><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
+                    <li class="navbar--waterfall-shrunk__hidden right">
                         <form id="js-search-form" class="hide-on-small-and-down">
                             <div class="input-field">
                                 <input id="search" type="search" required class="autocomplete">
@@ -66,6 +66,29 @@
         </nav>
     </div>
     <div class="main">
+    <div class="card card--with-toolbar">
+        <div class="card__toolbar">
+            {{#if homepage}}
+                <h2>Lepidoptera</h2>
+            {{else}}
+                {{#each sections}}
+                    {{#if_eq depth 1}}
+                        {{#if fontawesome}}
+                            <i class="fa fa-{{fontawesome}}"></i>
+                        {{else if material}}
+                            <i class="material-icons">{{material}}</i>
+                        {{/if}}
+                        <h2>{{header}}</h2>
+                    {{/if_eq}}
+                {{/each}}
+            {{/if}}
+            <ul class="card__toolbar-actions">
+                <li><a href="#!"><i class="material-icons">done_all</i></a></li>
+                <li><a href="#!"><i class="material-icons">delete</i></a></li>
+                <li><a href="#!"><i class="material-icons">more_vert</i></a></li>
+            </ul>
+        </div>
+        <div class="card-content">
         {{#if homepage}}
             <div id="kssref-0" class="kss-section kss-section--depth-0 kss-overview kss-style">
                 {{{homepage}}}
@@ -172,13 +195,19 @@
                 </div>
             </div>
         {{/if}}
+        </div>
+    </div>
     </div>
 
     <script type="text/javascript" src="kss-assets/vendors/materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="kss-assets/card-toolbar.js"></script>
+    <script type="text/javascript" src="kss-assets/waterfall-nav.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/prism/prism.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
     <script type="text/javascript">
         $(function () {
+            $('.card--with-toolbar').cardToolbar();
+            $('.navbar-fixed').waterfallNav();
             $('.button-collapse').sideNav({edge: 'right'});
             $('.button-collapse-left').sideNav();
             $('.dropdown-button-click').dropdown();

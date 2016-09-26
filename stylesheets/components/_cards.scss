@@ -1,0 +1,76 @@
+@import '../abstracts/mixins/motions';
+
+//
+// Cards
+//
+// Cards from MaterializeCSS. For usage information please have a look at the
+// [documentation of MaterializeCSS](http://materializecss.com/cards.html).
+//
+// Lepidoptera adds a toolbar to the cards.
+//
+// Markup:
+// <div class="card">
+//  <div class="card__toolbar">
+//    <h2>Some title</h2>
+//    <ul class="card__toolbar-actions">
+//      <li><a href="#!"><i class="material-icons">delete</i></a></li>
+//      <li><a href="#!"><i class="material-icons">more_vert</i></a></li>
+//    </ul>
+//  </div>
+//  <div class="card-content">
+//    <p>
+//      I am a very simple card. I am good at containing small bits of information.
+//      I am convenient because I require little markup to use effectively.
+//    </p>
+//  </div>
+// </div>
+//
+// Styleguide components.cards
+//
+
+.card__toolbar {
+  background-color: inherit;
+  padding: 20px;
+  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+  transition: 0.3s;
+  position: relative;
+  color: color('grey', 'darken-1');
+  height: $navbar-height-mobile;
+
+  @media #{$medium-and-up} {
+    height: $navbar-height;
+  }
+
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    display: inline;
+    font-weight: normal;
+    font-size: 24px;
+  }
+}
+
+.card__toolbar .card__toolbar-actions {
+  float: right;
+  margin: 0;
+
+  li {
+    float: left;
+    padding: 0 16px;
+  }
+
+  li:first-child {
+    padding-left: 0;
+  }
+
+  li:last-child {
+    padding-right: 0;
+  }
+
+  li a {
+    color: color('grey', 'darken-1');
+  }
+}
