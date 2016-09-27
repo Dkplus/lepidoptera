@@ -14224,19 +14224,23 @@ body {
 /* line 28, _shame.scss */
 .card--with-toolbar {
   margin-top: -64px;
-  z-index: 1000;
+  z-index: 998;
 }
 /* line 32, _shame.scss */
-.card--with-toolbar.scrolled--level1, .card--with-toolbar.scrolled--level2 {
+.card--with-toolbar.scrolled {
   z-index: auto;
 }
-/* line 37, _shame.scss */
+/* line 35, _shame.scss */
+.card--with-toolbar.upscrolled {
+  z-index: auto;
+}
+/* line 39, _shame.scss */
 .card--with-toolbar > .card__toolbar {
-  z-index: 1000;
+  z-index: 998;
 }
 
-/* line 42, _shame.scss */
-.scrolled--level1 > .card__toolbar {
+/* line 44, _shame.scss */
+.scrolled > .card__toolbar {
   background-color: #ee6e73;
   color: #fff;
   transition: 0.3s top, 0.3s left, 0.3s width;
@@ -14244,9 +14248,19 @@ body {
   height: 64px;
   position: fixed;
 }
-/* line 50, _shame.scss */
-.scrolled--level1 > .card__toolbar li a {
+/* line 52, _shame.scss */
+.scrolled > .card__toolbar li a {
   color: #fff;
+}
+/* line 56, _shame.scss */
+.upscrolled > .card__toolbar {
+  transition: 0.3s top, 0.3s left, 0.3s width, 0.3s background-color, 0.3s color;
+  position: fixed;
+}
+
+/* line 62, _shame.scss */
+#sidenav-overlay {
+  z-index: 998;
 }
 
 /* line 1, themes/kss/layout/_side-nav.scss */
