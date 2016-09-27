@@ -27,19 +27,21 @@
 }*/
 .card--with-toolbar {
   margin-top: -64px;
-  z-index: 1000;
+  z-index: 998;
 
-  &.scrolled--level1,
-  &.scrolled--level2 {
+  &.scrolled {
+    z-index: auto;
+  }
+  &.upscrolled {
     z-index: auto;
   }
 
   > .card__toolbar {
-    z-index: 1000;
+    z-index: 998;
   }
 }
 .card__toolbar {
-  .scrolled--level1 > & {
+  .scrolled > & {
     background-color: $primary-color;
     color: $navbar-font-color;
     transition: 0.3s top, 0.3s left, 0.3s width;
@@ -51,4 +53,12 @@
       color: #fff;
     }
   }
+  .upscrolled > & {
+    transition: 0.3s top, 0.3s left, 0.3s width, 0.3s background-color, 0.3s color;
+    position: fixed;
+  }
+}
+
+#sidenav-overlay {
+  z-index: 998;
 }

@@ -1,5 +1,9 @@
 (function($) {
-    var applyCss = function (element, css) {
+    var cssPx = function ($element, property) {
+            "use strict";
+            return parseInt($element.css(property));
+        },
+        applyCss = function (element, css) {
             "use strict";
             for (var prop in css) {
                 if (css.hasOwnProperty(prop)) {
@@ -15,74 +19,152 @@
                     completion();
                 }
             });
+        },
+        detectMinimalScrolledToolbarDimension = function (selector, toolbar) {
+            "use strict";
+            var result = selector.offset();
+            result['width'] = toolbar.innerWidth();
+            return result;
+        },
+        detectFurtherScrolledToolbarDimension = function () {
+            "use strict";
+            var menuButton = $('.button-collapse:visible:first').parent(),
+                nav = $('nav'),
+                result;
+
+            if (menuButton.length > 0 && menuButton.position().left < 50) {
+                result = menuButton.position();
+                result['left'] += menuButton.width();
+                result['width'] = nav.innerWidth()
+                    - cssPx(nav, 'padding-left')
+                    - cssPx(nav, 'padding-right')
+                    - menuButton.width()
+                    - 16;
+                return result;
+            }
+
+            result = nav.position();
+            result['left'] += cssPx(nav, 'margin-left') + cssPx(nav, 'padding-left');
+            result['top'] += cssPx(nav, 'margin-top') + cssPx(nav, 'padding-top');
+            result['width'] = nav.innerWidth() - cssPx(nav, 'padding-left') - cssPx(nav, 'padding-right');
+
+            return result;
+        },
+        detectCurrentScrollingLevel = function (options) {
+            "use strict";
+            if (window.pageYOffset > options.scrollOffset) {
+                return 2;
+            } else if (window.pageYOffset > 0) {
+                return 1;
+            }
+            return 0;
         };
 
 
     $.cardToolbar = function (selector, options) {
         "use strict";
-        var defaults = {
-                scrollOffset: 50 // offset - 200 allows elements near bottom of page to scroll
-            },
-            nonScrolledDimensions,
-            scrolledDimension,
-            nav,
-            toolbar;
-        options = $.extend(defaults, options);
         selector = $(selector);
-        toolbar = selector.find('.card__toolbar').first();
-        nonScrolledDimensions = selector.offset();
-        nonScrolledDimensions['width'] = toolbar.innerWidth();
-        nav = $('nav');
-        scrolledDimension = nav.position();
-        scrolledDimension['left'] += parseInt(nav.css('margin-left')) + parseInt(nav.css('padding-left'));
-        scrolledDimension['top'] += parseInt(nav.css('margin-top')) + parseInt(nav.css('padding-top'));
-        scrolledDimension['width'] = nav.innerWidth() - parseInt(nav.css('padding-left')) - parseInt(nav.css('padding-right'));
+        var defaults = {scrollOffset: 50},
+            toolbar = selector.find('.card__toolbar').first(),
+            minimalScrolledToolbarDimension = detectMinimalScrolledToolbarDimension(selector, toolbar),
+            furtherScrolledToolbarDimension = detectFurtherScrolledToolbarDimension(),
+            nonScrolledToolbarDimension = {top: '', left: '', width: ''};
+        options = $.extend(defaults, options);
+        console.log(nonScrolledToolbarDimension, minimalScrolledToolbarDimension, furtherScrolledToolbarDimension);
 
+        var lastPosition = window.pageYOffset,
+            transformations,
+            lastStatus = 'notscrolled';
 
-        var scrollFunction = function() {
-            var levelBefore = selector.hasClass('scrolled--level1') ? 1 : 0,
-                levelAfter = 0;
-            if (selector.hasClass('scrolled--level2')) {
-                ++levelBefore;
-            }
-
-            if (window.pageYOffset > options.scrollOffset) {
-                levelAfter = 2;
-            } else if (window.pageYOffset > 0) {
-                levelAfter = 1;
-            }
-
-            if (levelAfter === levelBefore) {
-                return;
-            }
-
-            if (levelBefore < levelAfter) {
-                selector.addClass('scrolled--level1');
-                applyCss(toolbar, nonScrolledDimensions);
-
-                if (levelAfter > 1) {
-                    selector.addClass('scrolled--level2');
-                    animateCss(toolbar, scrolledDimension, 0.3);
+        transformations = {
+            notscrolled : {
+                notscrolled: function () { /* nothing to do */ },
+                upscrolled: function () {
+                    selector.removeClass('upscrolled');
+                    applyCss(toolbar, nonScrolledToolbarDimension);
+                },
+                minimalscrolled: function () {
+                    selector.removeClass('scrolled');
+                    applyCss(toolbar, nonScrolledToolbarDimension);
+                },
+                furtherscrolled: function () {
+                    selector.removeClass('scrolled');
+                    applyCss(toolbar, nonScrolledToolbarDimension);
                 }
-                return;
+            },
+            upscrolled: {
+                notscrolled: function () {
+                    selector.addClass('upscrolled');
+                    applyCss(toolbar, minimalScrolledToolbarDimension);
+                },
+                upscrolled: function () { /* nothing to do */ },
+                minimalscrolled: function () {
+                    throw new Error("Should not be possible");
+                },
+                furtherscrolled: function () {
+                    animateCss(toolbar, minimalScrolledToolbarDimension, 0.3, function () {
+                        selector.removeClass('scrolled').addClass('upscrolled');
+                    });
+                }
+            },
+            minimalscrolled: {
+                notscrolled: function () {
+                    selector.addClass('scrolled');
+                    applyCss(toolbar, minimalScrolledToolbarDimension);
+                },
+                upscrolled: function () {
+                    selector.removeClass('upscrolled');
+                    selector.addClass('scrolled');
+                    applyCss(toolbar, minimalScrolledToolbarDimension);
+                },
+                minimalscrolled: function () { /* nothing to do */ },
+                furtherscrolled: function () {
+                    animateCss(toolbar, minimalScrolledToolbarDimension);
+                }
+            },
+            furtherscrolled: {
+                notscrolled: function () {
+                    selector.addClass('scrolled');
+                    animateCss(toolbar, furtherScrolledToolbarDimension);
+                },
+                upscrolled: function () {
+                    selector.removeClass('upscrolled');
+                    selector.addClass('scrolled');
+                    applyCss(toolbar, furtherScrolledToolbarDimension);
+                },
+                minimalscrolled: function () {
+                    animateCss(toolbar, furtherScrolledToolbarDimension);
+                },
+                furtherscrolled: function () { /* nothing to do */ }
             }
-
-            if (levelBefore > 1) {
-                animateCss(toolbar, nonScrolledDimensions, 0.3, function () {
-                    selector.removeClass('scrolled--level2');
-                    if (levelAfter === 0) {
-                        toolbar.css('top', '').css('left', '').css('width', '');
-                        selector.removeClass('scrolled--level1');
-                    }
-                });
-                return;
-            }
-
-            toolbar.css('top', '').css('left', '').css('width', '');
-            selector.removeClass('scrolled--level1');
         };
-        $(window).scroll(scrollFunction);
-        scrollFunction();
+
+        $(window).scroll(function () {
+            var isScrollUp = lastPosition - 5 > window.pageYOffset || (lastPosition > window.pageYOffset && window.pageYOffset < options.scrollOffset),
+                isScrollDown = lastPosition + 5 < window.pageYOffset || (lastPosition < window.pageYOffset && window.pageYOffset < options.scrollOffset),
+                nextStatus;
+            lastPosition = window.pageYOffset;
+
+            if (! isScrollUp && ! isScrollDown) {
+                return;
+            }
+            if (isScrollUp) {
+                if (window.pageYOffset > options.scrollOffset) {
+                    nextStatus = 'upscrolled';
+                } else {
+                    nextStatus = window.pageYOffset === 0 ? 'notscrolled' : 'upscrolled';
+                }
+            } else if (isScrollDown) {
+                nextStatus = window.pageYOffset > options.scrollOffset ? 'furtherscrolled' : 'minimalscrolled';
+            }
+
+            if (lastStatus !== nextStatus) {
+                console.log(lastStatus, nextStatus);
+                toolbar.stop();
+            }
+            transformations[nextStatus][lastStatus]();
+            lastStatus = nextStatus;
+        });
     };
     $.fn.cardToolbar = function (offset) {
         "use strict";

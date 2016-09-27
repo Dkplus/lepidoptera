@@ -12,6 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+    <ul id="menu2" class="side-nav">
+        <li>
+            <a href="#!">test</a>
+        </li>
+    </ul>
     <ul id="menu" class="side-nav fixed collapsible">
         {{#each menu}}
             <li {{#if isActive }}class="active"{{/if}}>
@@ -50,8 +55,11 @@
         <nav>
             <div class="nav-wrapper">
                 <ul>
-                    <li><a href="#" data-activates="menu" class="button-collapse-left hide-on-large-only"><i class="material-icons">menu</i></a></li>
+                    <li><a href="#" data-activates="menu" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a></li>
                     <li class="navbar--waterfall-shrunk__hidden"><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
+                    <li class="right">
+                        <a href="#!" data-activates="menu2" class="button-collapse"><i class="material-icons">more_vert</i></a>
+                    </li>
                     <li class="navbar--waterfall-shrunk__hidden right">
                         <form id="js-search-form" class="hide-on-small-and-down">
                             <div class="input-field">
@@ -60,6 +68,10 @@
                                 <i class="material-icons">close</i>
                             </div>
                         </form>
+                    </li>
+                    <li class="right">
+                        test
+                        <a href="#!" data-activates="menu2" class="button-collapse">bla<i class="material-icons">more_vert</i></a>
                     </li>
                 </ul>
             </div>
@@ -200,6 +212,7 @@
     </div>
 
     <script type="text/javascript" src="kss-assets/vendors/materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="kss-assets/scroll-up.js"></script>
     <script type="text/javascript" src="kss-assets/card-toolbar.js"></script>
     <script type="text/javascript" src="kss-assets/waterfall-nav.js"></script>
     <script type="text/javascript" src="kss-assets/vendors/prism/prism.js"></script>
@@ -208,8 +221,9 @@
         $(function () {
             $('.card--with-toolbar').cardToolbar();
             $('.navbar-fixed').waterfallNav();
-            $('.button-collapse').sideNav({edge: 'right'});
-            $('.button-collapse-left').sideNav();
+            $(window).scrollUp();
+            $('.button-collapse:not(:first)').sideNav({edge: 'right'});
+            $('.button-collapse:first').sideNav();
             $('.dropdown-button-click').dropdown();
             $('.collapsible').collapsible();
             $('.scrollspy').scrollSpy();
@@ -254,6 +268,9 @@
                     window.location.assign(result[0].ref);
                     return false;
                 }
+            });
+            $(window).resize(function () {
+                $('.side-nav').css('transition', '0.3s transform');
             });
         });
     </script>
