@@ -10,6 +10,7 @@
 // Otherwise it should be added to the `.navbar-fixed` wrapper.
 //
 // To initialize the plugin you need to include `js/waterfall-nav.js` and call `$('.nav-waterfall-2x').waterfallNav();`.
+// You may pass `{enlargeOnScrollUp: true}` to change the behavior on scrolling up.
 //
 // Markup:
 // <nav class="{{modifier_class}}">

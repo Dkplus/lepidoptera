@@ -133,3 +133,15 @@ nav ul .breadcrumb {
     padding-right: 15px;
   }
 }
+
+//
+// Sidenav overlay
+//
+// The z-index of the sidenav-overlay must be changed to allow that a card-toolbar can be above the app bar
+// but below the sidenav-overlay.
+//
+// Styleguide vendors-extensions.materializecss.sidenav-overlay
+//
+#sidenav-overlay {
+  z-index: 998;
+}

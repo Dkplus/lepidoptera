@@ -3,10 +3,18 @@
 //
 // Cards
 //
-// Cards from MaterializeCSS. For usage information please have a look at the
+// Cards are well known from MaterializeCSS. For usage information please have
+// a look at the
 // [documentation of MaterializeCSS](http://materializecss.com/cards.html).
 //
-// Lepidoptera adds a toolbar to the cards.
+// Styleguide components.cards
+//
+
+//
+// Card Toolbar
+//
+// Lepidoptera adds a toolbar to the cards. It may contain an headline
+// (`h1`-`h6`) and some actions.
 //
 // Markup:
 // <div class="card">
@@ -25,9 +33,8 @@
 //  </div>
 // </div>
 //
-// Styleguide components.cards
+// Styleguide components.cards.toolbar
 //
-
 .card__toolbar {
   background-color: inherit;
   padding: 20px;
@@ -41,7 +48,7 @@
     height: $navbar-height;
   }
 
-
+  h1,
   h2,
   h3,
   h4,
@@ -73,4 +80,66 @@
   li a {
     color: color('grey', 'darken-1');
   }
+}
+
+//
+// Card overlapping app bar
+//
+// You can let your card overlap your navbar (like the card on this site).
+// Therefore you only need to add the `card--into-app-bar` class to the `card`.
+//
+// You can use JavaScript to animate the card and let it transform into an app bar on scroll.
+// To initialize the plugin you need to include `js/card-toolbar.js` and call
+// `$('.card--into-app-bar').cardToolbar()`.
+//
+// You may pass `{enlargeOnScrollUp: true}` to change the behavior on scrolling up.
+//
+// Styleguide components.cards.into-app-bar
+//
+.card--into-app-bar {
+  margin-top: -$navbar-height-mobile;
+  z-index: 998;
+
+  @media #{$medium-and-up} {
+    margin-top: -$navbar-height;
+  }
+
+  &.card--into-app-bar-scrolled,
+  &.card--into-app-bar-scrolled-up {
+    z-index: auto;
+  }
+
+  > .card__toolbar {
+    z-index: 998;
+  }
+}
+
+.card--into-app-bar-scrolled > .card__toolbar {
+  position: fixed;
+  background-color: $primary-color;
+  color: $navbar-font-color;
+  border-bottom: 0 none;
+  height: $navbar-height-mobile;
+
+  @media #{$medium-and-up} {
+    height: $navbar-height;
+  }
+
+  li a {
+    color: $navbar-font-color;
+  }
+}
+
+.card--into-app-bar-scrolled > .card-content,
+.card--into-app-bar-scrolled-up > .card-content {
+  padding-top: $navbar-height-mobile;
+
+  @media #{$medium-and-up} {
+    padding-top: $navbar-height;
+  }
+}
+
+.card--into-app-bar-scrolled-up > .card__toolbar {
+  transition: 0.3s top, 0.3s left, 0.3s background-color, 0.3s color;
+  position: fixed;
 }

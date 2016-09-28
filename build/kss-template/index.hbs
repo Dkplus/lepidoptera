@@ -12,11 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-    <ul id="menu2" class="side-nav">
-        <li>
-            <a href="#!">test</a>
-        </li>
-    </ul>
     <ul id="menu" class="side-nav fixed collapsible">
         {{#each menu}}
             <li {{#if isActive }}class="active"{{/if}}>
@@ -57,9 +52,6 @@
                 <ul>
                     <li><a href="#" data-activates="menu" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a></li>
                     <li class="navbar--waterfall-shrunk__hidden"><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
-                    <li class="right">
-                        <a href="#!" data-activates="menu2" class="button-collapse"><i class="material-icons">more_vert</i></a>
-                    </li>
                     <li class="navbar--waterfall-shrunk__hidden right">
                         <form id="js-search-form" class="hide-on-small-and-down">
                             <div class="input-field">
@@ -69,16 +61,12 @@
                             </div>
                         </form>
                     </li>
-                    <li class="right">
-                        test
-                        <a href="#!" data-activates="menu2" class="button-collapse">bla<i class="material-icons">more_vert</i></a>
-                    </li>
                 </ul>
             </div>
         </nav>
     </div>
     <div class="main">
-    <div class="card card--with-toolbar">
+    <div class="card card--into-app-bar">
         <div class="card__toolbar">
             {{#if homepage}}
                 <h2>Lepidoptera</h2>
@@ -90,15 +78,10 @@
                         {{else if material}}
                             <i class="material-icons">{{material}}</i>
                         {{/if}}
-                        <h2>{{header}}</h2>
+                        <h2 id="kssref-{{referenceURI}}" class="scrollspy">{{header}}</h2>
                     {{/if_eq}}
                 {{/each}}
             {{/if}}
-            <ul class="card__toolbar-actions">
-                <li><a href="#!"><i class="material-icons">done_all</i></a></li>
-                <li><a href="#!"><i class="material-icons">delete</i></a></li>
-                <li><a href="#!"><i class="material-icons">more_vert</i></a></li>
-            </ul>
         </div>
         <div class="card-content">
         {{#if homepage}}
@@ -114,88 +97,90 @@
             <div class="row">
                 <div class="col s12 m9 l10">
                     {{#each sections}}
-                        <div id="kssref-{{referenceURI}}" class="section scrollspy">
-                            <h{{depth}}>
-                                <a href="#kssref-{{referenceURI}}">
-                                    {{#if fontawesome}}
-                                        <i class="fa fa-{{fontawesome}}"></i>
-                                    {{else if material}}
-                                        <i class="material-icons">{{material}}</i>
-                                    {{/if}}
-                                    {{referenceNumber}} {{header}}
-                                </a>
-                            </h{{depth}}>
-
-                            {{#if description}}
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    {{{description}}}
-                                </div>
-                            {{/if}}
-
-                            {{#if parameters}}
-                                <div class="kss-parameters__title">Parameters:</div>
-                                <ul class="kss-parameters">
-                                    {{#each parameters}}
-                                        <li class="kss-parameters__item">
-                                            <div class="kss-parameters__name"><code>{{name}}</code></div>
-                                            <div class="kss-parameters__description">
-                                                {{{description}}}
-                                                {{#if defaultValue}}
-                                                    <div class="kss-parameters__default-value">
-                                                        Defaults to: <code>{{defaultValue}}</code>
-                                                    </div>
-                                                {{/if}}
-                                            </div>
-                                        </li>
-                                    {{/each}}
-                                </ul>
-                            {{/if}}
-
-                            {{#if default}}
-                                Default: <code>{{default}}</code>
-                            {{/if}}
-
-
-                            {{#if example}}
-                                <div>
-                                    <div class="promo-caption" style="font-size: 1.7rem; font-weight: 500; margin-top: 5px; margin-bottom: 0;">
-                                        Example{{#if modifiers}}s{{/if}}
-                                    </div>
-
-                                    <div class="example" style="margin-left: 2em;">
-                                        {{#if modifiers}}
-                                            <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
-                                                Default styling
-                                            </div>
+                        {{#if_gte depth 2}}
+                            <div id="kssref-{{referenceURI}}" class="section scrollspy">
+                                <h{{depth}}>
+                                    <a href="#kssref-{{referenceURI}}">
+                                        {{#if fontawesome}}
+                                            <i class="fa fa-{{fontawesome}}"></i>
+                                        {{else if material}}
+                                            <i class="material-icons">{{material}}</i>
                                         {{/if}}
+                                        {{referenceNumber}} {{header}}
+                                    </a>
+                                </h{{depth}}>
 
-                                        {{{idable_markup example}}}
+                                {{#if description}}
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        {{{description}}}
                                     </div>
+                                {{/if}}
 
-                                    {{#each modifiers}}
-                                        <div class="example" style="margin-left: 2em;">
-                                            <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
-                                                {{name}}
-                                            </div>
-                                            {{#if_skip_example_of this}}
-                                                <p>{{{skippable_description_of this}}}</p>
-                                                <p>{{{reason_to_skip this}}}</p>
-                                            {{else}}
-                                                <p>{{{description}}}</p>
-                                                {{{idable_markup markup}}}
-                                            {{/if_skip_example_of}}
+                                {{#if parameters}}
+                                    <div class="kss-parameters__title">Parameters:</div>
+                                    <ul class="kss-parameters">
+                                        {{#each parameters}}
+                                            <li class="kss-parameters__item">
+                                                <div class="kss-parameters__name"><code>{{name}}</code></div>
+                                                <div class="kss-parameters__description">
+                                                    {{{description}}}
+                                                    {{#if defaultValue}}
+                                                        <div class="kss-parameters__default-value">
+                                                            Defaults to: <code>{{defaultValue}}</code>
+                                                        </div>
+                                                    {{/if}}
+                                                </div>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                {{/if}}
+
+                                {{#if default}}
+                                    Default: <code>{{default}}</code>
+                                {{/if}}
+
+
+                                {{#if example}}
+                                    <div>
+                                        <div class="promo-caption" style="font-size: 1.7rem; font-weight: 500; margin-top: 5px; margin-bottom: 0;">
+                                            Example{{#if modifiers}}s{{/if}}
                                         </div>
-                                    {{/each}}
-                                    <pre><code class="language-html">{{idable_markup example}}</code></pre>
-                                </div>
-                            {{/if}}
 
-                            {{#if sourceFile.name}}
-                                <div class="kss-source kss-style">
-                                    Source: <code>{{sourceFile.name}}</code>, line {{sourceFile.line}}
-                                </div>
-                            {{/if}}
-                        </div>
+                                        <div class="example" style="margin-left: 2em;">
+                                            {{#if modifiers}}
+                                                <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
+                                                    Default styling
+                                                </div>
+                                            {{/if}}
+
+                                            {{{idable_markup example}}}
+                                        </div>
+
+                                        {{#each modifiers}}
+                                            <div class="example" style="margin-left: 2em;">
+                                                <div class="promo-caption-2" style="margin-left: -1.5em; font-size: 1.3rem; font-weight: 300; margin-top: 5px; margin-bottom: 0;">
+                                                    {{name}}
+                                                </div>
+                                                {{#if_skip_example_of this}}
+                                                    <p>{{{skippable_description_of this}}}</p>
+                                                    <p>{{{reason_to_skip this}}}</p>
+                                                {{else}}
+                                                    <p>{{{description}}}</p>
+                                                    {{{idable_markup markup}}}
+                                                {{/if_skip_example_of}}
+                                            </div>
+                                        {{/each}}
+                                        <pre><code class="language-html">{{idable_markup example}}</code></pre>
+                                    </div>
+                                {{/if}}
+
+                                {{#if sourceFile.name}}
+                                    <div class="kss-source kss-style">
+                                        Source: <code>{{sourceFile.name}}</code>, line {{sourceFile.line}}
+                                    </div>
+                                {{/if}}
+                            </div>
+                        {{/if_gte}}
                     {{/each}}
                 </div>
                 <div class="col hide-on-small-only m3 l2">
@@ -219,9 +204,8 @@
     <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('.card--with-toolbar').cardToolbar();
-            $('.navbar-fixed').waterfallNav();
-            $(window).scrollUp();
+            $('.card--into-app-bar').cardToolbar({enlargeOnScrollUp: true});
+            $('.navbar-fixed').waterfallNav({enlargeOnScrollUp: true});
             $('.button-collapse:not(:first)').sideNav({edge: 'right'});
             $('.button-collapse:first').sideNav();
             $('.dropdown-button-click').dropdown();
