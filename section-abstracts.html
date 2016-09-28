@@ -12,11 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-    <ul id="menu2" class="side-nav">
-        <li>
-            <a href="#!">test</a>
-        </li>
-    </ul>
     <ul id="menu" class="side-nav fixed collapsible">
             <li class="active">
                 <a class="waves-effect collapsible-header active"
@@ -113,9 +108,6 @@
                 <ul>
                     <li><a href="#" data-activates="menu" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a></li>
                     <li class="navbar--waterfall-shrunk__hidden"><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
-                    <li class="right">
-                        <a href="#!" data-activates="menu2" class="button-collapse"><i class="material-icons">more_vert</i></a>
-                    </li>
                     <li class="navbar--waterfall-shrunk__hidden right">
                         <form id="js-search-form" class="hide-on-small-and-down">
                             <div class="input-field">
@@ -125,283 +117,257 @@
                             </div>
                         </form>
                     </li>
-                    <li class="right">
-                        test
-                        <a href="#!" data-activates="menu2" class="button-collapse">bla<i class="material-icons">more_vert</i></a>
-                    </li>
                 </ul>
             </div>
         </nav>
     </div>
     <div class="main">
-    <div class="card card--with-toolbar">
+    <div class="card card--into-app-bar">
         <div class="card__toolbar">
                             <i class="fa fa-usd"></i>
-                        <h2>Abstracts</h2>
-            <ul class="card__toolbar-actions">
-                <li><a href="#!"><i class="material-icons">done_all</i></a></li>
-                <li><a href="#!"><i class="material-icons">delete</i></a></li>
-                <li><a href="#!"><i class="material-icons">more_vert</i></a></li>
-            </ul>
+                        <h2 id="kssref-abstracts" class="scrollspy">Abstracts</h2>
         </div>
         <div class="card-content">
             <div class="row">
                 <div class="col s12 m9 l10">
-                        <div id="kssref-abstracts" class="section scrollspy">
-                            <h1>
-                                <a href="#kssref-abstracts">
-                                        <i class="fa fa-usd"></i>
-                                    1 Abstracts
-                                </a>
-                            </h1>
+                            <div id="kssref-abstracts-mixins" class="section scrollspy">
+                                <h2>
+                                    <a href="#kssref-abstracts-mixins">
+                                        1.1 Mixins
+                                    </a>
+                                </h2>
+
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Utilities that should help you to design your template.</p>
+
+                                    </div>
 
 
 
 
 
+                                    <div class="kss-source kss-style">
+                                        Source: <code>_main.scss</code>, line 14
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-mixins-motions" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-abstracts-mixins-motions">
+                                        1.1.1 Motions
+                                    </a>
+                                </h3>
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>_main.scss</code>, line 3
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-mixins" class="section scrollspy">
-                            <h2>
-                                <a href="#kssref-abstracts-mixins">
-                                    1.1 Mixins
-                                </a>
-                            </h2>
-
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Utilities that should help you to design your template.</p>
-
-                                </div>
-
-
-
-
-
-                                <div class="kss-source kss-style">
-                                    Source: <code>_main.scss</code>, line 14
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-mixins-motions" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-abstracts-mixins-motions">
-                                    1.1.1 Motions
-                                </a>
-                            </h3>
-
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Lepidoptera ships different motions from the material design guidelines.
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Lepidoptera ships different motions from the material design guidelines.
 They are implemented as <em>mixins</em> that can be applied via <code>@include</code>.
 For each animation two version exist: The <code>animation-</code> and the <code>transition-</code> version.</p>
 
-                                </div>
+                                    </div>
 
 
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 5
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-mixins-motions-appear-from" class="section scrollspy">
-                            <h4>
-                                <a href="#kssref-abstracts-mixins-motions-appear-from">
-                                    1.1.1.1 Appear from
-                                </a>
-                            </h4>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/mixins/_motions.scss</code>, line 5
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-mixins-motions-appear-from" class="section scrollspy">
+                                <h4>
+                                    <a href="#kssref-abstracts-mixins-motions-appear-from">
+                                        1.1.1.1 Disappear to
+                                    </a>
+                                </h4>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>The mixins <code>animation-appear-from</code> and <code>transition-appear-from</code> allow an element to appear by increasing its
-opacity and moving from a specific direction.</p>
-
-                                </div>
-
-                                <div class="kss-parameters__title">Parameters:</div>
-                                <ul class="kss-parameters">
-                                        <li class="kss-parameters__item">
-                                            <div class="kss-parameters__name"><code>$origin</code></div>
-                                            <div class="kss-parameters__description">
-                                                Origin from where to appear in (default: <code>bottom</code>)
-                                            </div>
-                                        </li>
-                                        <li class="kss-parameters__item">
-                                            <div class="kss-parameters__name"><code>$duration</code></div>
-                                            <div class="kss-parameters__description">
-                                                Duration of the animation (default: <code>0.3s</code>)
-                                            </div>
-                                        </li>
-                                </ul>
-
-
-
-
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 46
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-mixins-motions-appear-from" class="section scrollspy">
-                            <h4>
-                                <a href="#kssref-abstracts-mixins-motions-appear-from">
-                                    1.1.1.1 Disappear to
-                                </a>
-                            </h4>
-
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>The mixins <code>animation-disappear-to</code> and <code>transition-disappear-to</code> allow an element to disappear by decreasing its
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>The mixins <code>animation-disappear-to</code> and <code>transition-disappear-to</code> allow an element to disappear by decreasing its
 opacity and moving to a specific direction.</p>
 
-                                </div>
+                                    </div>
 
-                                <div class="kss-parameters__title">Parameters:</div>
-                                <ul class="kss-parameters">
-                                        <li class="kss-parameters__item">
-                                            <div class="kss-parameters__name"><code>$direction</code></div>
-                                            <div class="kss-parameters__description">
-                                                Direction where to move (default: <code>bottom</code>)
-                                            </div>
-                                        </li>
-                                        <li class="kss-parameters__item">
-                                            <div class="kss-parameters__name"><code>$duration</code></div>
-                                            <div class="kss-parameters__description">
-                                                Duration of the animation (default: <code>0.3s</code>)
-                                            </div>
-                                        </li>
-                                </ul>
-
-
+                                    <div class="kss-parameters__title">Parameters:</div>
+                                    <ul class="kss-parameters">
+                                            <li class="kss-parameters__item">
+                                                <div class="kss-parameters__name"><code>$direction</code></div>
+                                                <div class="kss-parameters__description">
+                                                    Direction where to move (default: <code>bottom</code>)
+                                                </div>
+                                            </li>
+                                            <li class="kss-parameters__item">
+                                                <div class="kss-parameters__name"><code>$duration</code></div>
+                                                <div class="kss-parameters__description">
+                                                    Duration of the animation (default: <code>0.3s</code>)
+                                                </div>
+                                            </li>
+                                    </ul>
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 97
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-mixins-motions-staggered" class="section scrollspy">
-                            <h4>
-                                <a href="#kssref-abstracts-mixins-motions-staggered">
-                                    1.1.1.2 Staggered List
-                                </a>
-                            </h4>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p><code>animation-staggered</code> and <code>transition-staggered</code> allow a list to appear staggered one by one.
+
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/mixins/_motions.scss</code>, line 97
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-mixins-motions-appear-from" class="section scrollspy">
+                                <h4>
+                                    <a href="#kssref-abstracts-mixins-motions-appear-from">
+                                        1.1.1.1 Appear from
+                                    </a>
+                                </h4>
+
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>The mixins <code>animation-appear-from</code> and <code>transition-appear-from</code> allow an element to appear by increasing its
+opacity and moving from a specific direction.</p>
+
+                                    </div>
+
+                                    <div class="kss-parameters__title">Parameters:</div>
+                                    <ul class="kss-parameters">
+                                            <li class="kss-parameters__item">
+                                                <div class="kss-parameters__name"><code>$origin</code></div>
+                                                <div class="kss-parameters__description">
+                                                    Origin from where to appear in (default: <code>bottom</code>)
+                                                </div>
+                                            </li>
+                                            <li class="kss-parameters__item">
+                                                <div class="kss-parameters__name"><code>$duration</code></div>
+                                                <div class="kss-parameters__description">
+                                                    Duration of the animation (default: <code>0.3s</code>)
+                                                </div>
+                                            </li>
+                                    </ul>
+
+
+
+
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/mixins/_motions.scss</code>, line 46
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-mixins-motions-staggered" class="section scrollspy">
+                                <h4>
+                                    <a href="#kssref-abstracts-mixins-motions-staggered">
+                                        1.1.1.2 Staggered List
+                                    </a>
+                                </h4>
+
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p><code>animation-staggered</code> and <code>transition-staggered</code> allow a list to appear staggered one by one.
 They are no motions itself but it must be combined with a motion.</p>
 
-                                </div>
+                                    </div>
 
-                                <div class="kss-parameters__title">Parameters:</div>
-                                <ul class="kss-parameters">
-                                        <li class="kss-parameters__item">
-                                            <div class="kss-parameters__name"><code>$item-delay</code></div>
-                                            <div class="kss-parameters__description">
-                                                Delay between each item (default: <code>0.1s</code>).
-                                            </div>
-                                        </li>
-                                        <li class="kss-parameters__item">
-                                            <div class="kss-parameters__name"><code>$base-delay</code></div>
-                                            <div class="kss-parameters__description">
-                                                Delay until the first <code>li</code> animates (default: <code>0s</code>).
-                                            </div>
-                                        </li>
-                                </ul>
-
-
-
-
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/mixins/_motions.scss</code>, line 15
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-variables" class="section scrollspy">
-                            <h2>
-                                <a href="#kssref-abstracts-variables">
-                                    1.2 Variables
-                                </a>
-                            </h2>
+                                    <div class="kss-parameters__title">Parameters:</div>
+                                    <ul class="kss-parameters">
+                                            <li class="kss-parameters__item">
+                                                <div class="kss-parameters__name"><code>$item-delay</code></div>
+                                                <div class="kss-parameters__description">
+                                                    Delay between each item (default: <code>0.1s</code>).
+                                                </div>
+                                            </li>
+                                            <li class="kss-parameters__item">
+                                                <div class="kss-parameters__name"><code>$base-delay</code></div>
+                                                <div class="kss-parameters__description">
+                                                    Delay until the first <code>li</code> animates (default: <code>0s</code>).
+                                                </div>
+                                            </li>
+                                    </ul>
 
 
 
 
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/mixins/_motions.scss</code>, line 15
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-variables" class="section scrollspy">
+                                <h2>
+                                    <a href="#kssref-abstracts-variables">
+                                        1.2 Variables
+                                    </a>
+                                </h2>
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/_variables.scss</code>, line 1
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-variables-base-path" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-abstracts-variables-base-path">
-                                    1.2.1 $le-vendor-base-path
-                                </a>
-                            </h3>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Base path to the stylesheets-vendor directory.
+
+
+
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/_variables.scss</code>, line 1
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-variables-base-path" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-abstracts-variables-base-path">
+                                        1.2.1 $le-vendor-base-path
+                                    </a>
+                                </h3>
+
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Base path to the stylesheets-vendor directory.
 Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
 
-                                </div>
+                                    </div>
 
 
-                                Default: <code>./</code>
-
-
-
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/_variables.scss</code>, line 6
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-variables-side-nav-expanding-width" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-abstracts-variables-side-nav-expanding-width">
-                                    1.2.2 $le-side-nav-expanding-width
-                                </a>
-                            </h3>
-
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Width of the <code>.side-nav--expanding</code> in collapsed state.</p>
-
-                                </div>
-
-
-                                Default: <code>65px</code>
+                                    Default: <code>./</code>
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/_variables.scss</code>, line 29
-                                </div>
-                        </div>
-                        <div id="kssref-abstracts-variables-side-nav-width" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-abstracts-variables-side-nav-width">
-                                    1.2.3 $le-side-nav-width
-                                </a>
-                            </h3>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/_variables.scss</code>, line 6
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-variables-side-nav-expanding-width" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-abstracts-variables-side-nav-expanding-width">
+                                        1.2.2 $le-side-nav-expanding-width
+                                    </a>
+                                </h3>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Width of the <code>.side-nav</code>.</p>
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Width of the <code>.side-nav--expanding</code> in collapsed state.</p>
 
-                                </div>
-
-
-                                Default: <code>300px</code>
+                                    </div>
 
 
+                                    Default: <code>65px</code>
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>abstracts/_variables.scss</code>, line 18
-                                </div>
-                        </div>
+
+
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/_variables.scss</code>, line 29
+                                    </div>
+                            </div>
+                            <div id="kssref-abstracts-variables-side-nav-width" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-abstracts-variables-side-nav-width">
+                                        1.2.3 $le-side-nav-width
+                                    </a>
+                                </h3>
+
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Width of the <code>.side-nav</code>.</p>
+
+                                    </div>
+
+
+                                    Default: <code>300px</code>
+
+
+
+                                    <div class="kss-source kss-style">
+                                        Source: <code>abstracts/_variables.scss</code>, line 18
+                                    </div>
+                            </div>
                 </div>
                 <div class="col hide-on-small-only m3 l2">
                     <ul class="section table-of-contents pinned">
                             <li><a href="#kssref-abstracts">1 Abstracts</a></li>
                             <li><a href="#kssref-abstracts-mixins">1.1 Mixins</a></li>
                             <li><a href="#kssref-abstracts-mixins-motions">1.1.1 Motions</a></li>
-                            <li><a href="#kssref-abstracts-mixins-motions-appear-from">1.1.1.1 Appear from</a></li>
                             <li><a href="#kssref-abstracts-mixins-motions-appear-from">1.1.1.1 Disappear to</a></li>
+                            <li><a href="#kssref-abstracts-mixins-motions-appear-from">1.1.1.1 Appear from</a></li>
                             <li><a href="#kssref-abstracts-mixins-motions-staggered">1.1.1.2 Staggered List</a></li>
                             <li><a href="#kssref-abstracts-variables">1.2 Variables</a></li>
                             <li><a href="#kssref-abstracts-variables-base-path">1.2.1 $le-vendor-base-path</a></li>
@@ -422,9 +388,8 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
     <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('.card--with-toolbar').cardToolbar();
-            $('.navbar-fixed').waterfallNav();
-            $(window).scrollUp();
+            $('.card--into-app-bar').cardToolbar({enlargeOnScrollUp: true});
+            $('.navbar-fixed').waterfallNav({enlargeOnScrollUp: true});
             $('.button-collapse:not(:first)').sideNav({edge: 'right'});
             $('.button-collapse:first').sideNav();
             $('.dropdown-button-click').dropdown();
@@ -478,8 +443,18 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                 });
                         index.add({
                             'header': "Cards",
-                            'description': " p Cards from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com cards.html  documentation of MaterializeCSS  a .  p   p Lepidoptera adds a toolbar to the cards.  p  ",
+                            'description': " p Cards are well known from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com cards.html  documentation of MaterializeCSS  a .  p  ",
                             "url": "section-components.html#kssref-components-cards"
+                        });
+                        index.add({
+                            'header': "Card overlapping app bar",
+                            'description': " p You can let your card overlap your navbar (like the card on this site). Therefore you only need to add the  code card--into-app-bar  code  class to the  code card  code .  p   p You can use JavaScript to animate the card and let it transform into an app bar on scroll. To initialize the plugin you need to include  code js card-toolbar.js  code  and call  code $( .card--into-app-bar ).cardToolbar()  code .  p   p You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p  ",
+                            "url": "section-components.html#kssref-components-cards-into-app-bar"
+                        });
+                        index.add({
+                            'header': "Card Toolbar",
+                            'description': " p Lepidoptera adds a toolbar to the cards. It may contain an headline ( code h1  code - code h6  code ) and some actions.  p  ",
+                            "url": "section-components.html#kssref-components-cards-toolbar"
                         });
                         index.add({
                             'header': "Collection",
@@ -493,7 +468,7 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                 });
                         index.add({
                             'header': "Navbar",
-                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p   p To initialize the plugin you need to include  code js waterfall-nav.js  code  and call  code $( .nav-waterfall-2x ).waterfallNav();  code .  p  ",
+                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p   p To initialize the plugin you need to include  code js waterfall-nav.js  code  and call  code $( .nav-waterfall-2x ).waterfallNav();  code . You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p  ",
                             "url": "section-layout.html#kssref-layout-navbar"
                         });
                         index.add({
@@ -556,6 +531,11 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                             'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for  code .main  code . Within the  code .nav-wrapper  code  this must be applied to each element on its on because rows already have this.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-screen-margins"
                         });
+                        index.add({
+                            'header': "Sidenav overlay",
+                            'description': " p The z-index of the sidenav-overlay must be changed to allow that a card-toolbar can be above the app bar but below the sidenav-overlay.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-sidenav-overlay"
+                        });
             $('#search').autocomplete({data: {
                     "Abstracts": null,
                             "Mixins": null,
@@ -566,6 +546,8 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                             "$le-side-nav-width": null,
                     "Components": null,
                             "Cards": null,
+                            "Card overlapping app bar": null,
+                            "Card Toolbar": null,
                             "Collection": null,
                     "Layout": null,
                             "Navbar": null,
@@ -581,6 +563,7 @@ Can be used to adjust paths of fonts and images shipped with Lepidoptera.</p>
                             "Breadcrumb in List": null,
                             "Intention after fixed SideNav": null,
                             "Screen margins": null,
+                            "Sidenav overlay": null,
             }});
             $('#search ~ .autocomplete-content').on('click', function () {
                 window.setTimeout(function(){$('#js-search-form').submit();}, 200);

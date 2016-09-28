@@ -12,11 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-    <ul id="menu2" class="side-nav">
-        <li>
-            <a href="#!">test</a>
-        </li>
-    </ul>
     <ul id="menu" class="side-nav fixed collapsible">
             <li >
                 <a class="waves-effect collapsible-header"
@@ -113,9 +108,6 @@
                 <ul>
                     <li><a href="#" data-activates="menu" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a></li>
                     <li class="navbar--waterfall-shrunk__hidden"><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
-                    <li class="right">
-                        <a href="#!" data-activates="menu2" class="button-collapse"><i class="material-icons">more_vert</i></a>
-                    </li>
                     <li class="navbar--waterfall-shrunk__hidden right">
                         <form id="js-search-form" class="hide-on-small-and-down">
                             <div class="input-field">
@@ -125,198 +117,189 @@
                             </div>
                         </form>
                     </li>
-                    <li class="right">
-                        test
-                        <a href="#!" data-activates="menu2" class="button-collapse">bla<i class="material-icons">more_vert</i></a>
-                    </li>
                 </ul>
             </div>
         </nav>
     </div>
     <div class="main">
-    <div class="card card--with-toolbar">
+    <div class="card card--into-app-bar">
         <div class="card__toolbar">
                             <i class="material-icons">extensions</i>
-                                                <h2>Vendors Extensions</h2>
-            <ul class="card__toolbar-actions">
-                <li><a href="#!"><i class="material-icons">done_all</i></a></li>
-                <li><a href="#!"><i class="material-icons">delete</i></a></li>
-                <li><a href="#!"><i class="material-icons">more_vert</i></a></li>
-            </ul>
+                                                <h2 id="kssref-vendors-extensions" class="scrollspy">Vendors Extensions</h2>
         </div>
         <div class="card-content">
             <div class="row">
                 <div class="col s12 m9 l10">
-                        <div id="kssref-vendors-extensions" class="section scrollspy">
-                            <h1>
-                                <a href="#kssref-vendors-extensions">
-                                        <i class="material-icons">extensions</i>
-                                                                        4 Vendors Extensions
-                                </a>
-                            </h1>
+                            <div id="kssref-vendors-extensions-font-awesome" class="section scrollspy">
+                                <h2>
+                                    <a href="#kssref-vendors-extensions-font-awesome">
+                                        4.1 Font Awesome
+                                    </a>
+                                </h2>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>All used frameworks are great by itself but may need a little bit more love when playing together.</p>
-
-                                </div>
-
-
-
-
-
-                                <div class="kss-source kss-style">
-                                    Source: <code>_main.scss</code>, line 27
-                                </div>
-                        </div>
-                        <div id="kssref-vendors-extensions-font-awesome" class="section scrollspy">
-                            <h2>
-                                <a href="#kssref-vendors-extensions-font-awesome">
-                                    4.1 Font Awesome
-                                </a>
-                            </h2>
-
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Font Awesome has been added as another Icon-library. While the Material Design Icons are great they are missing some
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Font Awesome has been added as another Icon-library. While the Material Design Icons are great they are missing some
 Icons that may be found in Font Awesome.</p>
 
-                                </div>
+                                    </div>
 
 
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>vendors-extensions/_fontawesome.scss</code>, line 1
-                                </div>
-                        </div>
-                        <div id="kssref-vendors-extensions-font-awesome-adjusted-font-size" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-vendors-extensions-font-awesome-adjusted-font-size">
-                                    4.1.1 Adjusted Font size
-                                </a>
-                            </h3>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_fontawesome.scss</code>, line 1
+                                    </div>
+                            </div>
+                            <div id="kssref-vendors-extensions-font-awesome-adjusted-font-size" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-vendors-extensions-font-awesome-adjusted-font-size">
+                                        4.1.1 Adjusted Font size
+                                    </a>
+                                </h3>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Font size for <code>.fa</code> has been adjusted to match Material Design Icon size in <code>.side-nav</code> and <code>.nav-wrapper</code>.</p>
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Font size for <code>.fa</code> has been adjusted to match Material Design Icon size in <code>.side-nav</code> and <code>.nav-wrapper</code>.</p>
 
-                                </div>
-
-
-
-
-
-                                <div class="kss-source kss-style">
-                                    Source: <code>vendors-extensions/_fontawesome.scss</code>, line 10
-                                </div>
-                        </div>
-                        <div id="kssref-vendors-extensions-font-awesome-side-nav-toggle" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-vendors-extensions-font-awesome-side-nav-toggle">
-                                    4.1.2 SideNav Toggle Font-Size
-                                </a>
-                            </h3>
-
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Reset the font-size for the <code>.side-nav__toggle</code>. It has been increased by MaterializeCSS.</p>
-
-                                </div>
+                                    </div>
 
 
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>vendors-extensions/_fontawesome.scss</code>, line 22
-                                </div>
-                        </div>
-                        <div id="kssref-vendors-extensions-materializecss" class="section scrollspy">
-                            <h2>
-                                <a href="#kssref-vendors-extensions-materializecss">
-                                    4.2 MaterializeCSS
-                                </a>
-                            </h2>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_fontawesome.scss</code>, line 10
+                                    </div>
+                            </div>
+                            <div id="kssref-vendors-extensions-font-awesome-side-nav-toggle" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-vendors-extensions-font-awesome-side-nav-toggle">
+                                        4.1.2 SideNav Toggle Font-Size
+                                    </a>
+                                </h3>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>While MaterializeCSS is a great framework, there are some things that can be enhanced to allow a better interaction
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Reset the font-size for the <code>.side-nav__toggle</code>. It has been increased by MaterializeCSS.</p>
+
+                                    </div>
+
+
+
+
+
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_fontawesome.scss</code>, line 22
+                                    </div>
+                            </div>
+                            <div id="kssref-vendors-extensions-materializecss" class="section scrollspy">
+                                <h2>
+                                    <a href="#kssref-vendors-extensions-materializecss">
+                                        4.2 MaterializeCSS
+                                    </a>
+                                </h2>
+
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>While MaterializeCSS is a great framework, there are some things that can be enhanced to allow a better interaction
 with other frameworks without adding new classes.</p>
 <p>These hacks are listed here.</p>
 
-                                </div>
+                                    </div>
 
 
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>vendors-extensions/_materialize.scss</code>, line 1
-                                </div>
-                        </div>
-                        <div id="kssref-vendors-extensions-materializecss-breadcrumb" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-vendors-extensions-materializecss-breadcrumb">
-                                    4.2.1 Breadcrumb in List
-                                </a>
-                            </h3>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_materialize.scss</code>, line 1
+                                    </div>
+                            </div>
+                            <div id="kssref-vendors-extensions-materializecss-breadcrumb" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-vendors-extensions-materializecss-breadcrumb">
+                                        4.2.1 Breadcrumb in List
+                                    </a>
+                                </h3>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>Breadcrumbs cannot be used within an <code>li</code> because they are block-elements
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>Breadcrumbs cannot be used within an <code>li</code> because they are block-elements
 (and therefore displayed one below the other) and with too much space between them.</p>
 
-                                </div>
+                                    </div>
 
 
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>vendors-extensions/_materialize.scss</code>, line 116
-                                </div>
-                        </div>
-                        <div id="kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav">
-                                    4.2.2 Intention after fixed SideNav
-                                </a>
-                            </h3>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_materialize.scss</code>, line 116
+                                    </div>
+                            </div>
+                            <div id="kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav">
+                                        4.2.2 Intention after fixed SideNav
+                                    </a>
+                                </h3>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>A fixed SideNav hides content at the left.
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>A fixed SideNav hides content at the left.
 To prevent this, the <code>nav</code> and the main content (use <code>.container</code> or <code>.main</code>) will be automatically intended
 if it is placed after the fixed navbar.</p>
 
-                                </div>
+                                    </div>
 
 
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>vendors-extensions/_materialize.scss</code>, line 12
-                                </div>
-                        </div>
-                        <div id="kssref-vendors-extensions-materializecss-screen-margins" class="section scrollspy">
-                            <h3>
-                                <a href="#kssref-vendors-extensions-materializecss-screen-margins">
-                                    4.2.3 Screen margins
-                                </a>
-                            </h3>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_materialize.scss</code>, line 12
+                                    </div>
+                            </div>
+                            <div id="kssref-vendors-extensions-materializecss-screen-margins" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-vendors-extensions-materializecss-screen-margins">
+                                        4.2.3 Screen margins
+                                    </a>
+                                </h3>
 
-                                <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
-                                    <p>The Material Design Guidelines mention
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>The Material Design Guidelines mention
 <a href="https://material.google.com/layout/metrics-keylines.html">a screen edge left and right margin of 16dp</a>.</p>
 <p>This has been added for <code>.main</code>.
 Within the <code>.nav-wrapper</code> this must be applied to each element on its on because rows already have this.</p>
 
-                                </div>
+                                    </div>
 
 
 
 
 
-                                <div class="kss-source kss-style">
-                                    Source: <code>vendors-extensions/_materialize.scss</code>, line 33
-                                </div>
-                        </div>
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_materialize.scss</code>, line 33
+                                    </div>
+                            </div>
+                            <div id="kssref-vendors-extensions-materializecss-sidenav-overlay" class="section scrollspy">
+                                <h3>
+                                    <a href="#kssref-vendors-extensions-materializecss-sidenav-overlay">
+                                        4.2.4 Sidenav overlay
+                                    </a>
+                                </h3>
+
+                                    <div class="caption" style="font-size: 1.25rem; font-weight: 300; margin-bottom: 30px;">
+                                        <p>The z-index of the sidenav-overlay must be changed to allow that a card-toolbar can be above the app bar
+but below the sidenav-overlay.</p>
+
+                                    </div>
+
+
+
+
+
+                                    <div class="kss-source kss-style">
+                                        Source: <code>vendors-extensions/_materialize.scss</code>, line 137
+                                    </div>
+                            </div>
                 </div>
                 <div class="col hide-on-small-only m3 l2">
                     <ul class="section table-of-contents pinned">
@@ -328,6 +311,7 @@ Within the <code>.nav-wrapper</code> this must be applied to each element on its
                             <li><a href="#kssref-vendors-extensions-materializecss-breadcrumb">4.2.1 Breadcrumb in List</a></li>
                             <li><a href="#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav">4.2.2 Intention after fixed SideNav</a></li>
                             <li><a href="#kssref-vendors-extensions-materializecss-screen-margins">4.2.3 Screen margins</a></li>
+                            <li><a href="#kssref-vendors-extensions-materializecss-sidenav-overlay">4.2.4 Sidenav overlay</a></li>
                     </ul>
                 </div>
             </div>
@@ -343,9 +327,8 @@ Within the <code>.nav-wrapper</code> this must be applied to each element on its
     <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            $('.card--with-toolbar').cardToolbar();
-            $('.navbar-fixed').waterfallNav();
-            $(window).scrollUp();
+            $('.card--into-app-bar').cardToolbar({enlargeOnScrollUp: true});
+            $('.navbar-fixed').waterfallNav({enlargeOnScrollUp: true});
             $('.button-collapse:not(:first)').sideNav({edge: 'right'});
             $('.button-collapse:first').sideNav();
             $('.dropdown-button-click').dropdown();
@@ -399,8 +382,18 @@ Within the <code>.nav-wrapper</code> this must be applied to each element on its
                 });
                         index.add({
                             'header': "Cards",
-                            'description': " p Cards from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com cards.html  documentation of MaterializeCSS  a .  p   p Lepidoptera adds a toolbar to the cards.  p  ",
+                            'description': " p Cards are well known from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com cards.html  documentation of MaterializeCSS  a .  p  ",
                             "url": "section-components.html#kssref-components-cards"
+                        });
+                        index.add({
+                            'header': "Card overlapping app bar",
+                            'description': " p You can let your card overlap your navbar (like the card on this site). Therefore you only need to add the  code card--into-app-bar  code  class to the  code card  code .  p   p You can use JavaScript to animate the card and let it transform into an app bar on scroll. To initialize the plugin you need to include  code js card-toolbar.js  code  and call  code $( .card--into-app-bar ).cardToolbar()  code .  p   p You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p  ",
+                            "url": "section-components.html#kssref-components-cards-into-app-bar"
+                        });
+                        index.add({
+                            'header': "Card Toolbar",
+                            'description': " p Lepidoptera adds a toolbar to the cards. It may contain an headline ( code h1  code - code h6  code ) and some actions.  p  ",
+                            "url": "section-components.html#kssref-components-cards-toolbar"
                         });
                         index.add({
                             'header': "Collection",
@@ -414,7 +407,7 @@ Within the <code>.nav-wrapper</code> this must be applied to each element on its
                 });
                         index.add({
                             'header': "Navbar",
-                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p   p To initialize the plugin you need to include  code js waterfall-nav.js  code  and call  code $( .nav-waterfall-2x ).waterfallNav();  code .  p  ",
+                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p   p To initialize the plugin you need to include  code js waterfall-nav.js  code  and call  code $( .nav-waterfall-2x ).waterfallNav();  code . You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p  ",
                             "url": "section-layout.html#kssref-layout-navbar"
                         });
                         index.add({
@@ -477,6 +470,11 @@ Within the <code>.nav-wrapper</code> this must be applied to each element on its
                             'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for  code .main  code . Within the  code .nav-wrapper  code  this must be applied to each element on its on because rows already have this.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-screen-margins"
                         });
+                        index.add({
+                            'header': "Sidenav overlay",
+                            'description': " p The z-index of the sidenav-overlay must be changed to allow that a card-toolbar can be above the app bar but below the sidenav-overlay.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-sidenav-overlay"
+                        });
             $('#search').autocomplete({data: {
                     "Abstracts": null,
                             "Mixins": null,
@@ -487,6 +485,8 @@ Within the <code>.nav-wrapper</code> this must be applied to each element on its
                             "$le-side-nav-width": null,
                     "Components": null,
                             "Cards": null,
+                            "Card overlapping app bar": null,
+                            "Card Toolbar": null,
                             "Collection": null,
                     "Layout": null,
                             "Navbar": null,
@@ -502,6 +502,7 @@ Within the <code>.nav-wrapper</code> this must be applied to each element on its
                             "Breadcrumb in List": null,
                             "Intention after fixed SideNav": null,
                             "Screen margins": null,
+                            "Sidenav overlay": null,
             }});
             $('#search ~ .autocomplete-content').on('click', function () {
                 window.setTimeout(function(){$('#js-search-form').submit();}, 200);

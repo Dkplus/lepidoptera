@@ -20,9 +20,9 @@
                 }
             });
         },
-        detectMinimalScrolledToolbarDimension = function (selector, toolbar) {
+        detectMinimalScrolledToolbarDimension = function (card, toolbar) {
             "use strict";
-            var result = selector.offset();
+            var result = card.offset();
             result['width'] = toolbar.innerWidth();
             return result;
         },
@@ -50,121 +50,157 @@
 
             return result;
         },
-        detectCurrentScrollingLevel = function (options) {
+        detectNonScrolledToolbarDimension = function () {
             "use strict";
-            if (window.pageYOffset > options.scrollOffset) {
-                return 2;
-            } else if (window.pageYOffset > 0) {
-                return 1;
-            }
-            return 0;
-        };
-
+            return {top: '', left: '', width: ''};
+        },
+        transform = (function () {
+            var transformations = {
+                notScrolled: {
+                    notScrolled: function () { /* nothing to do */ },
+                    scrolledUp: function (state) {
+                        state.card.removeClass('card--into-app-bar-scrolled-up');
+                        applyCss(state.toolbar, state.nonScrolledToolbarDimension);
+                    },
+                    scrolledMinimal: function (state) {
+                        state.card.removeClass('card--into-app-bar-scrolled');
+                        applyCss(state.toolbar, state.nonScrolledToolbarDimension);
+                    },
+                    scrolledFurther: function (state) {
+                        state.card.removeClass('card--into-app-bar-scrolled');
+                        applyCss(state.toolbar, state.nonScrolledToolbarDimension);
+                    }
+                },
+                scrolledUp: {
+                    notScrolled: function (state) {
+                        state.card.addClass('card--into-app-bar-scrolled-up');
+                        applyCss(state.toolbar, state.minimalScrolledToolbarDimension);
+                    },
+                    scrolledUp: function () { /* nothing to do */ },
+                    scrolledMinimal: function (state) {
+                        state.card
+                            .removeClass('card--into-app-bar-scrolled')
+                            .addClass('card--into-app-bar-scrolled-up');
+                    },
+                    scrolledFurther: function (state, options) {
+                        animateCss(
+                            state.toolbar,
+                            state.minimalScrolledToolbarDimension,
+                            options.animationDuration,
+                            function () {
+                                state.card
+                                    .removeClass('card--into-app-bar-scrolled')
+                                    .addClass('card--into-app-bar-scrolled-up');
+                            }
+                        );
+                    }
+                },
+                scrolledMinimal: {
+                    notScrolled: function (state) {
+                        state.card.addClass('card--into-app-bar-scrolled');
+                        applyCss(state.toolbar, state.minimalScrolledToolbarDimension);
+                    },
+                    scrolledUp: function (state) {
+                        state.card
+                            .removeClass('card--into-app-bar-scrolled-up')
+                            .addClass('card--into-app-bar-scrolled');
+                    },
+                    scrolledMinimal: function () { /* nothing to do */ },
+                    scrolledFurther: function (state, options) {
+                        animateCss(state.toolbar, state.minimalScrolledToolbarDimension, options.animationDuration);
+                    }
+                },
+                scrolledFurther: {
+                    notScrolled: function (state, options) {
+                        state.card.addClass('card--into-app-bar-scrolled');
+                        animateCss(state.toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
+                    },
+                    scrolledUp: function (state, options) {
+                        state.card
+                            .removeClass('card--into-app-bar-scrolled-up')
+                            .addClass('card--into-app-bar-scrolled');
+                        animateCss(state.toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
+                    },
+                    scrolledMinimal: function (state, options) {
+                        animateCss(state.toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
+                    },
+                    scrolledFurther: function () { /* nothing to do */ }
+                }
+            };
+            return function (fromState, toState, state, options) {
+                "use strict";
+                transformations[toState][fromState](state, options);
+            };
+        })();
 
     $.cardToolbar = function (selector, options) {
         "use strict";
         selector = $(selector);
-        var defaults = {scrollOffset: 50},
+        var defaults = {scrollOffset: 50, animationDuration: 0.3, enlargeOnScrollUp: false},
             toolbar = selector.find('.card__toolbar').first(),
-            minimalScrolledToolbarDimension = detectMinimalScrolledToolbarDimension(selector, toolbar),
-            furtherScrolledToolbarDimension = detectFurtherScrolledToolbarDimension(),
-            nonScrolledToolbarDimension = {top: '', left: '', width: ''};
+            state = {
+                minimalScrolledToolbarDimension: detectMinimalScrolledToolbarDimension(selector, toolbar),
+                furtherScrolledToolbarDimension: detectFurtherScrolledToolbarDimension(),
+                nonScrolledToolbarDimension: detectNonScrolledToolbarDimension(),
+                card: selector,
+                toolbar: toolbar
+            },
+            lastPosition = window.pageYOffset,
+            currentStatus = 'notScrolled',
+            detectStatus;
         options = $.extend(defaults, options);
-        console.log(nonScrolledToolbarDimension, minimalScrolledToolbarDimension, furtherScrolledToolbarDimension);
+        console.log(state.nonScrolledToolbarDimension);
 
-        var lastPosition = window.pageYOffset,
-            transformations,
-            lastStatus = 'notscrolled';
-
-        transformations = {
-            notscrolled : {
-                notscrolled: function () { /* nothing to do */ },
-                upscrolled: function () {
-                    selector.removeClass('upscrolled');
-                    applyCss(toolbar, nonScrolledToolbarDimension);
-                },
-                minimalscrolled: function () {
-                    selector.removeClass('scrolled');
-                    applyCss(toolbar, nonScrolledToolbarDimension);
-                },
-                furtherscrolled: function () {
-                    selector.removeClass('scrolled');
-                    applyCss(toolbar, nonScrolledToolbarDimension);
-                }
-            },
-            upscrolled: {
-                notscrolled: function () {
-                    selector.addClass('upscrolled');
-                    applyCss(toolbar, minimalScrolledToolbarDimension);
-                },
-                upscrolled: function () { /* nothing to do */ },
-                minimalscrolled: function () {
-                    throw new Error("Should not be possible");
-                },
-                furtherscrolled: function () {
-                    animateCss(toolbar, minimalScrolledToolbarDimension, 0.3, function () {
-                        selector.removeClass('scrolled').addClass('upscrolled');
-                    });
-                }
-            },
-            minimalscrolled: {
-                notscrolled: function () {
-                    selector.addClass('scrolled');
-                    applyCss(toolbar, minimalScrolledToolbarDimension);
-                },
-                upscrolled: function () {
-                    selector.removeClass('upscrolled');
-                    selector.addClass('scrolled');
-                    applyCss(toolbar, minimalScrolledToolbarDimension);
-                },
-                minimalscrolled: function () { /* nothing to do */ },
-                furtherscrolled: function () {
-                    animateCss(toolbar, minimalScrolledToolbarDimension);
-                }
-            },
-            furtherscrolled: {
-                notscrolled: function () {
-                    selector.addClass('scrolled');
-                    animateCss(toolbar, furtherScrolledToolbarDimension);
-                },
-                upscrolled: function () {
-                    selector.removeClass('upscrolled');
-                    selector.addClass('scrolled');
-                    applyCss(toolbar, furtherScrolledToolbarDimension);
-                },
-                minimalscrolled: function () {
-                    animateCss(toolbar, furtherScrolledToolbarDimension);
-                },
-                furtherscrolled: function () { /* nothing to do */ }
+        detectStatus = function (isScrollUp, isScrollDown) {
+            if (window.pageYOffset === 0) {
+                return 'notScrolled';
             }
+            if (window.pageYOffset < options.scrollOffset) {
+                return 'scrolledMinimal';
+            }
+            return 'scrolledFurther';
         };
 
+        if (options.enlargeOnScrollUp) {
+            detectStatus = (function (wrappedFunction) {
+                return function (isScrollUp, isScrollDown) {
+                    if (isScrollUp) {
+                        if (window.pageYOffset > options.scrollOffset) {
+                            return 'scrolledUp';
+                        } else {
+                            return window.pageYOffset === 0 ? 'notScrolled' : 'scrolledUp';
+                        }
+                    } else if (isScrollDown) {
+                        return window.pageYOffset > options.scrollOffset ? 'scrolledFurther' : 'scrolledMinimal';
+                    }
+                    return wrappedFunction(isScrollUp, isScrollDown);
+                }
+            })(detectStatus);
+        }
+
         $(window).scroll(function () {
-            var isScrollUp = lastPosition - 5 > window.pageYOffset || (lastPosition > window.pageYOffset && window.pageYOffset < options.scrollOffset),
-                isScrollDown = lastPosition + 5 < window.pageYOffset || (lastPosition < window.pageYOffset && window.pageYOffset < options.scrollOffset),
+            var isScrollUp = lastPosition - 5 > window.pageYOffset
+                    || (lastPosition > window.pageYOffset && window.pageYOffset < options.scrollOffset),
+                isScrollDown = lastPosition + 5 < window.pageYOffset
+                    || (lastPosition < window.pageYOffset && window.pageYOffset < options.scrollOffset),
                 nextStatus;
             lastPosition = window.pageYOffset;
 
             if (! isScrollUp && ! isScrollDown) {
                 return;
             }
-            if (isScrollUp) {
-                if (window.pageYOffset > options.scrollOffset) {
-                    nextStatus = 'upscrolled';
-                } else {
-                    nextStatus = window.pageYOffset === 0 ? 'notscrolled' : 'upscrolled';
-                }
-            } else if (isScrollDown) {
-                nextStatus = window.pageYOffset > options.scrollOffset ? 'furtherscrolled' : 'minimalscrolled';
-            }
+            nextStatus = detectStatus(isScrollUp, isScrollDown);
 
-            if (lastStatus !== nextStatus) {
-                console.log(lastStatus, nextStatus);
-                toolbar.stop();
+            if (currentStatus !== nextStatus) {
+                state.toolbar.stop();
+                transform(currentStatus, nextStatus, state, options);
             }
-            transformations[nextStatus][lastStatus]();
-            lastStatus = nextStatus;
+            currentStatus = nextStatus;
         });
+        (function (lastStatus) {
+            currentStatus = detectStatus(false, false);
+            transform(lastStatus, currentStatus, state, options);
+        })(currentStatus);
     };
     $.fn.cardToolbar = function (offset) {
         "use strict";

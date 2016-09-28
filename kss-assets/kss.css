@@ -13182,6 +13182,11 @@ nav ul .breadcrumb:last-child {
   padding-right: 15px;
 }
 
+/* line 145, vendors-extensions/_materialize.scss */
+#sidenav-overlay {
+  z-index: 998;
+}
+
 /* line 2, base/_normalize.scss */
 body {
   overflow-y: scroll;
@@ -13371,7 +13376,7 @@ body {
   transform: rotate(0deg);
 }
 
-/* line 51, layout/_navbar.scss */
+/* line 52, layout/_navbar.scss */
 .navbar--waterfall-2x,
 .navbar--waterfall-2x nav {
   -moz-transition: height 0.3s;
@@ -13380,13 +13385,13 @@ body {
   transition: height 0.3s;
   height: 128px;
 }
-/* line 56, layout/_navbar.scss */
+/* line 57, layout/_navbar.scss */
 .navbar--waterfall-2x .nav-wrapper > ul,
 .navbar--waterfall-2x nav .nav-wrapper > ul {
   height: 50%;
 }
 
-/* line 51, layout/_navbar.scss */
+/* line 52, layout/_navbar.scss */
 .navbar--waterfall-3x,
 .navbar--waterfall-3x nav {
   -moz-transition: height 0.3s;
@@ -13395,13 +13400,13 @@ body {
   transition: height 0.3s;
   height: 192px;
 }
-/* line 56, layout/_navbar.scss */
+/* line 57, layout/_navbar.scss */
 .navbar--waterfall-3x .nav-wrapper > ul,
 .navbar--waterfall-3x nav .nav-wrapper > ul {
   height: 33.33333%;
 }
 
-/* line 51, layout/_navbar.scss */
+/* line 52, layout/_navbar.scss */
 .navbar--waterfall-4x,
 .navbar--waterfall-4x nav {
   -moz-transition: height 0.3s;
@@ -13410,13 +13415,13 @@ body {
   transition: height 0.3s;
   height: 256px;
 }
-/* line 56, layout/_navbar.scss */
+/* line 57, layout/_navbar.scss */
 .navbar--waterfall-4x .nav-wrapper > ul,
 .navbar--waterfall-4x nav .nav-wrapper > ul {
   height: 25%;
 }
 
-/* line 51, layout/_navbar.scss */
+/* line 52, layout/_navbar.scss */
 .navbar--waterfall-5x,
 .navbar--waterfall-5x nav {
   -moz-transition: height 0.3s;
@@ -13425,13 +13430,13 @@ body {
   transition: height 0.3s;
   height: 320px;
 }
-/* line 56, layout/_navbar.scss */
+/* line 57, layout/_navbar.scss */
 .navbar--waterfall-5x .nav-wrapper > ul,
 .navbar--waterfall-5x nav .nav-wrapper > ul {
   height: 20%;
 }
 
-/* line 62, layout/_navbar.scss */
+/* line 63, layout/_navbar.scss */
 .navbar--waterfall-shrunk,
 .navbar--waterfall-shrunk nav {
   -moz-transition: height 0.3s;
@@ -13440,18 +13445,18 @@ body {
   transition: height 0.3s;
   height: 64px;
 }
-/* line 67, layout/_navbar.scss */
+/* line 68, layout/_navbar.scss */
 .navbar--waterfall-shrunk .nav-wrapper > ul,
 .navbar--waterfall-shrunk nav .nav-wrapper > ul {
   height: 100%;
 }
-/* line 71, layout/_navbar.scss */
+/* line 72, layout/_navbar.scss */
 .navbar--waterfall-shrunk .navbar--waterfall-shrunk__hidden,
 .navbar--waterfall-shrunk nav .navbar--waterfall-shrunk__hidden {
   display: none;
 }
 
-/* line 113, layout/_navbar.scss */
+/* line 114, layout/_navbar.scss */
 .nav-wrapper .badge.badge--raised {
   display: block;
   position: absolute;
@@ -14147,7 +14152,7 @@ body {
     opacity: 1;
   }
 }
-/* line 31, components/_cards.scss */
+/* line 38, components/_cards.scss */
 .card__toolbar {
   background-color: inherit;
   padding: 20px;
@@ -14158,12 +14163,13 @@ body {
   height: 56px;
 }
 @media only screen and (min-width: 601px) {
-  /* line 31, components/_cards.scss */
+  /* line 38, components/_cards.scss */
   .card__toolbar {
     height: 64px;
   }
 }
-/* line 45, components/_cards.scss */
+/* line 51, components/_cards.scss */
+.card__toolbar h1,
 .card__toolbar h2,
 .card__toolbar h3,
 .card__toolbar h4,
@@ -14174,93 +14180,85 @@ body {
   font-size: 24px;
 }
 
-/* line 56, components/_cards.scss */
+/* line 63, components/_cards.scss */
 .card__toolbar .card__toolbar-actions {
   float: right;
   margin: 0;
 }
-/* line 60, components/_cards.scss */
+/* line 67, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li {
   float: left;
   padding: 0 16px;
 }
-/* line 65, components/_cards.scss */
+/* line 72, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li:first-child {
   padding-left: 0;
 }
-/* line 69, components/_cards.scss */
+/* line 76, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li:last-child {
   padding-right: 0;
 }
-/* line 73, components/_cards.scss */
+/* line 80, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li a {
   color: #757575;
 }
 
-/*.navbar__card-toolbar {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+/* line 99, components/_cards.scss */
+.card--into-app-bar {
+  margin-top: -56px;
+  z-index: 998;
+}
+@media only screen and (min-width: 601px) {
+  /* line 99, components/_cards.scss */
+  .card--into-app-bar {
+    margin-top: -64px;
+  }
+}
+/* line 107, components/_cards.scss */
+.card--into-app-bar.card--into-app-bar-scrolled, .card--into-app-bar.card--into-app-bar-scrolled-up {
+  z-index: auto;
+}
+/* line 112, components/_cards.scss */
+.card--into-app-bar > .card__toolbar {
+  z-index: 998;
+}
 
-  div {
-    @include border-radius(2px 2px 0 0);
-    @include box-shadow(0 0 5px 0 rgba(0, 0, 0, 0.16), 0 0 10px 0 rgba(0, 0, 0, 0.12));
-    margin: 0 16px;
-    padding: 20px;
-    background: #fff;
-    color: #000;
+/* line 117, components/_cards.scss */
+.card--into-app-bar-scrolled > .card__toolbar {
+  position: fixed;
+  background-color: #ee6e73;
+  color: #fff;
+  border-bottom: 0 none;
+  height: 56px;
+}
+@media only screen and (min-width: 601px) {
+  /* line 117, components/_cards.scss */
+  .card--into-app-bar-scrolled > .card__toolbar {
+    height: 64px;
+  }
+}
+/* line 128, components/_cards.scss */
+.card--into-app-bar-scrolled > .card__toolbar li a {
+  color: #fff;
+}
+
+/* line 133, components/_cards.scss */
+.card--into-app-bar-scrolled > .card-content,
+.card--into-app-bar-scrolled-up > .card-content {
+  padding-top: 56px;
+}
+@media only screen and (min-width: 601px) {
+  /* line 133, components/_cards.scss */
+  .card--into-app-bar-scrolled > .card-content,
+  .card--into-app-bar-scrolled-up > .card-content {
+    padding-top: 64px;
   }
 }
 
-.card--with-toolbar {
-  @include border-top-radius(0);
-  margin-top: 0;
-  z-index: 1000;
-}
-
-.card--with-toolbar.card--with-toolbar-scrolled {
-  z-index: auto;
-}*/
-/* line 28, _shame.scss */
-.card--with-toolbar {
-  margin-top: -64px;
-  z-index: 998;
-}
-/* line 32, _shame.scss */
-.card--with-toolbar.scrolled {
-  z-index: auto;
-}
-/* line 35, _shame.scss */
-.card--with-toolbar.upscrolled {
-  z-index: auto;
-}
-/* line 39, _shame.scss */
-.card--with-toolbar > .card__toolbar {
-  z-index: 998;
-}
-
-/* line 44, _shame.scss */
-.scrolled > .card__toolbar {
-  background-color: #ee6e73;
-  color: #fff;
-  transition: 0.3s top, 0.3s left, 0.3s width;
-  border-bottom: 0 none;
-  height: 64px;
+/* line 142, components/_cards.scss */
+.card--into-app-bar-scrolled-up > .card__toolbar {
+  transition: 0.3s top, 0.3s left, 0.3s background-color, 0.3s color;
   position: fixed;
-}
-/* line 52, _shame.scss */
-.scrolled > .card__toolbar li a {
-  color: #fff;
-}
-/* line 56, _shame.scss */
-.upscrolled > .card__toolbar {
-  transition: 0.3s top, 0.3s left, 0.3s width, 0.3s background-color, 0.3s color;
-  position: fixed;
-}
-
-/* line 62, _shame.scss */
-#sidenav-overlay {
-  z-index: 998;
 }
 
 /* line 1, themes/kss/layout/_side-nav.scss */
