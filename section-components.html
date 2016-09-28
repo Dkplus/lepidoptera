@@ -124,7 +124,7 @@
     <div class="main">
     <div class="card card--into-app-bar">
         <div class="card__toolbar">
-                            <i class="material-icons">picture_in_picture</i>
+                            <i class="material-icons card__into-app-bar-scrolled-hidden">picture_in_picture</i>
                                                 <h2 id="kssref-components" class="scrollspy">Components</h2>
         </div>
         <div class="card-content">
@@ -166,6 +166,8 @@ Therefore you only need to add the <code>card--into-app-bar</code> class to the 
 To initialize the plugin you need to include <code>js/card-toolbar.js</code> and call
 <code>$(&#39;.card--into-app-bar&#39;).cardToolbar()</code>.</p>
 <p>You may pass <code>{enlargeOnScrollUp: true}</code> to change the behavior on scrolling up.</p>
+<p>To hide elements when transform into the app bar add
+<code>card__into-app-bar-scrolled-hidden</code> as class to the elements.</p>
 
                                     </div>
 
@@ -380,7 +382,7 @@ To initialize the plugin you need to include <code>js/card-toolbar.js</code> and
                         });
                         index.add({
                             'header': "Card overlapping app bar",
-                            'description': " p You can let your card overlap your navbar (like the card on this site). Therefore you only need to add the  code card--into-app-bar  code  class to the  code card  code .  p   p You can use JavaScript to animate the card and let it transform into an app bar on scroll. To initialize the plugin you need to include  code js card-toolbar.js  code  and call  code $( .card--into-app-bar ).cardToolbar()  code .  p   p You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p  ",
+                            'description': " p You can let your card overlap your navbar (like the card on this site). Therefore you only need to add the  code card--into-app-bar  code  class to the  code card  code .  p   p You can use JavaScript to animate the card and let it transform into an app bar on scroll. To initialize the plugin you need to include  code js card-toolbar.js  code  and call  code $( .card--into-app-bar ).cardToolbar()  code .  p   p You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p   p To hide elements when transform into the app bar add  code card__into-app-bar-scrolled-hidden  code  as class to the elements.  p  ",
                             "url": "section-components.html#kssref-components-cards-into-app-bar"
                         });
                         index.add({

@@ -14203,27 +14203,27 @@ body {
   color: #757575;
 }
 
-/* line 99, components/_cards.scss */
+/* line 102, components/_cards.scss */
 .card--into-app-bar {
   margin-top: -56px;
   z-index: 998;
 }
 @media only screen and (min-width: 601px) {
-  /* line 99, components/_cards.scss */
+  /* line 102, components/_cards.scss */
   .card--into-app-bar {
     margin-top: -64px;
   }
 }
-/* line 107, components/_cards.scss */
+/* line 110, components/_cards.scss */
 .card--into-app-bar.card--into-app-bar-scrolled, .card--into-app-bar.card--into-app-bar-scrolled-up {
   z-index: auto;
 }
-/* line 112, components/_cards.scss */
+/* line 115, components/_cards.scss */
 .card--into-app-bar > .card__toolbar {
   z-index: 998;
 }
 
-/* line 117, components/_cards.scss */
+/* line 120, components/_cards.scss */
 .card--into-app-bar-scrolled > .card__toolbar {
   position: fixed;
   background-color: #ee6e73;
@@ -14232,33 +14232,38 @@ body {
   height: 56px;
 }
 @media only screen and (min-width: 601px) {
-  /* line 117, components/_cards.scss */
+  /* line 120, components/_cards.scss */
   .card--into-app-bar-scrolled > .card__toolbar {
     height: 64px;
   }
 }
-/* line 128, components/_cards.scss */
+/* line 131, components/_cards.scss */
 .card--into-app-bar-scrolled > .card__toolbar li a {
   color: #fff;
 }
 
-/* line 133, components/_cards.scss */
+/* line 136, components/_cards.scss */
 .card--into-app-bar-scrolled > .card-content,
 .card--into-app-bar-scrolled-up > .card-content {
   padding-top: 56px;
 }
 @media only screen and (min-width: 601px) {
-  /* line 133, components/_cards.scss */
+  /* line 136, components/_cards.scss */
   .card--into-app-bar-scrolled > .card-content,
   .card--into-app-bar-scrolled-up > .card-content {
     padding-top: 64px;
   }
 }
 
-/* line 142, components/_cards.scss */
+/* line 145, components/_cards.scss */
 .card--into-app-bar-scrolled-up > .card__toolbar {
   transition: 0.3s top, 0.3s left, 0.3s background-color, 0.3s color;
   position: fixed;
+}
+
+/* line 150, components/_cards.scss */
+.card--into-app-bar-scrolled .card__into-app-bar-scrolled-hidden {
+  display: none;
 }
 
 /* line 1, themes/kss/layout/_side-nav.scss */
