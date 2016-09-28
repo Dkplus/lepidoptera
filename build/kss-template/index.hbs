@@ -74,9 +74,9 @@
                 {{#each sections}}
                     {{#if_eq depth 1}}
                         {{#if fontawesome}}
-                            <i class="fa fa-{{fontawesome}}"></i>
+                            <i class="fa fa-{{fontawesome}} card__into-app-bar-scrolled-hidden"></i>
                         {{else if material}}
-                            <i class="material-icons">{{material}}</i>
+                            <i class="material-icons card__into-app-bar-scrolled-hidden">{{material}}</i>
                         {{/if}}
                         <h2 id="kssref-{{referenceURI}}" class="scrollspy">{{header}}</h2>
                     {{/if_eq}}

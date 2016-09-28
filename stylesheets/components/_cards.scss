@@ -94,6 +94,9 @@
 //
 // You may pass `{enlargeOnScrollUp: true}` to change the behavior on scrolling up.
 //
+// To hide elements when transform into the app bar add
+// `card__into-app-bar-scrolled-hidden` as class to the elements.
+//
 // Styleguide components.cards.into-app-bar
 //
 .card--into-app-bar {
@@ -142,4 +145,8 @@
 .card--into-app-bar-scrolled-up > .card__toolbar {
   transition: 0.3s top, 0.3s left, 0.3s background-color, 0.3s color;
   position: fixed;
+}
+
+.card--into-app-bar-scrolled .card__into-app-bar-scrolled-hidden {
+  display: none;
 }
