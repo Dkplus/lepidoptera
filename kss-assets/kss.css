@@ -14159,7 +14159,7 @@ body {
   border-bottom: 1px solid rgba(160, 160, 160, 0.2);
   transition: 0.3s;
   position: relative;
-  color: #757575;
+  color: rgba(0, 0, 0, 0.87);
   height: 56px;
 }
 @media only screen and (min-width: 601px) {
@@ -14200,7 +14200,7 @@ body {
 }
 /* line 80, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li a {
-  color: #757575;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 /* line 102, components/_cards.scss */

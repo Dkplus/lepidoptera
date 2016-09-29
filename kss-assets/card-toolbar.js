@@ -28,11 +28,11 @@
         },
         detectFurtherScrolledToolbarDimension = function () {
             "use strict";
-            var menuButton = $('.button-collapse:visible:first').parent(),
+            var menuButton = $('nav .button-collapse:visible:first').parent(),
                 nav = $('nav'),
                 result;
 
-            if (menuButton.length > 0 && menuButton.position().left < 50) {
+            if (menuButton.length > 0 && menuButton.position().left < 50 && menuButton.is) {
                 result = menuButton.position();
                 result['left'] += menuButton.width();
                 result['width'] = nav.innerWidth()
@@ -149,7 +149,6 @@
             currentStatus = 'notScrolled',
             detectStatus;
         options = $.extend(defaults, options);
-        console.log(state.nonScrolledToolbarDimension);
 
         detectStatus = function (isScrollUp, isScrollDown) {
             if (window.pageYOffset === 0) {
