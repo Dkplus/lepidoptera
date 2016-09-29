@@ -41,7 +41,7 @@
   border-bottom: 1px solid rgba(160, 160, 160, 0.2);
   transition: 0.3s;
   position: relative;
-  color: color('grey', 'darken-1');
+  color: rgba(#000, 0.87);
   height: $navbar-height-mobile;
 
   @media #{$medium-and-up} {
@@ -78,7 +78,7 @@
   }
 
   li a {
-    color: color('grey', 'darken-1');
+    color: rgba(#000, 0.87);
   }
 }
 
