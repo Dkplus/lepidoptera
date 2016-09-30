@@ -13,7 +13,7 @@
         },
         animateCss = function (element, css, duration, completion) {
             "use strict";
-            element.animate(css, duration, 'swing', function () {
+            element.velocity(css, duration, 'swing', function () {
                 applyCss(css);
                 if (completion) {
                     completion();

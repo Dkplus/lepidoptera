@@ -251,6 +251,7 @@
   }
 
   .side-nav__toggle--animated {
+    @include translateZ(0); // enable hardware acceleration
     @include transition(0.5s linear);
     @include rotate(-90deg);
     height: auto;
@@ -258,6 +259,7 @@
   }
 
   .active > .side-nav__toggle--animated {
+    @include translateZ(0); // enable hardware acceleration
     @include transition(0.5s linear);
     @include rotate(0deg);
   }
