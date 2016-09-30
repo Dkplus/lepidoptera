@@ -13352,6 +13352,9 @@ body {
 /* line 253, layout/_side-nav.scss */
 .side-nav .side-nav__toggle--animated,
 .side-nav.fixed .side-nav__toggle--animated {
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
   -webkit-transition: linear 0.5s;
@@ -13363,9 +13366,12 @@ body {
   height: auto;
   margin: 0;
 }
-/* line 260, layout/_side-nav.scss */
+/* line 261, layout/_side-nav.scss */
 .side-nav .active > .side-nav__toggle--animated,
 .side-nav.fixed .active > .side-nav__toggle--animated {
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   -moz-transition: linear 0.5s;
   -o-transition: linear 0.5s;
   -webkit-transition: linear 0.5s;
@@ -14169,6 +14175,9 @@ body {
 }
 /* line 38, components/_cards.scss */
 .card__toolbar {
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   background-color: inherit;
   padding: 20px;
   border-bottom: 1px solid rgba(160, 160, 160, 0.2);
@@ -14183,7 +14192,7 @@ body {
     height: 64px;
   }
 }
-/* line 51, components/_cards.scss */
+/* line 52, components/_cards.scss */
 .card__toolbar h1,
 .card__toolbar h2,
 .card__toolbar h3,
@@ -14195,50 +14204,50 @@ body {
   font-size: 24px;
 }
 
-/* line 63, components/_cards.scss */
+/* line 64, components/_cards.scss */
 .card__toolbar .card__toolbar-actions {
   float: right;
   margin: 0;
 }
-/* line 67, components/_cards.scss */
+/* line 68, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li {
   float: left;
   padding: 0 16px;
 }
-/* line 72, components/_cards.scss */
+/* line 73, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li:first-child {
   padding-left: 0;
 }
-/* line 76, components/_cards.scss */
+/* line 77, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li:last-child {
   padding-right: 0;
 }
-/* line 80, components/_cards.scss */
+/* line 81, components/_cards.scss */
 .card__toolbar .card__toolbar-actions li a {
   color: rgba(0, 0, 0, 0.87);
 }
 
-/* line 102, components/_cards.scss */
+/* line 103, components/_cards.scss */
 .card--into-app-bar {
   margin-top: -56px;
   z-index: 998;
 }
 @media only screen and (min-width: 601px) {
-  /* line 102, components/_cards.scss */
+  /* line 103, components/_cards.scss */
   .card--into-app-bar {
     margin-top: -64px;
   }
 }
-/* line 110, components/_cards.scss */
+/* line 111, components/_cards.scss */
 .card--into-app-bar.card--into-app-bar-scrolled, .card--into-app-bar.card--into-app-bar-scrolled-up {
   z-index: auto;
 }
-/* line 115, components/_cards.scss */
+/* line 116, components/_cards.scss */
 .card--into-app-bar > .card__toolbar {
   z-index: 998;
 }
 
-/* line 120, components/_cards.scss */
+/* line 121, components/_cards.scss */
 .card--into-app-bar-scrolled > .card__toolbar {
   position: fixed;
   background-color: #ee6e73;
@@ -14247,36 +14256,36 @@ body {
   height: 56px;
 }
 @media only screen and (min-width: 601px) {
-  /* line 120, components/_cards.scss */
+  /* line 121, components/_cards.scss */
   .card--into-app-bar-scrolled > .card__toolbar {
     height: 64px;
   }
 }
-/* line 131, components/_cards.scss */
+/* line 132, components/_cards.scss */
 .card--into-app-bar-scrolled > .card__toolbar li a {
   color: #fff;
 }
 
-/* line 136, components/_cards.scss */
+/* line 137, components/_cards.scss */
 .card--into-app-bar-scrolled > .card-content,
 .card--into-app-bar-scrolled-up > .card-content {
   padding-top: 56px;
 }
 @media only screen and (min-width: 601px) {
-  /* line 136, components/_cards.scss */
+  /* line 137, components/_cards.scss */
   .card--into-app-bar-scrolled > .card-content,
   .card--into-app-bar-scrolled-up > .card-content {
     padding-top: 64px;
   }
 }
 
-/* line 145, components/_cards.scss */
+/* line 146, components/_cards.scss */
 .card--into-app-bar-scrolled-up > .card__toolbar {
   transition: 0.3s top, 0.3s left, 0.3s background-color, 0.3s color;
   position: fixed;
 }
 
-/* line 150, components/_cards.scss */
+/* line 151, components/_cards.scss */
 .card--into-app-bar-scrolled .card__into-app-bar-scrolled-hidden {
   display: none;
 }
