@@ -52,6 +52,7 @@
   .navbar--waterfall-#{$i}x,
   .navbar--waterfall-#{$i}x nav {
     @include transition(0.3s height);
+    @include translateZ(0); // enable hardware acceleration
     height: $i * $navbar-height;
 
     .nav-wrapper > ul {
@@ -63,6 +64,7 @@
 .navbar--waterfall-shrunk,
 .navbar--waterfall-shrunk nav {
   @include transition(0.3s height);
+  @include translateZ(0); // enable hardware acceleration
   height: $navbar-height;
 
   .nav-wrapper > ul {
