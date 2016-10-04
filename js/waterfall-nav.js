@@ -10,11 +10,10 @@
             waterfallShouldBeEnlarged,
             waterfallShouldBeShrunk;
         options = $.extend(defaults, options);
-        selector = $(selector);
         lastPosition = 0;
 
         waterfallShouldBeShrunk = function () {
-            return lastPosition + 5 < window.pageYOffset &&  window.pageYOffset > options.scrollOffset;
+            return lastPosition + 5 < window.pageYOffset && window.pageYOffset > options.scrollOffset;
         };
         waterfallShouldBeEnlarged = function () {
             return lastPosition - 5 > window.pageYOffset && window.pageYOffset < options.scrollOffset;
@@ -27,10 +26,11 @@
         }
 
         listener = function() {
+            var $selector = $(selector);
             if (waterfallShouldBeShrunk()) {
-                selector.addClass('navbar--waterfall-shrunk');
+                $selector.addClass('navbar--waterfall-shrunk');
             } else if(waterfallShouldBeEnlarged()) {
-                selector.removeClass('navbar--waterfall-shrunk');
+                $selector.removeClass('navbar--waterfall-shrunk');
             }
             lastPosition = window.pageYOffset;
         };
