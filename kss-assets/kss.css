@@ -13383,7 +13383,12 @@ body {
 }
 
 /* line 52, layout/_navbar.scss */
-.navbar--waterfall-2x,
+.navbar--waterfall-2x {
+  height: 128px;
+}
+
+/* line 56, layout/_navbar.scss */
+nav.navbar--waterfall-2x,
 .navbar--waterfall-2x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
@@ -13394,14 +13399,19 @@ body {
   transform: translateZ(0);
   height: 128px;
 }
-/* line 58, layout/_navbar.scss */
-.navbar--waterfall-2x .nav-wrapper > ul,
+/* line 62, layout/_navbar.scss */
+nav.navbar--waterfall-2x .nav-wrapper > ul,
 .navbar--waterfall-2x nav .nav-wrapper > ul {
   height: 50%;
 }
 
 /* line 52, layout/_navbar.scss */
-.navbar--waterfall-3x,
+.navbar--waterfall-3x {
+  height: 192px;
+}
+
+/* line 56, layout/_navbar.scss */
+nav.navbar--waterfall-3x,
 .navbar--waterfall-3x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
@@ -13412,14 +13422,19 @@ body {
   transform: translateZ(0);
   height: 192px;
 }
-/* line 58, layout/_navbar.scss */
-.navbar--waterfall-3x .nav-wrapper > ul,
+/* line 62, layout/_navbar.scss */
+nav.navbar--waterfall-3x .nav-wrapper > ul,
 .navbar--waterfall-3x nav .nav-wrapper > ul {
   height: 33.33333%;
 }
 
 /* line 52, layout/_navbar.scss */
-.navbar--waterfall-4x,
+.navbar--waterfall-4x {
+  height: 256px;
+}
+
+/* line 56, layout/_navbar.scss */
+nav.navbar--waterfall-4x,
 .navbar--waterfall-4x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
@@ -13430,14 +13445,19 @@ body {
   transform: translateZ(0);
   height: 256px;
 }
-/* line 58, layout/_navbar.scss */
-.navbar--waterfall-4x .nav-wrapper > ul,
+/* line 62, layout/_navbar.scss */
+nav.navbar--waterfall-4x .nav-wrapper > ul,
 .navbar--waterfall-4x nav .nav-wrapper > ul {
   height: 25%;
 }
 
 /* line 52, layout/_navbar.scss */
-.navbar--waterfall-5x,
+.navbar--waterfall-5x {
+  height: 320px;
+}
+
+/* line 56, layout/_navbar.scss */
+nav.navbar--waterfall-5x,
 .navbar--waterfall-5x nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
@@ -13448,14 +13468,19 @@ body {
   transform: translateZ(0);
   height: 320px;
 }
-/* line 58, layout/_navbar.scss */
-.navbar--waterfall-5x .nav-wrapper > ul,
+/* line 62, layout/_navbar.scss */
+nav.navbar--waterfall-5x .nav-wrapper > ul,
 .navbar--waterfall-5x nav .nav-wrapper > ul {
   height: 20%;
 }
 
-/* line 64, layout/_navbar.scss */
-.navbar--waterfall-shrunk,
+/* line 68, layout/_navbar.scss */
+.navbar--waterfall-shrunk {
+  height: 64px;
+}
+
+/* line 72, layout/_navbar.scss */
+nav.navbar--waterfall-shrunk,
 .navbar--waterfall-shrunk nav {
   -moz-transition: height 0.3s;
   -o-transition: height 0.3s;
@@ -13466,18 +13491,18 @@ body {
   transform: translateZ(0);
   height: 64px;
 }
-/* line 70, layout/_navbar.scss */
-.navbar--waterfall-shrunk .nav-wrapper > ul,
+/* line 78, layout/_navbar.scss */
+nav.navbar--waterfall-shrunk .nav-wrapper > ul,
 .navbar--waterfall-shrunk nav .nav-wrapper > ul {
   height: 100%;
 }
-/* line 74, layout/_navbar.scss */
-.navbar--waterfall-shrunk .navbar--waterfall-shrunk__hidden,
+/* line 82, layout/_navbar.scss */
+nav.navbar--waterfall-shrunk .navbar--waterfall-shrunk__hidden,
 .navbar--waterfall-shrunk nav .navbar--waterfall-shrunk__hidden {
   display: none;
 }
 
-/* line 116, layout/_navbar.scss */
+/* line 124, layout/_navbar.scss */
 .nav-wrapper .badge.badge--raised {
   display: block;
   position: absolute;

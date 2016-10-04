@@ -3,27 +3,27 @@
             "use strict";
             return parseInt($element.css(property));
         },
-        applyCss = function (element, css) {
+        applyCss = function ($element, css) {
             "use strict";
             for (var prop in css) {
                 if (css.hasOwnProperty(prop)) {
-                    element.css(prop, css[prop]);
+                    $element.css(prop, css[prop]);
                 }
             }
         },
-        animateCss = function (element, css, duration, completion) {
+        animateCss = function ($element, css, duration, completion) {
             "use strict";
-            element.velocity(css, duration, 'swing', function () {
+            $element.velocity(css, duration, 'swing', function () {
                 applyCss(css);
                 if (completion) {
                     completion();
                 }
             });
         },
-        detectMinimalScrolledToolbarDimension = function (card, toolbar) {
+        detectMinimalScrolledToolbarDimension = function ($card, $toolbar) {
             "use strict";
-            var result = card.offset();
-            result['width'] = toolbar.innerWidth();
+            var result = $card.offset();
+            result['width'] = $toolbar.innerWidth();
             return result;
         },
         detectFurtherScrolledToolbarDimension = function () {
@@ -59,36 +59,36 @@
                 notScrolled: {
                     notScrolled: function () { /* nothing to do */ },
                     scrolledUp: function (state) {
-                        state.card.removeClass('card--into-app-bar-scrolled-up');
-                        applyCss(state.toolbar, state.nonScrolledToolbarDimension);
+                        state.$card.removeClass('card--into-app-bar-scrolled-up');
+                        applyCss(state.$toolbar, state.nonScrolledToolbarDimension);
                     },
                     scrolledMinimal: function (state) {
-                        state.card.removeClass('card--into-app-bar-scrolled');
-                        applyCss(state.toolbar, state.nonScrolledToolbarDimension);
+                        state.$card.removeClass('card--into-app-bar-scrolled');
+                        applyCss(state.$toolbar, state.nonScrolledToolbarDimension);
                     },
                     scrolledFurther: function (state) {
-                        state.card.removeClass('card--into-app-bar-scrolled');
-                        applyCss(state.toolbar, state.nonScrolledToolbarDimension);
+                        state.$card.removeClass('card--into-app-bar-scrolled');
+                        applyCss(state.$toolbar, state.nonScrolledToolbarDimension);
                     }
                 },
                 scrolledUp: {
                     notScrolled: function (state) {
-                        state.card.addClass('card--into-app-bar-scrolled-up');
-                        applyCss(state.toolbar, state.minimalScrolledToolbarDimension);
+                        state.$card.addClass('card--into-app-bar-scrolled-up');
+                        applyCss(state.$toolbar, state.minimalScrolledToolbarDimension);
                     },
                     scrolledUp: function () { /* nothing to do */ },
                     scrolledMinimal: function (state) {
-                        state.card
+                        state.$card
                             .removeClass('card--into-app-bar-scrolled')
                             .addClass('card--into-app-bar-scrolled-up');
                     },
                     scrolledFurther: function (state, options) {
                         animateCss(
-                            state.toolbar,
+                            state.$toolbar,
                             state.minimalScrolledToolbarDimension,
                             options.animationDuration,
                             function () {
-                                state.card
+                                state.$card
                                     .removeClass('card--into-app-bar-scrolled')
                                     .addClass('card--into-app-bar-scrolled-up');
                             }
@@ -97,53 +97,58 @@
                 },
                 scrolledMinimal: {
                     notScrolled: function (state) {
-                        state.card.addClass('card--into-app-bar-scrolled');
-                        applyCss(state.toolbar, state.minimalScrolledToolbarDimension);
+                        state.$card.addClass('card--into-app-bar-scrolled');
+                        applyCss(state.$toolbar, state.minimalScrolledToolbarDimension);
                     },
                     scrolledUp: function (state) {
-                        state.card
+                        state.$card
                             .removeClass('card--into-app-bar-scrolled-up')
                             .addClass('card--into-app-bar-scrolled');
                     },
                     scrolledMinimal: function () { /* nothing to do */ },
                     scrolledFurther: function (state, options) {
-                        animateCss(state.toolbar, state.minimalScrolledToolbarDimension, options.animationDuration);
+                        animateCss(state.$toolbar, state.minimalScrolledToolbarDimension, options.animationDuration);
                     }
                 },
                 scrolledFurther: {
                     notScrolled: function (state, options) {
-                        state.card.addClass('card--into-app-bar-scrolled');
-                        animateCss(state.toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
+                        state.$card.addClass('card--into-app-bar-scrolled');
+                        animateCss(state.$toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
                     },
                     scrolledUp: function (state, options) {
-                        state.card
+                        state.$card
                             .removeClass('card--into-app-bar-scrolled-up')
                             .addClass('card--into-app-bar-scrolled');
-                        animateCss(state.toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
+                        animateCss(state.$toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
                     },
                     scrolledMinimal: function (state, options) {
-                        animateCss(state.toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
+                        animateCss(state.$toolbar, state.furtherScrolledToolbarDimension, options.animationDuration);
                     },
                     scrolledFurther: function () { /* nothing to do */ }
                 }
             };
             return function (fromState, toState, state, options) {
                 "use strict";
-                transformations[toState][fromState](state, options);
+                if (fromState !== toState) {
+                    state.$card = $(state.card);
+                    state.$toolbar = state.$card.find('.card__toolbar').first();
+                    transformations[toState][fromState](state, options);
+                }
             };
         })();
 
     $.cardToolbar = function (selector, options) {
         "use strict";
-        selector = $(selector);
-        var defaults = {scrollOffset: 50, animationDuration: 0.3, enlargeOnScrollUp: false},
-            toolbar = selector.find('.card__toolbar').first(),
+        var $selector = $(selector),
+            defaults = {scrollOffset: 50, animationDuration: 0.3, enlargeOnScrollUp: false},
+            toolbar = $selector.find('.card__toolbar').first(),
             state = {
-                minimalScrolledToolbarDimension: detectMinimalScrolledToolbarDimension(selector, toolbar),
+                minimalScrolledToolbarDimension: detectMinimalScrolledToolbarDimension($selector, toolbar),
                 furtherScrolledToolbarDimension: detectFurtherScrolledToolbarDimension(),
                 nonScrolledToolbarDimension: detectNonScrolledToolbarDimension(),
                 card: selector,
-                toolbar: toolbar
+                $card: $selector,
+                $toolbar: toolbar
             },
             lastPosition = window.pageYOffset,
             currentStatus = 'notScrolled',
@@ -191,7 +196,7 @@
             nextStatus = detectStatus(isScrollUp, isScrollDown);
 
             if (currentStatus !== nextStatus) {
-                state.toolbar.stop();
+                state.$toolbar.stop();
                 transform(currentStatus, nextStatus, state, options);
             }
             currentStatus = nextStatus;
