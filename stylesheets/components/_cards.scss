@@ -39,7 +39,7 @@
   @include translateZ(0); // enable hardware acceleration
   background-color: inherit;
   padding: 20px;
-  border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+  border-bottom: 1px solid rgba(160, 160, 160, 0.3);
   transition: 0.3s;
   position: relative;
   color: rgba(#000, 0.87);
@@ -91,12 +91,16 @@
 //
 // You can use JavaScript to animate the card and let it transform into an app bar on scroll.
 // To initialize the plugin you need to include `js/card-toolbar.js` and call
-// `$('.card--into-app-bar').cardToolbar()`.
+// `$('.card--into-app-bar').cardToolbar()` or `$.cardToolbar('.card--into-app-bar')`.
 //
 // You may pass `{enlargeOnScrollUp: true}` to change the behavior on scrolling up.
 //
 // To hide elements when transform into the app bar add
 // `card__into-app-bar-scrolled-hidden` as class to the elements.
+//
+// If the card should not hide some elements of the app bar in scrolled mode, add the class
+// `js-card-toolbar__left-border` to this elements. The scrolled card toolbar will position
+// itself right after the last of this elements.
 //
 // Styleguide components.cards.into-app-bar
 //
