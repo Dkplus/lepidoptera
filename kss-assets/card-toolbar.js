@@ -28,17 +28,22 @@
         },
         detectFurtherScrolledToolbarDimension = function () {
             "use strict";
-            var menuButton = $('nav .button-collapse:visible:first').parent(),
+            var leftBorder = $('.js-card-toolbar__left-border:visible:last'),
                 nav = $('nav'),
                 result;
 
-            if (menuButton.length > 0 && menuButton.position().left < 50 && menuButton.is) {
-                result = menuButton.position();
-                result['left'] += menuButton.width();
+            if (leftBorder.parent().prop('tagName') && leftBorder.parent().prop('tagName').toLowerCase() == 'li') {
+                leftBorder = leftBorder.parent();
+            }
+
+            if (leftBorder.length > 0) {
+                result = leftBorder.offset();
+                result.top = 0;
+                result['left'] += leftBorder.width();
                 result['width'] = nav.innerWidth()
                     - cssPx(nav, 'padding-left')
                     - cssPx(nav, 'padding-right')
-                    - menuButton.width()
+                    - leftBorder.width()
                     - 16;
                 return result;
             }
@@ -47,7 +52,6 @@
             result['left'] += cssPx(nav, 'margin-left') + cssPx(nav, 'padding-left');
             result['top'] += cssPx(nav, 'margin-top') + cssPx(nav, 'padding-top');
             result['width'] = nav.innerWidth() - cssPx(nav, 'padding-left') - cssPx(nav, 'padding-right');
-
             return result;
         },
         detectNonScrolledToolbarDimension = function () {
@@ -132,6 +136,9 @@
                 if (fromState !== toState) {
                     state.$card = $(state.card);
                     state.$toolbar = state.$card.find('.card__toolbar').first();
+                    state.minimalScrolledToolbarDimension = detectMinimalScrolledToolbarDimension(state.$card, state.$toolbar);
+                    state.furtherScrolledToolbarDimension = detectFurtherScrolledToolbarDimension();
+                    state.nonScrolledToolbarDimension = detectNonScrolledToolbarDimension();
                     transformations[toState][fromState](state, options);
                 }
             };

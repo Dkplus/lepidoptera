@@ -164,10 +164,13 @@ a look at the
 Therefore you only need to add the <code>card--into-app-bar</code> class to the <code>card</code>.</p>
 <p>You can use JavaScript to animate the card and let it transform into an app bar on scroll.
 To initialize the plugin you need to include <code>js/card-toolbar.js</code> and call
-<code>$(&#39;.card--into-app-bar&#39;).cardToolbar()</code>.</p>
+<code>$(&#39;.card--into-app-bar&#39;).cardToolbar()</code> or <code>$.cardToolbar(&#39;.card--into-app-bar&#39;)</code>.</p>
 <p>You may pass <code>{enlargeOnScrollUp: true}</code> to change the behavior on scrolling up.</p>
 <p>To hide elements when transform into the app bar add
 <code>card__into-app-bar-scrolled-hidden</code> as class to the elements.</p>
+<p>If the card should not hide some elements of the app bar in scrolled mode, add the class
+<code>js-card-toolbar__left-border</code> to this elements. The scrolled card toolbar will position
+itself right after the last of this elements.</p>
 
                                     </div>
 
@@ -382,7 +385,7 @@ To initialize the plugin you need to include <code>js/card-toolbar.js</code> and
                         });
                         index.add({
                             'header': "Card overlapping app bar",
-                            'description': " p You can let your card overlap your navbar (like the card on this site). Therefore you only need to add the  code card--into-app-bar  code  class to the  code card  code .  p   p You can use JavaScript to animate the card and let it transform into an app bar on scroll. To initialize the plugin you need to include  code js card-toolbar.js  code  and call  code $( .card--into-app-bar ).cardToolbar()  code .  p   p You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p   p To hide elements when transform into the app bar add  code card__into-app-bar-scrolled-hidden  code  as class to the elements.  p  ",
+                            'description': " p You can let your card overlap your navbar (like the card on this site). Therefore you only need to add the  code card--into-app-bar  code  class to the  code card  code .  p   p You can use JavaScript to animate the card and let it transform into an app bar on scroll. To initialize the plugin you need to include  code js card-toolbar.js  code  and call  code $( .card--into-app-bar ).cardToolbar()  code  or  code $.cardToolbar( .card--into-app-bar )  code .  p   p You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p   p To hide elements when transform into the app bar add  code card__into-app-bar-scrolled-hidden  code  as class to the elements.  p   p If the card should not hide some elements of the app bar in scrolled mode, add the class  code js-card-toolbar__left-border  code  to this elements. The scrolled card toolbar will position itself right after the last of this elements.  p  ",
                             "url": "section-components.html#kssref-components-cards-into-app-bar"
                         });
                         index.add({
@@ -456,6 +459,11 @@ To initialize the plugin you need to include <code>js/card-toolbar.js</code> and
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-breadcrumb"
                         });
                         index.add({
+                            'header': "Span as Breadcrumb Element",
+                            'description': " p Spans cannot be used as Breadcrumb elements because of gthe missing overflow. But since the last element is often not clickable …  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-breadcrumb_span"
+                        });
+                        index.add({
                             'header': "Intention after fixed SideNav",
                             'description': " p A fixed SideNav hides content at the left. To prevent this, the  code nav  code  and the main content (use  code .container  code  or  code .main  code ) will be automatically intended if it is placed after the fixed navbar.  p  ",
                             "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav"
@@ -495,6 +503,7 @@ To initialize the plugin you need to include <code>js/card-toolbar.js</code> and
                             "SideNav Toggle Font-Size": null,
                             "MaterializeCSS": null,
                             "Breadcrumb in List": null,
+                            "Span as Breadcrumb Element": null,
                             "Intention after fixed SideNav": null,
                             "Screen margins": null,
                             "Sidenav overlay": null,
