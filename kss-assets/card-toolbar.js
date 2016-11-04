@@ -136,6 +136,9 @@
                 if (fromState !== toState) {
                     state.$card = $(state.card);
                     state.$toolbar = state.$card.find('.card__toolbar').first();
+                    if (state.$card.length === 0 || state.$toolbar.length === 0) {
+                        return;
+                    }
                     state.minimalScrolledToolbarDimension = detectMinimalScrolledToolbarDimension(state.$card, state.$toolbar);
                     state.furtherScrolledToolbarDimension = detectFurtherScrolledToolbarDimension();
                     state.nonScrolledToolbarDimension = detectNonScrolledToolbarDimension();
@@ -150,9 +153,9 @@
             defaults = {scrollOffset: 50, animationDuration: 0.3, enlargeOnScrollUp: false},
             toolbar = $selector.find('.card__toolbar').first(),
             state = {
-                minimalScrolledToolbarDimension: detectMinimalScrolledToolbarDimension($selector, toolbar),
-                furtherScrolledToolbarDimension: detectFurtherScrolledToolbarDimension(),
-                nonScrolledToolbarDimension: detectNonScrolledToolbarDimension(),
+                minimalScrolledToolbarDimension: null,
+                furtherScrolledToolbarDimension: null,
+                nonScrolledToolbarDimension: null,
                 card: selector,
                 $card: $selector,
                 $toolbar: toolbar
@@ -160,6 +163,7 @@
             lastPosition = window.pageYOffset,
             currentStatus = 'notScrolled',
             detectStatus;
+
         options = $.extend(defaults, options);
 
         detectStatus = function (isScrollUp, isScrollDown) {
