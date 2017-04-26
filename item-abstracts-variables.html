@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Lepidoptera</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="kss-assets/kss.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="kss-assets/vendors/prism/themes/prism.css"/>
+    
+    <!-- moved to top so that we can use it within our example markup -->
+    <script type="text/javascript" src="kss-assets/vendors/jquery/dist/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <ul id="menu" class="side-nav fixed collapsible">
+            <li >
+                <a class="waves-effect collapsible-header"
+                   >
+                        <i class="side-nav__short fa fa-usd"></i>
+                    <span class="side-nav__long">Abstracts</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body collection--animated">
+                                <li>
+                                    <a class="waves-effect" href="section-abstracts.html#kssref-abstracts-mixins">
+                                        <span class="side-nav__short">1.1</span>
+                                        <span class="side-nav__long">Mixins</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-abstracts.html#kssref-abstracts-variables">
+                                        <span class="side-nav__short">1.2</span>
+                                        <span class="side-nav__long">Variables</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+            <li >
+                <a class="waves-effect collapsible-header"
+                   >
+                        <i class="side-nav__short material-icons">picture_in_picture</i>
+                    <span class="side-nav__long">Components</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body collection--animated">
+                                <li>
+                                    <a class="waves-effect" href="section-components.html#kssref-components-cards">
+                                        <span class="side-nav__short">2.1</span>
+                                        <span class="side-nav__long">Cards</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-components.html#kssref-components-collection">
+                                        <span class="side-nav__short">2.2</span>
+                                        <span class="side-nav__long">Collection</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+            <li >
+                <a class="waves-effect collapsible-header"
+                   >
+                        <i class="side-nav__short material-icons">view_quilt</i>
+                    <span class="side-nav__long">Layout</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body collection--animated">
+                                <li>
+                                    <a class="waves-effect" href="section-layout.html#kssref-layout-navbar">
+                                        <span class="side-nav__short">3.1</span>
+                                        <span class="side-nav__long">Navbar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-layout.html#kssref-layout-side-nav">
+                                        <span class="side-nav__short">3.2</span>
+                                        <span class="side-nav__long">SideNav</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+            <li >
+                <a class="waves-effect collapsible-header"
+                   >
+                        <i class="side-nav__short material-icons">extensions</i>
+                    <span class="side-nav__long">Vendors Extensions</span>
+                        <i class="fa fa-fw fa-caret-down side-nav__toggle side-nav__toggle--animated side-nav__toggle--right"></i>
+                </a>
+                    <ul class="collapsible-body collection--animated">
+                                <li>
+                                    <a class="waves-effect" href="section-vendors-extensions.html#kssref-vendors-extensions-font-awesome">
+                                        <span class="side-nav__short">4.1</span>
+                                        <span class="side-nav__long">Font Awesome</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect" href="section-vendors-extensions.html#kssref-vendors-extensions-materializecss">
+                                        <span class="side-nav__short">4.2</span>
+                                        <span class="side-nav__long">MaterializeCSS</span>
+                                    </a>
+                                </li>
+                    </ul>
+            </li>
+    </ul>
+    <div class="navbar-fixed navbar--waterfall-2x">
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="#" data-activates="menu" class="button-collapse hide-on-large-only"><i class="material-icons">menu</i></a></li>
+                    <li class="navbar--waterfall-shrunk__hidden"><a href="./" class="brand-logo"><img src="kss-assets/logo.png"> Lepidoptera</a></li>
+                    <li class="navbar--waterfall-shrunk__hidden right">
+                        <form id="js-search-form" class="hide-on-small-and-down">
+                            <div class="input-field">
+                                <input id="search" type="search" required class="autocomplete">
+                                <label for="search"><i class="material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="main">
+    <div class="card card--into-app-bar">
+        <div class="card__toolbar">
+        </div>
+        <div class="card-content">
+            <div class="row">
+                <div class="col s12 m9 l10">
+                            <div id="kssref-abstracts-variables" class="section scrollspy">
+                                <h2>
+                                    <a href="#kssref-abstracts-variables">
+                                        1.2 Variables
+                                    </a>
+                                </h2>
+
+
+
+
+
+
+                            </div>
+                </div>
+                <div class="col hide-on-small-only m3 l2">
+                    <ul class="section table-of-contents pinned">
+                            <li><a href="#kssref-abstracts-variables">1.2 Variables</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="kss-assets/vendors/materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="kss-assets/scroll-up.js"></script>
+    <script type="text/javascript" src="kss-assets/card-toolbar.js"></script>
+    <script type="text/javascript" src="kss-assets/waterfall-nav.js"></script>
+    <script type="text/javascript" src="kss-assets/vendors/prism/prism.js"></script>
+    <script type="text/javascript" src="kss-assets/vendors/lunr.js/lunr.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.card--into-app-bar').cardToolbar({enlargeOnScrollUp: true});
+            $('.navbar-fixed').waterfallNav({enlargeOnScrollUp: true});
+            $('.button-collapse:not(:first)').sideNav({edge: 'right'});
+            $('.button-collapse:first').sideNav();
+            $('.dropdown-button-click').dropdown();
+            $('.collapsible').collapsible();
+            $('.scrollspy').scrollSpy();
+
+            var index = lunr(function () {
+                this.field('header', {boost: 10});
+                this.field('description');
+                this.ref('url');
+            });
+                index.add({
+                    'header': "Abstracts",
+                    'description': "",
+                    'url': "section-abstracts.html"
+                });
+                        index.add({
+                            'header': "Mixins",
+                            'description': " p Utilities that should help you to design your template.  p  ",
+                            "url": "section-abstracts.html#kssref-abstracts-mixins"
+                        });
+                        index.add({
+                            'header': "Motions",
+                            'description': " p Lepidoptera ships different motions from the material design guidelines. They are implemented as  em mixins  em  that can be applied via  code @include  code . For each animation two version exist: The  code animation-  code  and the  code transition-  code  version.  p  ",
+                            "url": "section-abstracts.html#kssref-abstracts-mixins-motions"
+                        });
+                        index.add({
+                            'header': "Variables",
+                            'description': "",
+                            "url": "section-abstracts.html#kssref-abstracts-variables"
+                        });
+                        index.add({
+                            'header': "$le-vendor-base-path",
+                            'description': " p Base path to the stylesheets-vendor directory. Can be used to adjust paths of fonts and images shipped with Lepidoptera.  p  ",
+                            "url": "section-abstracts.html#kssref-abstracts-variables-base-path"
+                        });
+                        index.add({
+                            'header': "$le-side-nav-expanding-width",
+                            'description': " p Width of the  code .side-nav--expanding  code  in collapsed state.  p  ",
+                            "url": "section-abstracts.html#kssref-abstracts-variables-side-nav-expanding-width"
+                        });
+                        index.add({
+                            'header': "$le-side-nav-width",
+                            'description': " p Width of the  code .side-nav  code .  p  ",
+                            "url": "section-abstracts.html#kssref-abstracts-variables-side-nav-width"
+                        });
+                index.add({
+                    'header': "Components",
+                    'description': "",
+                    'url': "section-components.html"
+                });
+                        index.add({
+                            'header': "Cards",
+                            'description': " p Cards are well known from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com cards.html  documentation of MaterializeCSS  a .  p  ",
+                            "url": "section-components.html#kssref-components-cards"
+                        });
+                        index.add({
+                            'header': "Card overlapping app bar",
+                            'description': " p You can let your card overlap your navbar (like the card on this site). Therefore you only need to add the  code card--into-app-bar  code  class to the  code card  code .  p   p You can use JavaScript to animate the card and let it transform into an app bar on scroll. To initialize the plugin you need to include  code js card-toolbar.js  code  and call  code $( .card--into-app-bar ).cardToolbar()  code  or  code $.cardToolbar( .card--into-app-bar )  code .  p   p You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p   p To hide elements when transform into the app bar add  code card__into-app-bar-scrolled-hidden  code  as class to the elements.  p   p If the card should not hide some elements of the app bar in scrolled mode, add the class  code js-card-toolbar__left-border  code  to this elements. The scrolled card toolbar will position itself right after the last of this elements.  p  ",
+                            "url": "section-components.html#kssref-components-cards-into-app-bar"
+                        });
+                        index.add({
+                            'header': "Card Toolbar",
+                            'description': " p Lepidoptera adds a toolbar to the cards. It may contain an headline ( code h1  code - code h6  code ) and some actions.  p  ",
+                            "url": "section-components.html#kssref-components-cards-toolbar"
+                        });
+                        index.add({
+                            'header': "Collection",
+                            'description': " p Collections from MaterializeCSS. For usage information please have a look at the  a href  http:  materializecss.com collections.html  documentation of MaterializeCSS  a .  p   p Lepidoptera adds some modifiers for the collections.  p  ",
+                            "url": "section-components.html#kssref-components-collection"
+                        });
+                index.add({
+                    'header': "Layout",
+                    'description': "",
+                    'url': "section-layout.html"
+                });
+                        index.add({
+                            'header': "Navbar",
+                            'description': " p Horizontal navigation bar from MaterializeCSS.  p   p Please have a look at the  a href  http:  materializecss.com navbar.html  documentation of MaterializeCSS  a  for many awesome build in features.  p   p Modifiers should be added to the  code nav  code  element if it is not wrapped by a  code .navbar-fixed  code . Otherwise it should be added to the  code .navbar-fixed  code  wrapper.  p   p To initialize the plugin you need to include  code js waterfall-nav.js  code  and call  code $( .nav-waterfall-2x ).waterfallNav();  code . You may pass  code {enlargeOnScrollUp: true}  code  to change the behavior on scrolling up.  p  ",
+                            "url": "section-layout.html#kssref-layout-navbar"
+                        });
+                        index.add({
+                            'header': "Badge",
+                            'description': " p Support for badges within the Navbar is built in in MaterializeCSS. But its missing support for badges near to Materialize Icons (see the  em Default styling  em  example). This has been added. Together with class  code circle  code  it can be used to create a nice looking notification counter.  p  ",
+                            "url": "section-layout.html#kssref-layout-navbar-badge"
+                        });
+                        index.add({
+                            'header': "SideNav",
+                            'description': " p Slide out menu from MaterializeCSS. It has been extended with some modifiers that allow a more flexible usage of the side-nav.  p   p The two most noteworthy things are the possibility to always have a small side-nav that expands on hover (See  code .side-nav--mini  code  and to add an logo to the sidebar.  p   p For most use cases you can keep up using the normal markup from Materialize, but for some modifiers you need to put the  code side-nav  code  class at a div and put the  code ul  code  inside of this  code div  code :  p   pre  code class  lang-html   div class  side-nav     ul      li  a href  #!  Label  a   li     ul    div    code   pre   p Please have a look at the  a href  http:  materializecss.com side-nav.html  documentation of MaterializeCSS  a  especially for the initialization with jQuery and the Dropdown HTML Structure.  p  ",
+                            "url": "section-layout.html#kssref-layout-side-nav"
+                        });
+                        index.add({
+                            'header': "Logo",
+                            'description': " p Logo inside the side-nav of MaterializeCSS.  p  ",
+                            "url": "section-layout.html#kssref-layout-side-nav-logo"
+                        });
+                        index.add({
+                            'header': "Toggle Icon",
+                            'description': "",
+                            "url": "section-layout.html#kssref-layout-side-nav-toggle"
+                        });
+                index.add({
+                    'header': "Vendors Extensions",
+                    'description': " p All used frameworks are great by itself but may need a little bit more love when playing together.  p  ",
+                    'url': "section-vendors-extensions.html"
+                });
+                        index.add({
+                            'header': "Font Awesome",
+                            'description': " p Font Awesome has been added as another Icon-library. While the Material Design Icons are great they are missing some Icons that may be found in Font Awesome.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-font-awesome"
+                        });
+                        index.add({
+                            'header': "Adjusted Font size",
+                            'description': " p Font size for  code .fa  code  has been adjusted to match Material Design Icon size in  code .side-nav  code  and  code .nav-wrapper  code .  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-font-awesome-adjusted-font-size"
+                        });
+                        index.add({
+                            'header': "SideNav Toggle Font-Size",
+                            'description': " p Reset the font-size for the  code .side-nav__toggle  code . It has been increased by MaterializeCSS.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-font-awesome-side-nav-toggle"
+                        });
+                        index.add({
+                            'header': "MaterializeCSS",
+                            'description': " p While MaterializeCSS is a great framework, there are some things that can be enhanced to allow a better interaction with other frameworks without adding new classes.  p   p These hacks are listed here.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss"
+                        });
+                        index.add({
+                            'header': "Breadcrumb in List",
+                            'description': " p Breadcrumbs cannot be used within an  code li  code  because they are block-elements (and therefore displayed one below the other) and with too much space between them.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-breadcrumb"
+                        });
+                        index.add({
+                            'header': "Span as Breadcrumb Element",
+                            'description': " p Spans cannot be used as Breadcrumb elements because of gthe missing overflow. But since the last element is often not clickable ...  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-breadcrumb_span"
+                        });
+                        index.add({
+                            'header': "Intention after fixed SideNav",
+                            'description': " p A fixed SideNav hides content at the left. To prevent this, the  code nav  code  and the main content (use  code .container  code  or  code .main  code ) will be automatically intended if it is placed after the fixed navbar.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-intend-after-fixed-side-nav"
+                        });
+                        index.add({
+                            'header': "Screen margins",
+                            'description': " p The Material Design Guidelines mention  a href  https:  material.google.com layout metrics-keylines.html  a screen edge left and right margin of 16dp  a .  p   p This has been added for  code .main  code . Within the  code .nav-wrapper  code  this must be applied to each element on its on because rows already have this.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-screen-margins"
+                        });
+                        index.add({
+                            'header': "Sidenav overlay",
+                            'description': " p The z-index of the sidenav-overlay must be changed to allow that a card-toolbar can be above the app bar but below the sidenav-overlay.  p  ",
+                            "url": "section-vendors-extensions.html#kssref-vendors-extensions-materializecss-sidenav-overlay"
+                        });
+            $('#search').autocomplete({data: {
+                    "Abstracts": null,
+                            "Mixins": null,
+                            "Motions": null,
+                            "Variables": null,
+                            "$le-vendor-base-path": null,
+                            "$le-side-nav-expanding-width": null,
+                            "$le-side-nav-width": null,
+                    "Components": null,
+                            "Cards": null,
+                            "Card overlapping app bar": null,
+                            "Card Toolbar": null,
+                            "Collection": null,
+                    "Layout": null,
+                            "Navbar": null,
+                            "Badge": null,
+                            "SideNav": null,
+                            "Logo": null,
+                            "Toggle Icon": null,
+                    "Vendors Extensions": null,
+                            "Font Awesome": null,
+                            "Adjusted Font size": null,
+                            "SideNav Toggle Font-Size": null,
+                            "MaterializeCSS": null,
+                            "Breadcrumb in List": null,
+                            "Span as Breadcrumb Element": null,
+                            "Intention after fixed SideNav": null,
+                            "Screen margins": null,
+                            "Sidenav overlay": null,
+            }});
+            $('#search ~ .autocomplete-content').on('click', function () {
+                window.setTimeout(function(){$('#js-search-form').submit();}, 200);
+            });
+            $('#js-search-form').submit(function () {
+                var result = index.search($('#search').val());
+                if (result.length > 0) {
+                    window.location.assign(result[0].ref);
+                    return false;
+                }
+            });
+            $(window).resize(function () {
+                $('.side-nav').css('transition', '0.3s transform');
+            });
+        });
+    </script>
+    
+    </body>
+</html>

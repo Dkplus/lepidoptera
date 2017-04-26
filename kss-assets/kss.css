@@ -14509,11 +14509,16 @@ nav.navbar--waterfall-shrunk .navbar--waterfall-shrunk__hidden,
   z-index: auto;
 }
 /* line 120, components/_cards.scss */
+.card--into-app-bar.card--into-app-bar-scrolled-up > .card__toolbar {
+  background-color: #ee6e73;
+  color: #fff;
+}
+/* line 125, components/_cards.scss */
 .card--into-app-bar > .card__toolbar {
   z-index: 998;
 }
 
-/* line 125, components/_cards.scss */
+/* line 130, components/_cards.scss */
 .card--into-app-bar-scrolled > .card__toolbar {
   position: fixed;
   background-color: #ee6e73;
@@ -14522,36 +14527,36 @@ nav.navbar--waterfall-shrunk .navbar--waterfall-shrunk__hidden,
   height: 56px;
 }
 @media only screen and (min-width: 601px) {
-  /* line 125, components/_cards.scss */
+  /* line 130, components/_cards.scss */
   .card--into-app-bar-scrolled > .card__toolbar {
     height: 64px;
   }
 }
-/* line 136, components/_cards.scss */
+/* line 141, components/_cards.scss */
 .card--into-app-bar-scrolled > .card__toolbar li a {
   color: #fff;
 }
 
-/* line 141, components/_cards.scss */
+/* line 146, components/_cards.scss */
 .card--into-app-bar-scrolled > .card-content,
 .card--into-app-bar-scrolled-up > .card-content {
   padding-top: 56px;
 }
 @media only screen and (min-width: 601px) {
-  /* line 141, components/_cards.scss */
+  /* line 146, components/_cards.scss */
   .card--into-app-bar-scrolled > .card-content,
   .card--into-app-bar-scrolled-up > .card-content {
     padding-top: 64px;
   }
 }
 
-/* line 150, components/_cards.scss */
+/* line 155, components/_cards.scss */
 .card--into-app-bar-scrolled-up > .card__toolbar {
   transition: 0.3s top, 0.3s left, 0.3s background-color, 0.3s color;
   position: fixed;
 }
 
-/* line 155, components/_cards.scss */
+/* line 160, components/_cards.scss */
 .card--into-app-bar-scrolled .card__into-app-bar-scrolled-hidden {
   display: none;
 }
