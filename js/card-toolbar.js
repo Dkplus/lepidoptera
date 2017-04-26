@@ -20,10 +20,10 @@
                 }
             });
         },
-        detectMinimalScrolledToolbarDimension = function ($card, $toolbar) {
+        detectMinimalScrolledToolbarDimension = function ($card) {
             "use strict";
             var result = $card.offset();
-            result['width'] = $toolbar.innerWidth();
+            result['width'] = $card.innerWidth();
             return result;
         },
         detectFurtherScrolledToolbarDimension = function () {
@@ -139,7 +139,7 @@
                     if (state.$card.length === 0 || state.$toolbar.length === 0) {
                         return;
                     }
-                    state.minimalScrolledToolbarDimension = detectMinimalScrolledToolbarDimension(state.$card, state.$toolbar);
+                    state.minimalScrolledToolbarDimension = detectMinimalScrolledToolbarDimension(state.$card);
                     state.furtherScrolledToolbarDimension = detectFurtherScrolledToolbarDimension();
                     state.nonScrolledToolbarDimension = detectNonScrolledToolbarDimension();
                     transformations[toState][fromState](state, options);

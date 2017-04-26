@@ -117,6 +117,11 @@
     z-index: auto;
   }
 
+  &.card--into-app-bar-scrolled-up > .card__toolbar {
+    background-color: $primary-color;
+    color: $navbar-font-color;
+  }
+
   > .card__toolbar {
     z-index: 998;
   }
